@@ -317,3 +317,21 @@ a{color:inherit}
   .slider__frame{padding:16px 12px}
   .slider__btn{display:none}
 }
+
+.about-image {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;          /* КВАДРАТ */
+  border-radius: 20px;
+  overflow: hidden;
+  background: #0b1412;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* ВАЖНО */
+  display: block;
+}
+
