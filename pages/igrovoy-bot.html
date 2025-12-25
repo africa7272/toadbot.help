@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Игровой бот — что это такое и как играть в чате | Жабабот в Telegram</title>
+  <meta name="description" content="Игровой бот — это игра прямо в чате: персонаж, прогресс, соревнования и общение. Объясняем простыми словами, как работают игровые боты и как начать играть в Telegram." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <link rel="canonical" href="https://жабабот.рф/pages/igrovoy-bot.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="жабабот.рф" />
+  <meta property="og:title" content="Игровой бот — что это и как играть в чате" />
+  <meta property="og:description" content="Коротко и по делу: что такое игровой бот, чем он отличается от обычной игры и как начать играть в Telegram." />
+  <meta property="og:url" content="https://жабабот.рф/pages/igrovoy-bot.html" />
+  <meta property="og:image" content="https://жабабот.рф/assets/img/hero-bg.webp.jpeg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Игровой бот — что это и как играть" />
+  <meta name="twitter:description" content="Игра прямо в чате: персонаж, прогресс, рейтинги и общение. Понятно для новичков." />
+  <meta name="twitter:image" content="https://жабабот.рф/assets/img/hero-bg.webp.jpeg" />
+
+  <meta name="theme-color" content="#0b0f14" />
+
+  <link rel="icon" href="/assets/img/frogmark.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+
+  <!-- Structured data: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Игровой бот — что это такое и как играть в чате",
+    "url":"https://жабабот.рф/pages/igrovoy-bot.html",
+    "inLanguage":"ru",
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"жабабот.рф",
+      "url":"https://жабабот.рф/"
+    }
+  }
+  </script>
+
+  <!-- Structured data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Что такое игровой бот?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Игровой бот — это бот в мессенджере, который превращает чат в игру: ты выполняешь действия, прокачиваешь персонажа или питомца и получаешь прогресс прямо в диалоге."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Игровой бот — это отдельное приложение?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Обычно нет. В Telegram игровые боты работают прямо в чате: ничего скачивать не нужно, достаточно открыть бот и начать играть."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Можно играть с друзьями?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Да. Формат чат-игры как раз про социальность: сравнивать прогресс, участвовать в соревнованиях и взаимодействовать в общих активностях."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Подходит ли игровой бот новичкам?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Подходит: вход простой, а прогресс накапливается маленькими шагами. Идеально, если хочется коротких заходов в течение дня."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Мелкая локальная косметика (уникальная для страницы, но без ломания общего стиля) -->
+  <style>
+    .page-wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+    .page-hero{
+      padding: 46px 0 20px;
+      background:
+        radial-gradient(1200px 500px at 20% 0%, rgba(47,225,138,.08), transparent 60%),
+        radial-gradient(900px 420px at 80% 10%, rgba(255,210,85,.10), transparent 60%);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .breadcrumbs{color:rgba(234,241,255,.72);font-size:13px;margin:0 0 10px}
+    .breadcrumbs a{color:rgba(234,241,255,.86);text-decoration:none}
+    .breadcrumbs a:hover{text-decoration:underline}
+
+    .lead{max-width:78ch;color:rgba(234,241,255,.88);line-height:1.65;margin:0}
+    .two-col{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 18px;
+      align-items:start;
+      margin-top:18px;
+    }
+    .shot{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+    .shot img{width:100%;height:auto;display:block}
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 18px 0 0;
+    }
+    .mini-card{
+      padding: 14px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 18px 40px rgba(0,0,0,.25);
+    }
+    .mini-card b{display:block;margin-bottom:6px;color:rgba(242,208,137,.98)}
+    .section{padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,.06)}
+    .section h2{margin:0 0 10px;color:#f2d089}
+    .section p{margin:0 0 10px;max-width:92ch;line-height:1.7;color:rgba(234,241,255,.86)}
+    .steps{display:grid;gap:10px;margin-top:12px}
+    .step{
+      padding: 14px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .step span{display:inline-block;min-width:28px;height:28px;border-radius:999px;
+      background: rgba(47,225,138,.14); border:1px solid rgba(47,225,138,.22);
+      text-align:center; line-height:28px; font-weight:900; margin-right:8px;
+    }
+    .faq{margin-top:12px;display:grid;gap:10px}
+    details{
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding: 12px 14px;
+    }
+    summary{cursor:pointer;font-weight:900;color:rgba(234,241,255,.92)}
+    details p{margin:10px 0 0;color:rgba(234,241,255,.82)}
+    .cta-block{
+      margin-top:16px;
+      padding: 16px;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .cta-block p{margin:0;max-width:70ch}
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+    .muted{color:rgba(234,241,255,.72)}
+    @media (max-width: 900px){
+      .two-col{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Верхняя панель (без ссылок на другие SEO-страницы) -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="/" aria-label="На главную">
+        <img src="/assets/img/frogmark.svg" class="brand__logo" alt="Логотип Жабабот" width="34" height="34">
+        <span class="brand__text">жабабот.рф</span>
+      </a>
+
+      <div style="margin-left:auto;display:flex;gap:10px;align-items:center;">
+        <a class="btn btn--ghost" href="/">На главную</a>
+        <a class="btn btn--gold" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
+          Перейти в Telegram ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-wrap">
+        <p class="breadcrumbs">
+          <a href="/">Главная</a> → <span class="muted">Игровой бот</span>
+        </p>
+
+        <h1 class="hero__title" style="margin-bottom:10px;">
+          Игровой бот — что это такое и почему в него играют прямо в чате
+        </h1>
+
+        <p class="lead">
+          Если коротко: <strong>игровой бот</strong> — это игра внутри мессенджера, где ты получаешь прогресс в диалоге:
+          персонаж или питомец, действия, развитие и соревнование. Без установки приложений и без сложного входа.
+        </p>
+
+        <div class="two-col">
+          <div>
+            <div class="hero__actions" style="margin-top:14px;">
+              <a class="btn btn--gold" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
+                Попробовать игровой бот в Telegram ↗
+              </a>
+              <a class="btn btn--ghost" href="/">Вернуться на главную</a>
+            </div>
+
+            <div class="cards" aria-label="Короткие ответы">
+              <div class="mini-card">
+                <b>Формат</b>
+                Игра прямо в чате: нажал → сделал действие → получил результат.
+              </div>
+              <div class="mini-card">
+                <b>Социальность</b>
+                Можно играть рядом с друзьями: сравнивать прогресс и соревноваться.
+              </div>
+              <div class="mini-card">
+                <b>Прогресс</b>
+                Микро-заходы в течение дня → стабильное развитие персонажа/питомца.
+              </div>
+            </div>
+          </div>
+
+          <figure class="shot">
+            <img
+              src="/assets/img/gallery-03-na-arenu.jpeg"
+              alt="Пример игрового бота в Telegram: экран с активностью и действием"
+              loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1 -->
+    <section class="section">
+      <div class="page-wrap">
+        <h2>Как работает игровой бот простыми словами</h2>
+        <p>
+          В обычной игре ты запускаешь приложение. В чат-игре всё проще: ты открываешь диалог, выбираешь действие и получаешь ответ.
+          Поэтому такие проекты называют ещё <strong>игровой чат-бот</strong> или <strong>чат-игра</strong>.
+        </p>
+        <div class="steps" aria-label="Пошагово">
+          <div class="step"><span>1</span>Открываешь бота в Telegram и запускаешь игру.</div>
+          <div class="step"><span>2</span>Делаешь действия: развитие, активности, взаимодействие с другими игроками.</div>
+          <div class="step"><span>3</span>Получаешь прогресс: уровни, достижения, рейтинги.</div>
+          <div class="step"><span>4</span>Возвращаешься позже: чат-игры любят регулярность, но не требуют много времени.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="section">
+      <div class="page-wrap">
+        <h2>Почему игровые боты так заходят именно в Telegram</h2>
+        <p>
+          Telegram удобен тем, что игра становится частью общения. Ты не “уходишь играть”, ты просто переключаешься на активность в том же приложении.
+          Это особенно цепляет тех, кто ищет <strong>игры в Telegram</strong> без установки и регистрации в десяти местах.
+        </p>
+        <p class="muted">
+          Пример формата: виртуальный питомец + развитие + соревнования. Именно такой тип игры у Жабабота.
+        </p>
+
+        <div class="cta-block">
+          <p>
+            Хочешь почувствовать формат без теории? Зайди в Telegram и попробуй игровой бот на практике.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn--gold" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
+              Перейти в Telegram ↗
+            </a>
+            <a class="btn btn--ghost" href="/">На главную</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="section">
+      <div class="page-wrap">
+        <h2>Частые вопросы про игровой бот</h2>
+
+        <div class="faq" aria-label="FAQ">
+          <details>
+            <summary>Игровой бот — это отдельное приложение?</summary>
+            <p>Нет. В Telegram игровые боты работают прямо в чате: открыл диалог и играешь. Скачивать “игровой бот” не нужно.</p>
+          </details>
+
+          <details>
+            <summary>Чем игровой бот отличается от обычной мобильной игры?</summary>
+            <p>В чат-играх ниже порог входа: короткие действия, быстрый прогресс и часто больше общения и соревнований.</p>
+          </details>
+
+          <details>
+            <summary>Можно ли играть с друзьями?</summary>
+            <p>Да. Формат рассчитан на социальные механики: сравнение прогресса, совместные активности и конкуренцию.</p>
+          </details>
+
+          <details>
+            <summary>Это подходит, если нет времени на долгие сессии?</summary>
+            <p>Да. Обычно можно заходить на пару минут несколько раз в день — и всё равно видеть развитие.</p>
+          </details>
+        </div>
+
+        <div class="cta-block">
+          <p>
+            Если ты искал “<strong>игровой бот</strong>” — начни с простого: зайди в Telegram и попробуй формат.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn--gold" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
+              Играть в Telegram ↗
+            </a>
+            <a class="btn btn--ghost" href="/">Вернуться на главную</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <div class="footer__note">
+          Страница создана как фан-помощник для новичков. Официальные права на игру принадлежат авторам бота.
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
