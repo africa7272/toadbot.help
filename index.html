@@ -2,254 +2,177 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Жабабот в Telegram — игровой бот-тамагочи: прокачивай жабу и соревнуйся с друзьями</title>
-  <meta name="description" content="Жабабот — игровой бот-тамагочи в Telegram: заведи виртуальную жабку, ухаживай, прокачивай и соревнуйся с друзьями. Гайды для новичков, wiki и калькулятор сытости. Начать игру в Telegram." />
-  <meta name="keywords" content="игровой бот, бот в телеграм, тамагочи в телеграм, игра тамагочи, тамагочи игры, виртуальный питомец, игры боты в телеграмме, telegram bot игра, жабабот, toadbot" />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://жабабот.рф/" />
+  <meta name="description" content="Жабабот — игровой бот-тамагочи в Telegram. Заведи виртуальную жабу, ухаживай за ней, прокачивай уровень, участвуй в арене, событиях и клановых войнах. Гайды, wiki и калькуляторы для новичков." />
 
-  <!-- OG -->
-  <meta property="og:title" content="Жабабот — игровой бот-тамагочи в Telegram" />
-  <meta property="og:description" content="Прокачивай жабу в Telegram и соревнуйся с друзьями. Гайды, wiki, калькулятор сытости." />
+  <meta property="og:title" content="Жабабот в Telegram — игровой бот-тамагочи" />
+  <meta property="og:description" content="Прокачивай жабу в Telegram, играй с друзьями, участвуй в арене и клановых войнах. Гайды и wiki для новичков." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://жабабот.рф/" />
+  <meta property="og:image" content="assets/img/hero-bg.webp.png" />
 
+  <link rel="icon" href="assets/img/frogmark.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/styles.css" />
-  <script defer src="assets/app.js"></script>
 </head>
 
 <body>
-  <a class="skip" href="#content">К содержимому</a>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="жабабот.рф — главная">
-        <span class="brand__icon" aria-hidden="true">🐸</span>
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="index.html" aria-label="На главную">
+        <img src="assets/img/frogmark.svg" class="brand__logo" alt="" width="34" height="34">
         <span class="brand__text">жабабот.рф</span>
       </a>
 
-      <nav class="nav" aria-label="Навигация">
+      <nav class="nav">
         <a class="nav__link is-active" href="index.html">Главная</a>
-        <a class="nav__link" href="start/index.html">С чего начать</a>
-        <a class="nav__link" href="guides/index.html">Гайды</a>
-        <a class="nav__link" href="wiki/index.html">Wiki</a>
+        <a class="nav__link" href="guides.html">Гайды</a>
+        <a class="nav__link" href="wiki.html">Wiki</a>
       </nav>
 
-      <form class="search" id="siteSearch" role="search" autocomplete="off">
-        <label class="sr-only" for="q">Поиск по сайту</label>
-        <input id="q" name="q" type="search" placeholder="Поиск по гайдам, wiki, калькулятору…" />
-        <button class="search__btn" type="submit" aria-label="Найти">🔎</button>
-        <div class="search__panel" id="searchPanel" aria-live="polite"></div>
+      <form class="search" id="searchForm" action="search.html">
+        <input class="search__input" name="q" placeholder="Поиск по гайдам, wiki, калькулятору…" autocomplete="off">
+        <button class="search__btn" type="submit" aria-label="Найти"></button>
       </form>
 
-      <a class="cta" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener noreferrer">
-        Играть в Жабабота ↗
+      <a class="cta" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
+        Играть в Жабабота <span class="cta__arr">↗</span>
       </a>
-
-      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mobileNav">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <div class="mobile" id="mobileNav" hidden>
-      <div class="container mobile__inner">
-        <a class="mobile__link is-active" href="index.html">Главная</a>
-        <a class="mobile__link" href="start/index.html">С чего начать</a>
-        <a class="mobile__link" href="guides/index.html">Гайды</a>
-        <a class="mobile__link" href="wiki/index.html">Wiki</a>
-        <a class="mobile__cta" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener noreferrer">
-          Играть в Жабабота ↗
-        </a>
-      </div>
     </div>
   </header>
 
-  <main id="content">
-    <!-- HERO -->
-    <section class="hero" aria-label="Первый экран">
-      <div class="hero__bg" aria-hidden="true"></div>
-      <div class="hero__shade" aria-hidden="true"></div>
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="hero__overlay">
+        <div class="wrap hero__grid">
+          <div class="hero__left">
+            <h1 class="hero__title">
+              Жабабот — прокачивай жабу в Telegram и соревнуйся с друзьями
+            </h1>
 
-      <div class="container hero__inner">
-        <div class="hero__left">
-          <div class="pill">Игровой бот в Telegram · бот-тамагочи · виртуальный питомец</div>
-
-          <h1 class="hero__title">
-            Жабабот — прокачивай жабу в Telegram<br>
-            и соревнуйся с друзьями
-          </h1>
-
-          <p class="hero__lead">
-            Заведи виртуальную жабку, ухаживай за ней, развивай и участвуй в боях, событиях и клановых движухах.
-            Вкатываешься быстро — без простыней.
-          </p>
-
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener noreferrer">
-              Начать игру ↗
-            </a>
-            <a class="btn btn--ghost" href="start/index.html">С чего начать</a>
-          </div>
-
-          <div class="hero__tags" aria-label="Ключевые возможности">
-            <span class="tag">Уход и рост</span>
-            <span class="tag">Арена и дуэли</span>
-            <span class="tag">Кланы и войны</span>
-            <span class="tag">Подземелья</span>
-          </div>
-        </div>
-
-        <!-- right: phone mock (без реальных скринов пока) -->
-        <div class="hero__right" aria-hidden="true">
-          <div class="phoneStack">
-            <div class="phone phone--back">
-              <div class="phone__screen">
-                <div class="phone__top">Жабабот</div>
-                <div class="phone__line">• Взять жабу</div>
-                <div class="phone__line">• Покормить жабу</div>
-                <div class="phone__line">• На арену</div>
-                <div class="phone__line">• В подземелье</div>
-                <div class="phone__btn">Играть в Telegram</div>
-              </div>
-            </div>
-
-            <div class="phone phone--front">
-              <div class="phone__screen">
-                <div class="phone__top">Жабабот</div>
-                <div class="phone__big">🐸</div>
-                <div class="phone__stat">Уровень · Сытость · Настроение</div>
-                <div class="phone__btn">Играть в Telegram</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero__glow"></div>
-        </div>
-      </div>
-
-      <div class="hero__divider" aria-hidden="true"></div>
-    </section>
-
-    <!-- SEO BLOCK (как ты просил — отдельный, “вставной”) -->
-    <section class="seo">
-      <div class="container seo__inner">
-        <h2 class="seo__title">
-          Игры-тамагочи и игровые боты в Telegram — почему это залипательно
-        </h2>
-
-        <p class="seo__text">
-          <strong>Жабабот</strong> — это <strong>игровой бот в Telegram</strong> в стиле <strong>тамагочи-игры</strong>:
-          вы заводите виртуального питомца (жабку), ухаживаете за ним и видите рост.
-          А чтобы не было скучно — есть соревнования, бои, события и командная игра с друзьями.
-        </p>
-
-        <p class="seo__text">
-          Если вы ищете <strong>тамагочи в телеграм</strong>, <strong>игру-бота</strong> или <strong>виртуального питомца в Telegram</strong>,
-          то Жабабот — один из самых “простых на вход” вариантов: нажали кнопку — и вы уже в игре.
-          Для новичков здесь собраны <a href="guides/index.html">гайды</a>, <a href="wiki/index.html">wiki</a>
-          и инструменты вроде <a href="tools/satiety-calculator.html">калькулятора сытости</a>.
-        </p>
-
-        <details class="seo__more">
-          <summary>Подробнее (для SEO, но без перегруза на экране)</summary>
-          <div class="seo__moreText">
-            <p>
-              Жабабот подходит тем, кто любит <strong>тамагочи игры</strong>, “питомцев”, прокачку и соревнование.
-              Это <strong>игра в телеграмме</strong>, где важны регулярные действия: уход за жабкой, улучшения,
-              участие в активностях и взаимодействие с другими игроками. Если вам нужен <strong>бот-игра</strong>
-              с ощущением прогресса и движухой в чатах — попробуйте.
+            <p class="hero__lead">
+              Игровой бот-тамагочи в Telegram: заведи виртуальную жабу, ухаживай за ней,
+              повышай уровень и участвуй в событиях — арена, подземелья и клановые войны.
             </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
+                Играть в Telegram
+              </a>
+              <a class="btn btn--ghost" href="start.html">С чего начать</a>
+            </div>
+
+            <div class="chips">
+              <span class="chip">бот-тамагочи</span>
+              <span class="chip">виртуальный питомец</span>
+              <span class="chip">арена и дуэли</span>
+              <span class="chip">кланы</span>
+              <span class="chip">события</span>
+            </div>
           </div>
-        </details>
+
+          <!-- правую часть в hero НЕ делаем отдельным телефоном,
+               потому что твой фон уже “постерный” как на макете -->
+          <div class="hero__right" aria-hidden="true"></div>
+        </div>
       </div>
     </section>
 
-    <!-- FEATURE CAROUSEL (как “каталог”, но у нас “возможности”) -->
-    <section class="features" aria-label="Познакомься со всеми возможностями">
-      <div class="container">
-        <h2 class="features__title">Познакомься со всеми возможностями</h2>
-        <p class="features__sub">
-          Заходи в бота и выбирай, чем заняться прямо сейчас: уход, бои, кланы, подземелья и события.
+    <!-- MID SEO BLOCK (две строки: картинка + текст, потом наоборот) -->
+    <section class="seo">
+      <div class="wrap">
+        <h2 class="seo__title">Игровой бот-тамагочи в Telegram: зачем люди залипают</h2>
+        <p class="seo__sub">
+          Коротко и по делу: это не “ещё один бот”, а формат игры-тамагочи с прогрессом, активностями и соревнованием.
         </p>
 
-        <div class="marquee" role="region" aria-label="Лента возможностей">
-          <div class="marquee__track" id="track">
-            <!-- набор карточек повторяется JS-ом для бесконечности -->
-            <div class="tile" data-q="взять жабу старт новичок"><span class="tile__icon">🐸</span><span class="tile__text">Взять жабу</span></div>
-            <div class="tile" data-q="покормить жабу сытость уход тамагочи"><span class="tile__icon">🍽️</span><span class="tile__text">Покормить жабу</span></div>
-            <div class="tile" data-q="арена бои дуэли соревнования"><span class="tile__icon">⚔️</span><span class="tile__text">На арену</span></div>
-            <div class="tile" data-q="клан напасть на клан война"><span class="tile__icon">🛡️</span><span class="tile__text">Напасть на клан</span></div>
-            <div class="tile" data-q="клановая война кланы"><span class="tile__icon">🏴‍☠️</span><span class="tile__text">Начать клановую войну</span></div>
-            <div class="tile" data-q="жабенок покормить жабенка уход"><span class="tile__icon">🐣</span><span class="tile__text">Покормить жабенка</span></div>
-            <div class="tile" data-q="брак свадьба отношения"><span class="tile__icon">💍</span><span class="tile__text">Вступить в брак</span></div>
-            <div class="tile" data-q="подземелье рейд приключения"><span class="tile__icon">🗝️</span><span class="tile__text">Отправиться в подземелье</span></div>
-            <div class="tile" data-q="соревнование кланы событие"><span class="tile__icon">🏆</span><span class="tile__text">Соревнование: кланы</span></div>
-            <div class="tile" data-q="соревнование арена событие"><span class="tile__icon">🥇</span><span class="tile__text">Соревнование: арена</span></div>
-            <div class="tile" data-q="соревнование сытость уход"><span class="tile__icon">📈</span><span class="tile__text">Соревнование: сытость</span></div>
+        <div class="seo__row">
+          <div class="seo__img">
+            <img src="assets/img/seo-1.svg" alt="Виртуальная жаба: уход и прокачка">
+          </div>
+          <div class="seo__text">
+            <h3>Виртуальная жаба — как тамагочи, только интереснее</h3>
+            <p>
+              В классических тамагочи игра держится на простом цикле: <b>питомец → уход → рост → награда</b>.
+              Здесь тот же кайф: ты следишь за состоянием, развиваешь жабу и видишь прогресс.
+              Для новичка это самый понятный вход в “игру-бот в Telegram”.
+            </p>
+            <p class="seo__hint">
+              Хочешь быстро стартануть? Жми “Играть” — и бот сам проведёт по первым шагам.
+            </p>
+            <a class="link" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">Играть в Telegram ↗</a>
           </div>
         </div>
 
-        <div class="features__cta">
-          <a class="btn btn--primary" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener noreferrer">
-            Играть в Telegram ↗
-          </a>
-          <a class="btn btn--ghost" href="guides/index.html">Открыть гайды</a>
-          <a class="btn btn--ghost" href="tools/satiety-calculator.html">Калькулятор сытости</a>
+        <div class="seo__row seo__row--reverse">
+          <div class="seo__img">
+            <img src="assets/img/seo-2.svg" alt="Соревнования: арена, кланы, события">
+          </div>
+          <div class="seo__text">
+            <h3>Соревнования с друзьями: арена, события и кланы</h3>
+            <p>
+              Если “тамагочи” — это про заботу, то Жабабот ещё и про драйв:
+              <b>арена</b> (бои и дуэли), <b>кланы</b> (командные войны), <b>события</b> (временные активности).
+              Поэтому это работает как “игра в чате”: можно играть одному, но веселее — вместе.
+            </p>
+            <p class="seo__hint">
+              На сайте — гайды, wiki и калькуляторы (например, по сытости), чтобы меньше гадать и больше побеждать.
+            </p>
+            <div class="seo__links">
+              <a class="pill" href="guides.html">Гайды</a>
+              <a class="pill" href="wiki.html">Wiki</a>
+              <a class="pill" href="start.html">С чего начать</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Simple blocks like “game cards” (1 игра, 3 направления) -->
-    <section class="cards" aria-label="Куда идти дальше">
-      <div class="container">
-        <div class="cardRow">
-          <article class="card">
-            <div class="card__top">
-              <div class="chip">Новичкам</div>
-            </div>
-            <h3>С чего начать</h3>
-            <p>Коротко и по шагам: как стартовать, что нажать, что важно в первые дни.</p>
-            <a class="card__link" href="start/index.html">Открыть →</a>
-          </article>
+    <!-- SLIDER BLOCK (опускаем ниже) -->
+    <section class="slider">
+      <div class="wrap">
+        <h2 class="slider__title">Познакомься со всеми возможностями!</h2>
+        <p class="slider__sub">
+          Заходи в бота и участвуй в игровых активностях: арена, клановые войны, подземелья, уход за жабой и события.
+        </p>
 
-          <article class="card">
-            <div class="card__top">
-              <div class="chip">Гайды</div>
-            </div>
-            <h3>Гайды по режимам</h3>
-            <p>Арена, кланы, подземелья, события — подсказки без воды.</p>
-            <a class="card__link" href="guides/index.html">Открыть →</a>
-          </article>
+        <div class="slider__frame">
+          <button class="slider__btn slider__btn--left" id="prevBtn" aria-label="Назад">‹</button>
 
-          <article class="card">
-            <div class="card__top">
-              <div class="chip">Инструменты</div>
-            </div>
-            <h3>Калькулятор сытости</h3>
-            <p>Чтобы жабка не “просела”: быстрый расчёт ухода и таймингов.</p>
-            <a class="card__link" href="tools/satiety-calculator.html">Открыть →</a>
-          </article>
+          <div class="slider__track" id="track">
+            <img class="card" src="assets/img/slider-01.svg" alt="Взять жабу">
+            <img class="card" src="assets/img/slider-02.svg" alt="Покормить жабу">
+            <img class="card" src="assets/img/slider-03.svg" alt="На арену">
+            <img class="card" src="assets/img/slider-04.svg" alt="Подземелье">
+            <img class="card" src="assets/img/slider-05.svg" alt="Вступить в клан">
+            <img class="card" src="assets/img/slider-06.svg" alt="Начать клановую войну">
+            <img class="card" src="assets/img/slider-07.svg" alt="Соревнование: арена">
+            <img class="card" src="assets/img/slider-08.svg" alt="Соревнование: кланы">
+            <img class="card" src="assets/img/slider-09.svg" alt="Соревнование: сытость">
+            <img class="card" src="assets/img/slider-10.svg" alt="Брак и жабёнок">
+          </div>
+
+          <button class="slider__btn slider__btn--right" id="nextBtn" aria-label="Вперёд">›</button>
+        </div>
+
+        <div class="slider__actions">
+          <a class="btn btn--primary" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">Играть в Telegram</a>
+          <a class="btn btn--ghost" href="guides.html">Открыть гайды</a>
         </div>
       </div>
     </section>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <div class="footer__note">
+          Это фан-сайт помощи новичкам и приглашения игроков. Официальные права на игру принадлежат авторам бота.
+        </div>
+      </div>
+    </footer>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__left">
-        <strong>жабабот.рф</strong>
-        <span>— фан-проект для новичков и рефералов</span>
-      </div>
-      <div class="footer__right">
-        <a href="guides/index.html">Гайды</a>
-        <a href="wiki/index.html">Wiki</a>
-        <a href="tools/satiety-calculator.html">Калькулятор сытости</a>
-        <a href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener noreferrer">Играть ↗</a>
-      </div>
-    </div>
-  </footer>
+  <script src="assets/app.js"></script>
 </body>
 </html>
