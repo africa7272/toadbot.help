@@ -4,16 +4,100 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Жабабот в Telegram — игровой бот-тамагочи: прокачивай жабу и соревнуйся с друзьями</title>
-  <meta name="description" content="Жабабот — игровой бот-тамагочи в Telegram. Тамагочи игра на телефон прямо в чате: заведи виртуальную жабу, корми, прокачивай уровень, участвуй в арене, подземельях и клановых войнах. Гайды и Wiki для новичков." />
+  <title>Жабабот в Telegram — игровой бот-тамагочи и чат-игра: прокачивай жабу и соревнуйся</title>
 
-  <meta property="og:title" content="Жабабот в Telegram — игровой бот-тамагочи" />
-  <meta property="og:description" content="Прокачивай жабу в Telegram, играй с друзьями, участвуй в арене и клановых войнах. Тамагочи игра на телефон прямо в чате." />
+  <!-- SEO базовое -->
+  <meta name="description" content="Жабабот — игровой бот в Telegram в стиле тамагочи игры: заведи виртуальную жабку, корми, прокачивай уровень, участвуй в арене, подземельях и клановых войнах. Гайды и Wiki для новичков." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="keywords" content="игровой бот в телеграм, игры в telegram, игры в телеграме, бот игр в телеграм, чат игра в телеграм, тамагочи игра, тамагочи игра на телефон, виртуальный питомец, игра бот" />
+  <link rel="canonical" href="https://жабабот.рф/" />
+  <meta name="theme-color" content="#0b0f14" />
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Жабабот в Telegram — игровой бот-тамагочи и чат-игра" />
+  <meta property="og:description" content="Тамагочи игра на телефон прямо в чате: виртуальная жабка, прокачка, арена, подземелья и кланы. Гайды и Wiki для новичков." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/img/hero-bg.webp.jpeg" />
+  <meta property="og:image:alt" content="Жабабот — игровой бот-тамагочи в Telegram" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="Жабабот.рф" />
+  <meta property="og:url" content="https://жабабот.рф/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Жабабот в Telegram — игровой бот-тамагочи" />
+  <meta name="twitter:description" content="Виртуальная жабка в Telegram: прокачка, арена, подземелья, кланы. Гайды и Wiki." />
+  <meta name="twitter:image" content="assets/img/hero-bg.webp.jpeg" />
 
   <link rel="icon" href="assets/img/frogmark.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Жабабот.рф",
+    "url":"https://жабабот.рф/",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://жабабот.рф/search.html?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Жабабот.рф",
+    "url":"https://жабабот.рф/",
+    "logo":"https://жабабот.рф/assets/img/frogmark.svg"
+  }
+  </script>
+
+  <!-- Локальные правки стиля под “золотой заголовок + красивые кнопки” -->
+  <style>
+    .gold-title{
+      background: linear-gradient(180deg, #ffe9a8 0%, #f7c24d 38%, #c9922f 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 20px 60px rgba(0,0,0,.55);
+    }
+    .btn--gold{
+      background: linear-gradient(180deg, rgba(255,233,168,.98), rgba(247,194,77,.96), rgba(201,146,47,.96));
+      color:#1a1205;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 18px 50px rgba(0,0,0,.55);
+    }
+    .btn--gold:hover{ filter: brightness(1.02); transform: translateY(-1px); }
+    .btn--gold:active{ transform: translateY(0); }
+
+    .btn-primary{
+      display:inline-flex;align-items:center;justify-content:center;
+      text-decoration:none;
+      padding:12px 16px;border-radius:14px;
+      font-weight:900;letter-spacing:.2px;
+      background: linear-gradient(135deg, rgba(47,225,138,.96), rgba(33,184,111,.96));
+      color:#06140c;
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: 0 18px 50px rgba(0,0,0,.55);
+      white-space:nowrap;
+    }
+    .btn-secondary{
+      display:inline-flex;align-items:center;justify-content:center;
+      text-decoration:none;
+      padding:11px 14px;border-radius:14px;
+      font-weight:800;
+      background: rgba(255,255,255,.06);
+      color: rgba(234,241,255,.92);
+      border:1px solid rgba(255,255,255,.14);
+      white-space:nowrap;
+    }
+    .btn-secondary:hover{ background: rgba(255,255,255,.08); }
+    .about-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  </style>
 </head>
 
 <body>
@@ -31,8 +115,8 @@
         <a class="nav__link" href="wiki.html">Wiki</a>
       </nav>
 
-      <form class="search" id="searchForm" action="search.html">
-        <input class="search__input" name="q" placeholder="Поиск по гайдам, wiki, калькулятору…" autocomplete="off">
+      <form class="search" id="searchForm" action="search.html" role="search">
+        <input class="search__input" name="q" placeholder="Поиск по гайдам, wiki, калькулятору…" autocomplete="off" aria-label="Поиск по сайту">
         <button class="search__btn" type="submit" aria-label="Найти"></button>
       </form>
 
@@ -48,23 +132,24 @@
       <div class="hero__overlay">
         <div class="wrap hero__grid">
           <div class="hero__left">
-            <h1 class="hero__title">
+            <h1 class="hero__title gold-title">
               Жабабот — прокачивай жабу в Telegram и соревнуйся с друзьями
             </h1>
 
             <p class="hero__lead">
-              Увлекательный игровой бот-тамагочи: заведи виртуальную жабку, ухаживай за ней,
-              прокачивай уровень и заходи в активности — арена, подземелья, кланы и события.
+              <strong>Игровой бот в Telegram</strong> в стиле <strong>тамагочи игры</strong>:
+              заведи виртуальную жабку, корми, прокачивай уровень и заходи в активности — арена, подземелья, кланы и события.
             </p>
 
             <div class="hero__actions">
-              <a class="btn btn--primary" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
+              <a class="btn btn--gold" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
                 Играть в Telegram ↗
               </a>
               <a class="btn btn--ghost" href="start.html">С чего начать</a>
             </div>
 
             <div class="chips">
+              <span class="chip">игровой бот в телеграм</span>
               <span class="chip">тамагочи игра</span>
               <span class="chip">тамагочи игра на телефон</span>
               <span class="chip">игры в Telegram</span>
@@ -78,26 +163,26 @@
       </div>
     </section>
 
-    <!-- ABOUT / SEO BLOCKS (2 images + text, alternating) -->
+    <!-- ABOUT / SEO BLOCKS -->
     <section class="about-bot">
       <div class="about-wrapper">
 
         <div class="about-row">
           <div class="about-image">
             <img
-              src="assets/img/tamagotchi-frog.jpeg"
+              src="assets/img/tamagotchi-frog.webp.jpeg"
               alt="Тамагочи игра на телефон — виртуальный питомец жабка"
               loading="lazy">
           </div>
 
           <div class="about-text">
-            <h2>Тамагочи игра на телефон — твой питомец-жабка</h2>
+            <h2 class="gold-title">Тамагочи игра на телефон — твой питомец-жабка</h2>
             <p>
               <strong>Жабабот</strong> — это <strong>тамагочи игра</strong>, где у тебя появляется собственный виртуальный питомец: жабка.
-              Ты кормишь её, следишь за состоянием, прокачиваешь уровень и видишь прогресс не “на словах”, а по делу.
+              Ты кормишь её, следишь за состоянием, прокачиваешь уровень и видишь прогресс по цифрам, а не по обещаниям.
             </p>
             <p>
-              Главное — это <strong>тамагочи игра на телефон</strong>, но без отдельных приложений: всё живёт прямо в чате.
+              Это <strong>тамагочи игра на телефон</strong> без отдельного приложения: всё живёт прямо в чате Telegram.
               Зашёл на минуту — сделал действия — вернулся позже за наградой. Микро-заходы, большой прогресс.
             </p>
           </div>
@@ -106,21 +191,21 @@
         <div class="about-row reverse">
           <div class="about-image">
             <img
-              src="assets/img/tg-bot-battles.jpeg"
+              src="assets/img/tg-bot-battles.webp.jpeg"
               alt="Игры в Telegram — бот игр в телеграм и чат игра"
               loading="lazy">
           </div>
 
           <div class="about-text">
-            <h2>Игры в Telegram: бот-игра и чат-игра с друзьями</h2>
+            <h2 class="gold-title">Игры в Telegram: бот-игра и чат-игра с друзьями</h2>
             <p>
               Если ты искал <strong>игры в Telegram</strong> — вот оно.
-              Жабабот работает как <strong>бот игр в телеграм</strong> и как живая <strong>чат игра в телеграм</strong>:
-              активность, конкуренция и взаимодействие с людьми.
+              Это <strong>бот игр в телеграм</strong> и одновременно <strong>чат игра в телеграм</strong>:
+              ты играешь прямо в чате, сравниваешь прогресс, соревнуешься и двигаешься вместе с другими игроками.
             </p>
             <p>
-              Здесь не просто “покормил и ушёл”: есть арена, подземелья, клановые движухи и рейтинги.
-              Это тот случай, когда Telegram превращается в игровую площадку, а не в список чатов.
+              Тут не “покормил и ушёл”: есть арена, подземелья, кланы, рейтинги и игровые события.
+              Telegram превращается в игровую площадку, а не просто в список чатов.
             </p>
 
             <div class="about-actions">
@@ -137,13 +222,13 @@
       </div>
     </section>
 
-    <!-- FINAL GALLERY BLOCK (3 visible, total 7; next 4 scroll behind) -->
+    <!-- GALLERY -->
     <section class="gallery">
       <div class="wrap">
-        <h2 class="gallery__title">Познакомься со всеми возможностями!</h2>
+        <h2 class="gallery__title gold-title">Познакомься со всеми возможностями!</h2>
         <p class="gallery__sub">
           Листай галерею: уход за жабой, арена, подземелья, кланы и рейтинги — всё это внутри бота.
-          Никаких лишних слов, только то, что реально работает в игре.
+          Никаких лишних слов — только то, что реально работает в игре.
         </p>
 
         <div class="gallery__frame">
@@ -153,7 +238,6 @@
             <div class="gcard"><img src="assets/img/gallery-01-vzyat-zhabu.jpeg" alt="Взять жабу" loading="lazy"></div>
             <div class="gcard"><img src="assets/img/gallery-02-pokormit-zhabu.jpeg" alt="Покормить жабу" loading="lazy"></div>
             <div class="gcard"><img src="assets/img/gallery-03-na-arenu.jpeg" alt="На арену" loading="lazy"></div>
-
             <div class="gcard"><img src="assets/img/gallery-04-podzemelye.jpeg" alt="Подземелье" loading="lazy"></div>
             <div class="gcard"><img src="assets/img/gallery-05-klany.jpeg" alt="Кланы" loading="lazy"></div>
             <div class="gcard"><img src="assets/img/gallery-06-top-zhab.jpeg" alt="Топ жаб" loading="lazy"></div>
@@ -164,7 +248,7 @@
         </div>
 
         <div class="gallery__actions">
-          <a class="btn btn--primary" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
+          <a class="btn btn--gold" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
             Играть в Telegram ↗
           </a>
           <a class="btn btn--ghost" href="guides.html">Открыть гайды</a>
