@@ -1,30 +1,24 @@
-(() => {
-  // Gallery carousel: 3 visible, total 7 (first 3 visible, next 4 scroll behind)
+(function () {
   const track = document.getElementById("gTrack");
-  const prevBtn = document.getElementById("gPrev");
-  const nextBtn = document.getElementById("gNext");
+  const prev = document.getElementById("gPrev");
+  const next = document.getElementById("gNext");
 
-  function cardStepPx() {
-    const card = track?.querySelector(".gcard");
-    if (!card) return 320;
-    const styles = getComputedStyle(track);
-    const gap = parseFloat(styles.columnGap || styles.gap || "14");
-    return card.getBoundingClientRect().width + (isNaN(gap) ? 14 : gap);
+  if (!track || !prev || !next) return;
+
+  function stepPx() {
+    // листаем ровно на ширину 1 карточки + gap
+    const card = track.querySelector(".gcard");
+    if (!card) return 420;
+    const style = getComputedStyle(track);
+    const gap = parseFloat(style.columnGap || style.gap || "14") || 14;
+    return card.getBoundingClientRect().width + gap;
   }
 
-  function scrollByCards(dir = 1) {
-    if (!track) return;
-    track.scrollBy({ left: cardStepPx() * dir, behavior: "smooth" });
-  }
+  prev.addEventListener("click", () => {
+    track.scrollBy({ left: -stepPx(), behavior: "smooth" });
+  });
 
-  prevBtn?.addEventListener("click", () => scrollByCards(-1));
-  nextBtn?.addEventListener("click", () => scrollByCards(1));
-
-  // Search: send query to search.html?q=
-  const form = document.getElementById("searchForm");
-  form?.addEventListener("submit", (e) => {
-    const input = form.querySelector("input[name='q']");
-    const q = (input?.value || "").trim();
-    if (!q) e.preventDefault();
+  next.addEventListener("click", () => {
+    track.scrollBy({ left: stepPx(), behavior: "smooth" });
   });
 })();
