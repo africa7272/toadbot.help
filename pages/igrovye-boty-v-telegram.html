@@ -4,149 +4,487 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <title>Игровые боты в Telegram — как играть без приложений и установок</title>
-  <meta name="description" content="Игровые боты в Telegram — это игры прямо в чате: без установки приложений, с прогрессом и общением. Разбираем формат и показываем, как начать." />
+  <!-- Primary SEO -->
+  <title>Игровые боты в Telegram — игры прямо в чате без приложений и установок</title>
+  <meta name="description" content="Игровые боты в Telegram — это игры прямо в чате: без приложений, установок и лишних регистраций. Как выбрать бот-игру, как играть в группе и чем чат-игра отличается от обычной игры. Пример запуска в Telegram." />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <!-- Canonical -->
   <link rel="canonical" href="https://жабабот.рф/pages/igrovye-boty-v-telegram.html" />
 
   <!-- Open Graph -->
+  <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="жабабот.рф" />
-  <meta property="og:title" content="Игровые боты в Telegram — формат игр в чате" />
-  <meta property="og:description" content="Почему Telegram стал платформой для игр и как работают игровые боты без приложений." />
+  <meta property="og:title" content="Игровые боты в Telegram — игры прямо в чате" />
+  <meta property="og:description" content="Без приложений и установок: как работают игровые боты Telegram, как играть в чате с друзьями и как выбрать нормальную бот-игру." />
   <meta property="og:url" content="https://жабабот.рф/pages/igrovye-boty-v-telegram.html" />
   <meta property="og:image" content="https://жабабот.рф/assets/img/hero-bg.webp.jpeg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Игровые боты в Telegram — игры прямо в чате" />
+  <meta name="twitter:description" content="Как играть в Telegram без приложений: чат-игры, бот-игры, игры в группе, выбор бота." />
+  <meta name="twitter:image" content="https://жабабот.рф/assets/img/hero-bg.webp.jpeg" />
 
-  <link rel="icon" href="/assets/img/frogmark.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="/assets/styles.css" />
+  <!-- Icons -->
+  <link rel="icon" href="../assets/img/frogmark.svg" type="image/svg+xml" />
 
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "name":"Игровые боты в Telegram",
-    "url":"https://жабабот.рф/pages/igrovye-boty-v-telegram.html",
-    "inLanguage":"ru"
-  }
-  </script>
+  <!-- Styles (берём твой общий стиль) -->
+  <link rel="stylesheet" href="../assets/styles.css" />
+
+  <!-- Small page-specific tweaks (не ломаем общий css) -->
+  <style>
+    .page-hero{
+      padding: 42px 0 26px;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(255,210,85,.10), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(47,225,138,.10), transparent 60%),
+        linear-gradient(#070a0e, #0b0f14);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .page-hero__kicker{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:8px 12px;border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      color: rgba(234,241,255,.78);
+      font-size:12px;
+      margin-bottom:14px;
+    }
+    .page-hero h1{
+      margin:0 0 12px 0;
+      font-size: clamp(32px, 4.2vw, 54px);
+      line-height:1.05;
+      letter-spacing:.2px;
+    }
+    .page-hero p{
+      margin:0;
+      max-width: 80ch;
+      color: rgba(234,241,255,.84);
+      line-height:1.7;
+      font-size:16px;
+    }
+    .page-topline{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:12px;margin-bottom:18px;flex-wrap:wrap;
+    }
+    .back-home{
+      text-decoration:none;
+      padding:10px 14px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: rgba(234,241,255,.92);
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .back-home:hover{transform:translateY(-1px)}
+    .content{
+      padding: 34px 0 10px;
+      background:
+        radial-gradient(900px 420px at 15% 0%, rgba(47,225,138,.08), transparent 62%),
+        linear-gradient(#0b0f14, #070a0e);
+    }
+    .prose{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+    .block{
+      margin: 22px 0;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+    .block h2{
+      margin:0 0 10px 0;
+      font-size: 24px;
+      line-height:1.2;
+    }
+    .block h3{
+      margin:18px 0 8px 0;
+      font-size: 18px;
+      line-height:1.25;
+      color: rgba(255,210,85,.92);
+    }
+    .block p{margin:0 0 10px 0;color: rgba(234,241,255,.84);line-height:1.7}
+    .block ul{margin:0;padding-left:18px;color: rgba(234,241,255,.84);line-height:1.7}
+    .block li{margin:6px 0}
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items:start;
+    }
+    .imgcard{
+      border-radius: 18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.25);
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+    .imgcard img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .note{
+      color: rgba(234,241,255,.70);
+      font-size: 14px;
+      line-height:1.65;
+    }
+    .magnet{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 16px;
+      align-items:center;
+    }
+    .magnet__title{
+      font-size: 18px;
+      margin:0 0 8px 0;
+      color: rgba(255,210,85,.92);
+    }
+    .checklist{
+      display:grid;
+      gap: 8px;
+      margin: 10px 0 0;
+      padding:0;
+      list-style:none;
+    }
+    .checklist li{
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: rgba(234,241,255,.84);
+    }
+    .cta-inline{
+      margin-top: 12px;
+    }
+    .faq details{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius:14px;
+      padding: 12px 14px;
+      margin: 10px 0;
+    }
+    .faq summary{
+      cursor:pointer;
+      font-weight:800;
+      color: rgba(234,241,255,.92);
+    }
+    .faq p{margin:10px 0 0 0}
+    .soft-sep{
+      height:1px;background: rgba(255,255,255,.08);
+      margin: 18px 0;
+    }
+
+    /* keep it nice on phones */
+    @media (max-width: 860px){
+      .grid2{grid-template-columns:1fr}
+      .magnet{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 
 <body>
-<header class="topbar">
-  <div class="wrap topbar__inner">
-    <a class="brand" href="/">
-      <img src="/assets/img/frogmark.svg" class="brand__logo" alt="Жабабот логотип">
-      <span class="brand__text">жабабот.рф</span>
-    </a>
-
-    <div style="margin-left:auto;display:flex;gap:10px">
-      <a class="btn btn--ghost" href="/">На главную</a>
-    </div>
-  </div>
-</header>
-
-<main>
-
-<section class="page-hero">
-  <div class="page-wrap">
-    <h1 class="hero__title">
-      Игровые боты в Telegram — игры прямо в чате
-    </h1>
-
-    <p class="lead">
-      <strong>Игровые боты в Telegram</strong> — это формат, в котором игра запускается прямо в диалоге.
-      Никаких приложений, установок и регистраций: открыл чат — начал играть.
-    </p>
-
-    <div class="hero__actions" style="margin-top:16px">
-      <a class="btn btn--ghost" href="/">Перейти на главную</a>
-      <a class="btn btn--gold"
-         href="https://t.me/toadbot?start=228691787"
-         rel="nofollow noopener"
-         target="_blank">
-        Попробовать формат в Telegram ↗
+  <!-- Minimal top line (1 button to home, no extra CTA spam) -->
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="../index.html" aria-label="На главную">
+        <img src="../assets/img/frogmark.svg" class="brand__logo" alt="Логотип жабабот.рф" width="34" height="34">
+        <span class="brand__text">жабабот.рф</span>
       </a>
+
+      <div class="page-topline" style="margin-left:auto">
+        <a class="back-home" href="../index.html">На главную</a>
+      </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section class="section">
-  <div class="page-wrap">
-    <h2>Почему именно Telegram стал платформой для игровых ботов</h2>
-    <p>
-      Telegram изначально создавался как быстрый мессенджер, но со временем стал удобной платформой
-      для интерактивных сервисов. Именно поэтому <strong>игровые боты в Telegram</strong> получили
-      широкое распространение.
-    </p>
+  <main>
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="prose">
+        <div class="page-hero__kicker">Платформа: Telegram · формат: чат-игра</div>
+        <h1>Игровые боты в Telegram — игры прямо в чате</h1>
+        <p>
+          <strong>Игровые боты в Telegram</strong> — это когда игра запускается в диалоге: без отдельных приложений,
+          установок и сложных регистраций. Ниже — как работает <strong>бот-игра в телеграм</strong>,
+          чем хороша <strong>чат-игра в телеграм</strong> для друзей и на что смотреть, чтобы выбрать действительно “живую” игру.
+        </p>
+      </div>
+    </section>
 
-    <ul>
-      <li>не нужно скачивать отдельные игры</li>
-      <li>игра всегда под рукой — в чате</li>
-      <li>можно играть маленькими сессиями</li>
-      <li>общение и игра объединены</li>
-    </ul>
+    <section class="content">
+      <div class="prose">
 
-    <figure class="shot" style="margin-top:14px">
-      <img src="/assets/img/gallery-01-vzyat-zhabu.jpeg"
-           alt="Игровые боты в Telegram — интерфейс игры в чате"
-           loading="lazy">
-    </figure>
-  </div>
-</section>
+        <!-- Block: why Telegram -->
+        <article class="block" aria-label="Почему Telegram стал платформой для игровых ботов">
+          <h2>Почему Telegram стал платформой для игровых ботов</h2>
+          <p>
+            Telegram из мессенджера вырос в удобную платформу для интерактива. Поэтому
+            <strong>игровые боты телеграм</strong> (и то, что часто ищут как <strong>игровые боты в тг</strong> или
+            “<strong>игровые боты в телеграмме</strong>”) стали популярны: игра всегда под рукой и живёт там же, где общение.
+          </p>
+          <ul>
+            <li><strong>Ноль установок:</strong> открыл чат — играешь.</li>
+            <li><strong>Короткие сессии:</strong> 30–90 секунд на ход — и ты снова в делах.</li>
+            <li><strong>Социальность:</strong> проще собраться компанией — прямо в общем чате.</li>
+            <li><strong>Прогресс:</strong> удобно возвращаться за наградами и событиями.</li>
+          </ul>
+          <p class="note">
+            Отдельно: запрос “<strong>канал в телеграм игр</strong>” обычно про подборки и каталоги. Но самый интересный опыт — когда
+            канал приводит тебя в конкретную <strong>игру в Telegram</strong>, а дальше всё происходит внутри бота.
+          </p>
+        </article>
 
-<section class="section">
-  <div class="page-wrap">
-    <h2>Как обычно устроены игры-боты в Telegram</h2>
-    <p>
-      Большинство Telegram-игр работают по одному принципу:
-      пользователь выполняет действия, получает отклик и постепенно развивает персонажа,
-      питомца или аккаунт.
-    </p>
+        <!-- Block: visuals + explanation -->
+        <section class="block" aria-label="Как выглядит бот-игра и что внутри">
+          <h2>Как выглядит бот-игра и что внутри</h2>
+          <p>
+            Хороший <strong>игровой чат бот</strong> понятен с первого касания: понятные действия, быстрые ответы, ясные цели.
+            Внутри обычно есть прогресс, активности и соревнования — это удерживает лучше, чем “разовая игрушка”.
+          </p>
 
-    <p>
-      Один из популярных форматов — <a href="https://t.me/toadbot?start=228691787">игровые боты в Telegram</a>
-      с прогрессией и соревнованиями, где важно возвращаться регулярно.
-    </p>
-  </div>
-</section>
+          <div class="grid2" style="margin-top:14px">
+            <figure class="imgcard">
+              <img
+                src="../assets/img/tg-bot-battles.webp.jpeg"
+                alt="Пример: игры в Telegram — бот-игра с ареной, событиями и командными активностями"
+                loading="lazy">
+            </figure>
 
-<section class="section">
-  <div class="page-wrap">
-    <h2>Кому подойдут игровые боты в Telegram</h2>
+            <div>
+              <h3>Коротко: что делает чат-игру залипательной</h3>
+              <ul>
+                <li><strong>Петля прогресса:</strong> действие → награда → рост.</li>
+                <li><strong>События:</strong> временные активности, чтобы возвращаться.</li>
+                <li><strong>Соревнование:</strong> арена, кланы, рейтинги.</li>
+                <li><strong>Командность:</strong> когда друзья реально влияют на результат.</li>
+              </ul>
+              <div class="soft-sep"></div>
+              <p class="note">
+                Если ищешь “<strong>бот игр в телеграм</strong>” — смотри, чтобы игра не была просто меню-кнопками,
+                а давала ощущения: прогресс, цель, соперники, события.
+              </p>
+            </div>
+          </div>
+        </section>
 
-    <div class="cards">
-      <div class="mini-card"><b>Новичкам</b>Простой вход без обучения и сложных интерфейсов.</div>
-      <div class="mini-card"><b>Занятым</b>Короткие заходы без долгих игровых сессий.</div>
-      <div class="mini-card"><b>Любителям общения</b>Игра становится частью диалога.</div>
-    </div>
+        <!-- Magnet block (1st Telegram CTA) -->
+        <section class="block" aria-label="Чек-лист: как выбрать игровой бот в Telegram">
+          <div class="magnet">
+            <div>
+              <h2>Чек-лист: как выбрать игровой бот в Telegram без разочарований</h2>
+              <p>
+                Чтобы не попасть на “поиграл 3 минуты и забыл”, проверь бота по этим пунктам.
+                Это повышает шанс найти именно ту <strong>игру в Telegram</strong>, в которую реально возвращаются.
+              </p>
 
-    <div class="cta-block">
-      <p>
-        Если хочется понять формат на практике — проще всего открыть бота и посмотреть,
-        как выглядит игра прямо в Telegram.
-      </p>
-      <a class="btn btn--gold"
-         href="https://t.me/toadbot?start=228691787"
-         rel="nofollow noopener"
-         target="_blank">
-        Открыть бота в Telegram ↗
-      </a>
-    </div>
-  </div>
-</section>
+              <h3 class="magnet__title">7 признаков живой бот-игры</h3>
+              <ul class="checklist">
+                <li>Есть понятный старт: первые шаги занимают меньше минуты.</li>
+                <li>Прогресс виден сразу: уровни, состояние, награды.</li>
+                <li>Есть активности на выбор: арена / события / командная игра.</li>
+                <li>Понятные правила: без “магии” и скрытых штрафов.</li>
+                <li>Соревнование честное: рейтинги, сезонные активности.</li>
+                <li>Игра дружит с группами: можно играть в чате с друзьями.</li>
+                <li>Есть смысл возвращаться: ежедневные цели, бонусы, события.</li>
+              </ul>
 
-<footer class="footer">
-  <div class="wrap footer__inner">
-    <div class="footer__note">
-      Страница создана как обзор формата. Официальные права на игру принадлежат авторам бота.
-    </div>
-  </div>
-</footer>
+              <!-- Telegram CTA #1 -->
+              <div class="cta-inline">
+                <a class="btn btn--primary"
+                   href="https://t.me/toadbot?start=228691787"
+                   target="_blank" rel="noopener">
+                  Пример игры в Telegram ↗
+                </a>
+              </div>
 
-</main>
+              <p class="note" style="margin-top:10px">
+                Ссылка одна, без спама: просто чтобы ты мог(ла) посмотреть формат “игра прямо в чате” на живом примере.
+              </p>
+            </div>
+
+            <figure class="imgcard">
+              <img
+                src="../assets/img/tamagotchi-frog.webp.jpeg"
+                alt="Пример: чат-игра с прогрессом и виртуальным питомцем — формат тамагочи в Telegram"
+                loading="lazy">
+            </figure>
+          </div>
+        </section>
+
+        <!-- Block: how to play in group -->
+        <section class="block" aria-label="Как играть в Telegram в группе и в чате">
+          <h2>Как играть в Telegram в группе и в чате</h2>
+          <p>
+            Запросы типа “<strong>игры в телеграме</strong> для друзей” чаще всего про два сценария:
+            либо вы играете каждый за себя, но сравниваетесь; либо есть командные механики.
+            В хорошей чат-игре оба сценария поддерживаются.
+          </p>
+          <h3>Два быстрых формата</h3>
+          <ul>
+            <li><strong>Личная игра:</strong> ты играешь сам(а), но соревнуешься по рейтингу.</li>
+            <li><strong>Групповая игра:</strong> чат влияет на события, кланы или войны.</li>
+          </ul>
+          <p class="note">
+            Это не “игровые автоматы бот” и не казино-механики — нормальные игры в Telegram строятся на прогрессе, событиях и соревновании,
+            а не на “крути-надейся”.
+          </p>
+        </section>
+
+        <!-- Gallery block (kept images, no extra buttons) -->
+        <section class="block" aria-label="Галерея возможностей">
+          <h2>Что обычно есть внутри: активность, рейтинг, кланы</h2>
+          <p class="note">
+            Ниже — примеры экранов и режимов. Это не “вся игра”, а просто понятная витрина: уход, арена, подземелья и таблицы лидеров.
+          </p>
+
+          <div class="gallery__frame" style="margin-top:14px">
+            <button class="gallery__btn gallery__btn--left" id="gPrev" aria-label="Назад">‹</button>
+
+            <div class="gallery__track" id="gTrack">
+              <div class="gcard"><img src="../assets/img/gallery-01-vzyat-zhabu.jpeg" alt="Экран: взять жабу — старт и выбор питомца" loading="lazy"></div>
+              <div class="gcard"><img src="../assets/img/gallery-02-pokormit-zhabu.jpeg" alt="Экран: покормить жабу — уход и сытость" loading="lazy"></div>
+              <div class="gcard"><img src="../assets/img/gallery-03-na-arenu.jpeg" alt="Экран: арена — бои и соревнование" loading="lazy"></div>
+
+              <div class="gcard"><img src="../assets/img/gallery-04-podzemelye.jpeg" alt="Экран: подземелье — приключения и награды" loading="lazy"></div>
+              <div class="gcard"><img src="../assets/img/gallery-05-klany.jpeg" alt="Экран: кланы — командная игра и войны" loading="lazy"></div>
+              <div class="gcard"><img src="../assets/img/gallery-06-top-zhab.jpeg" alt="Экран: топ жаб — рейтинг игроков" loading="lazy"></div>
+              <div class="gcard"><img src="../assets/img/gallery-07-top-klanov.jpeg" alt="Экран: топ кланов — таблица лидеров" loading="lazy"></div>
+            </div>
+
+            <button class="gallery__btn gallery__btn--right" id="gNext" aria-label="Вперёд">›</button>
+          </div>
+        </section>
+
+        <!-- FAQ + Telegram CTA #2 (the only other one) -->
+        <section class="block faq" aria-label="Вопросы и ответы про игровые боты в Telegram">
+          <h2>Вопросы и ответы</h2>
+
+          <details>
+            <summary>Нужно ли что-то скачивать, чтобы играть в Telegram?</summary>
+            <p>Нет. В этом и смысл: игры в Telegram запускаются прямо в чате. Ты открываешь диалог и выполняешь действия внутри бота.</p>
+          </details>
+
+          <details>
+            <summary>Игровые боты в телеграмме подходят для игры с друзьями?</summary>
+            <p>Да. Многие чат-игры поддерживают соревнование, командные режимы, кланы и активности в группе — в зависимости от механик конкретной игры.</p>
+          </details>
+
+          <details>
+            <summary>Чем чат-игра в телеграм отличается от обычной мобильной игры?</summary>
+            <p>Чат-игра быстрее по входу: без установки, обычно короче сессии, больше социального взаимодействия. Мобильные игры чаще дают сложнее графику и долгие сессии.</p>
+          </details>
+
+          <details>
+            <summary>Как понять, что бот-игра не “одноразовая”?</summary>
+            <p>Смотри на прогресс (уровни/состояние), события, соревнование, командные механики и понятные правила. Если есть причины возвращаться — игра живёт.</p>
+          </details>
+
+          <details>
+            <summary>Можно ли играть в группе, если это бот игр в телеграм?</summary>
+            <p>Да, но по-разному: иногда группа — это “площадка” для общения и соревнования, иногда чат реально влияет на командные события. Лучше проверить на практике.</p>
+          </details>
+
+          <details>
+            <summary>Есть ли быстрый способ посмотреть формат “игра прямо в чате”?</summary>
+            <p>Да — открыть пример и пройти первые шаги. Обычно это занимает меньше минуты.</p>
+          </details>
+
+          <!-- Telegram CTA #2 -->
+          <div class="cta-inline">
+            <a class="btn btn--primary"
+               href="https://t.me/toadbot?start=228691787"
+               target="_blank" rel="noopener">
+              Открыть пример в Telegram ↗
+            </a>
+          </div>
+
+          <p class="note" style="margin-top:10px">
+            Две ссылки на Telegram на всю страницу — достаточно: без заспама, но с понятным “что делать дальше”.
+          </p>
+        </section>
+
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <div class="footer__note">
+          Этот сайт — фан-проект для новичков и игроков. Официальные права на игру принадлежат авторам бота.
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- existing script for gallery -->
+  <script src="../assets/app.js"></script>
+
+  <!-- Structured Data: Breadcrumbs + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"Главная",
+        "item":"https://жабабот.рф/"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "name":"Игровые боты в Telegram",
+        "item":"https://жабабот.рф/pages/igrovye-boty-v-telegram.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Нужно ли что-то скачивать, чтобы играть в Telegram?",
+        "acceptedAnswer":{"@type":"Answer","text":"Нет. Игры в Telegram запускаются прямо в чате: без приложений и установок. Открываешь диалог и выполняешь действия внутри бота."}
+      },
+      {
+        "@type":"Question",
+        "name":"Игровые боты в телеграмме подходят для игры с друзьями?",
+        "acceptedAnswer":{"@type":"Answer","text":"Да. Многие чат-игры поддерживают соревнование, командные режимы, кланы и активности в группе — в зависимости от механик конкретной игры."}
+      },
+      {
+        "@type":"Question",
+        "name":"Чем чат-игра в телеграм отличается от обычной мобильной игры?",
+        "acceptedAnswer":{"@type":"Answer","text":"Чат-игра быстрее по входу: без установки, обычно короче сессии, больше социального взаимодействия. Мобильные игры чаще дают сложнее графику и долгие сессии."}
+      },
+      {
+        "@type":"Question",
+        "name":"Как понять, что бот-игра не одноразовая?",
+        "acceptedAnswer":{"@type":"Answer","text":"Смотри на прогресс (уровни/состояние), события, соревнование, командные механики и понятные правила. Если есть причины возвращаться — игра живёт."}
+      },
+      {
+        "@type":"Question",
+        "name":"Можно ли играть в группе, если это бот игр в телеграм?",
+        "acceptedAnswer":{"@type":"Answer","text":"Да. Иногда группа — это площадка для общения и соревнования, иногда чат влияет на командные события. Лучше проверить на практике."}
+      },
+      {
+        "@type":"Question",
+        "name":"Есть ли быстрый способ посмотреть формат игра прямо в чате?",
+        "acceptedAnswer":{"@type":"Answer","text":"Да — открыть пример и пройти первые шаги. Обычно это занимает меньше минуты."}
+      }
+    ]
+  }
+  </script>
 </body>
 </html>
