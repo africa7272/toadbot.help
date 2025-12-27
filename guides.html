@@ -1,18 +1,479 @@
-<!doctype html><html lang="ru"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Гайды — Жабабот</title><link rel="stylesheet" href="assets/styles.css">
-</head><body>
-<header class="topbar"><div class="wrap topbar__inner">
-  <a class="brand" href="index.html"><img src="assets/img/frogmark.svg" class="brand__logo" alt="" width="34" height="34"><span class="brand__text">жабабот.рф</span></a>
-  <nav class="nav"><a class="nav__link" href="index.html">Главная</a><a class="nav__link is-active" href="guides.html">Гайды</a><a class="nav__link" href="wiki.html">Wiki</a></nav>
-  <form class="search" action="search.html"><input class="search__input" name="q" placeholder="Поиск…"><button class="search__btn" type="submit"></button></form>
-  <a class="cta" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">Играть <span class="cta__arr">↗</span></a>
-</div></header>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жабабот - Полный Гайд</title>
+    <style>
+        :root {
+            --primary: #2d1e0c;
+            --accent: #5fb878;
+            --light-bg: #faf8f3;
+            --card-bg: #fff;
+            --text-dark: #2c2c2c;
+            --text-light: #666;
+            --border: #e8e3d8;
+        }
 
-<main class="wrap" style="padding:30px 18px 70px">
-  <h1 style="margin:0 0 12px">Гайды</h1>
-  <p style="color:rgba(234,241,255,.76);line-height:1.7;max-width:80ch;margin:0 0 18px">
-    Скоро тут будут гайды по арене, кланам, подземельям, ежедневным активностям и прокачке.
-  </p>
-</main>
-</body></html>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #ffd86a 0%, #f4b83d 55%, #e1a72d 100%);
+            border-radius: 20px;
+            color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            transform: rotate(45deg);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .nav a {
+            padding: 10px 20px;
+            background: var(--light-bg);
+            border-radius: 25px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav a:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(95,184,120,0.3);
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h3 {
+            font-size: 1.4em;
+            margin: 25px 0 15px;
+            color: var(--accent);
+        }
+
+        .card {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            border-left: 5px solid var(--accent);
+        }
+
+        .card h4 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Lists */
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        /* Tables */
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--accent);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: var(--light-bg);
+        }
+
+        /* Highlight */
+        .highlight {
+            background: linear-gradient(120deg, rgba(255,216,106,0.3) 0%, rgba(255,216,106,0.1) 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,216,106,0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            .section {
+                padding: 20px;
+            }
+            .nav {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        /* === site mini header (only "На главную") === */
+        .sitebar{
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(250,248,243,.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .sitebar__inner{
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+        .sitebar__home{
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            color: var(--primary);
+            padding: 10px 12px;
+            border-radius: 10px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            box-shadow: 0 3px 12px rgba(0,0,0,.06);
+        }
+        .sitebar__home:hover{
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(0,0,0,.10);
+        }
+
+        /* === bottom CTA button === */
+        .footer-cta{
+            margin-top: 18px;
+        }
+        .tg-cta{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            padding: 12px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(133,100,4,.35);
+            background: linear-gradient(135deg, #ffd86a 0%, #f4b83d 55%, #e1a72d 100%);
+            color: #2d1e0c;
+            box-shadow: 0 10px 22px rgba(0,0,0,.12);
+        }
+        .tg-cta:hover{
+            transform: translateY(-1px);
+            box-shadow: 0 14px 26px rgba(0,0,0,.16);
+        }
+        .tg-cta:active{
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- mini header: only link to home -->
+    <div class="sitebar">
+        <div class="sitebar__inner">
+            <a class="sitebar__home" href="/" aria-label="На главную">← На главную</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🐸 Жабабот - Полный Гайд</h1>
+            <p>Вся информация для победы в мире жаб!</p>
+        </div>
+
+        <nav class="nav">
+            <a href="#start">🚀 Начало</a>
+            <a href="#battle">⚔️ Бои</a>
+            <a href="#clans">🏰 Кланы</a>
+            <a href="#marriage">💍 Брак</a>
+            <a href="#food">🍖 Сытость</a>
+            <a href="#stats">📊 Характеристики</a>
+            <a href="#shop">🛒 Магазин</a>
+            <a href="#items">🎒 Предметы</a>
+        </nav>
+
+        <!-- SECTION: START -->
+        <div class="section" id="start">
+            <h2>🚀 Начало игры</h2>
+            <div class="highlight">
+                <p><strong>Главное правило:</strong> В Жабаботе вы растите и прокачиваете свою жабу, участвуете в боях и соревнуетесь с другими игроками!</p>
+            </div>
+
+            <h3>📌 Первые шаги</h3>
+            <div class="card">
+                <h4>1️⃣ Получение жабы</h4>
+                <p>Чтобы начать игру, нужно получить свою первую жабу. Используйте команду для получения жабы и начните её развивать.</p>
+            </div>
+
+            <div class="card">
+                <h4>2️⃣ Основные команды</h4>
+                <ul>
+                    <li><strong>/жаба</strong> - посмотреть информацию о своей жабе</li>
+                    <li><strong>/кормить</strong> - покормить жабу</li>
+                    <li><strong>/бой</strong> - начать бой на арене</li>
+                    <li><strong>/клан</strong> - информация о клане</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION: BATTLE -->
+        <div class="section" id="battle">
+            <h2>⚔️ Система боёв</h2>
+
+            <h3>🎯 Арена</h3>
+            <div class="card">
+                <h4>Как работают бои</h4>
+                <p>Бои проходят автоматически, но результат зависит от характеристик вашей жабы и её сытости.</p>
+                <ul>
+                    <li>Чем выше уровень жабы - тем сильнее</li>
+                    <li>Сытость влияет на урон и защиту</li>
+                    <li>Предметы могут давать бонусы</li>
+                </ul>
+            </div>
+
+            <h3>🏆 Награды за победу</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Результат</th>
+                            <th>Награда</th>
+                            <th>Дополнительно</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Победа</td>
+                            <td>Опыт + монеты</td>
+                            <td>Шанс на предмет</td>
+                        </tr>
+                        <tr>
+                            <td>Поражение</td>
+                            <td>Меньше опыта</td>
+                            <td>Без предметов</td>
+                        </tr>
+                        <tr>
+                            <td>Ничья</td>
+                            <td>Средний опыт</td>
+                            <td>Редко бывает</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SECTION: CLANS -->
+        <div class="section" id="clans">
+            <h2>🏰 Кланы</h2>
+
+            <div class="card">
+                <h4>Зачем нужен клан?</h4>
+                <p>Кланы дают возможность участвовать в клановых войнах и получать дополнительные награды.</p>
+                <ul>
+                    <li>Клановые войны</li>
+                    <li>Общие бонусы</li>
+                    <li>Командные соревнования</li>
+                </ul>
+            </div>
+
+            <h3>⚔️ Клановые войны</h3>
+            <div class="highlight">
+                <p><strong>Важно:</strong> В клановых войнах участвуют все члены клана. Чем активнее клан - тем выше шанс победы!</p>
+            </div>
+        </div>
+
+        <!-- SECTION: MARRIAGE -->
+        <div class="section" id="marriage">
+            <h2>💍 Брак и жабята</h2>
+
+            <div class="card">
+                <h4>Как заключить брак</h4>
+                <p>В игре можно заключить брак с другим игроком. Это открывает новые возможности.</p>
+                <ul>
+                    <li>Совместные бонусы</li>
+                    <li>Возможность получить жабят</li>
+                    <li>Специальные события</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION: FOOD -->
+        <div class="section" id="food">
+            <h2>🍖 Сытость и кормление</h2>
+
+            <div class="card">
+                <h4>Почему сытость важна</h4>
+                <p>Сытость влияет на боевые характеристики жабы. Голодная жаба слабее в бою!</p>
+                <ul>
+                    <li>Высокая сытость = больше урона</li>
+                    <li>Низкая сытость = штрафы</li>
+                    <li>Сытость падает со временем</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION: STATS -->
+        <div class="section" id="stats">
+            <h2>📊 Характеристики жабы</h2>
+
+            <div class="card">
+                <h4>Основные параметры</h4>
+                <ul>
+                    <li><strong>Уровень</strong> - общая сила жабы</li>
+                    <li><strong>Атака</strong> - урон в бою</li>
+                    <li><strong>Защита</strong> - снижение урона</li>
+                    <li><strong>Скорость</strong> - влияет на ход боя</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION: SHOP -->
+        <div class="section" id="shop">
+            <h2>🛒 Магазин</h2>
+
+            <div class="card">
+                <h4>Что можно купить</h4>
+                <p>В магазине доступны предметы для усиления жабы и улучшения игрового процесса.</p>
+                <ul>
+                    <li>Еда для жабы</li>
+                    <li>Бонусные предметы</li>
+                    <li>Украшения</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION: ITEMS -->
+        <div class="section" id="items">
+            <h2>🎒 Предметы</h2>
+
+            <div class="card">
+                <h4>Типы предметов</h4>
+                <ul>
+                    <li><strong>Боевые</strong> - усиливают характеристики</li>
+                    <li><strong>Косметические</strong> - меняют внешний вид</li>
+                    <li><strong>Расходники</strong> - используются один раз</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>Жабабот Гайд • Полная информация по игре • Обновлено 2025</p>
+
+            <div class="footer-cta">
+                <a class="tg-cta" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">Ещё нет жабы? Заведи скорее ↗</a>
+            </div>
+
+            <p style="margin-top: 10px; opacity: 0.7;">Для актуальной информации посетите канал @toadbotnews</p>
+        </footer>
+    </div>
+</body>
+</html>
