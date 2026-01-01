@@ -36,7 +36,7 @@
       line-height: 1.6;
     }
 
-    /* TOPBAR STYLES (из твоего кода) */
+    /* TOPBAR STYLES */
     .topbar {
       background: var(--topbar-bg);
       padding: 12px 20px;
@@ -113,10 +113,7 @@
       cursor: pointer;
       white-space: nowrap;
     }
-    .cta--gold {
-      background: var(--cta-gold);
-      color: var(--topbar-bg);
-    }
+    .cta--gold { background: var(--cta-gold); color: var(--topbar-bg); }
     .cta--gold:hover { background: #e5c158; transform: translateY(-2px); }
     .cta__arr { font-size: 0.8em; opacity: 0.8; }
 
@@ -125,7 +122,6 @@
       overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
     }
 
-    /* PAGE LAYOUT */
     .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
 
     .hero {
@@ -178,11 +174,7 @@
     }
     .panel__body { padding: 14px 16px 16px 16px; }
 
-    .toc {
-      position: sticky;
-      top: 86px;
-    }
-
+    .toc { position: sticky; top: 86px; }
     .toc a {
       display: block;
       padding: 10px 10px;
@@ -212,11 +204,7 @@
     }
     .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,0,0,0.08); }
 
-    .section {
-      margin-bottom: 18px;
-      scroll-margin-top: 110px;
-    }
-
+    .section { margin-bottom: 18px; scroll-margin-top: 110px; }
     .section__title {
       padding: 16px 18px;
       border-bottom: 1px solid var(--border);
@@ -232,11 +220,7 @@
       align-items: center;
       gap: 10px;
     }
-    .section__meta {
-      font-size: 0.85em;
-      color: var(--text-light);
-      white-space: nowrap;
-    }
+    .section__meta { font-size: 0.85em; color: var(--text-light); white-space: nowrap; }
 
     .grid {
       display: grid;
@@ -376,11 +360,11 @@
   <main class="container">
     <section class="hero">
       <h1>📚 Wiki Жабабота</h1>
-      <p>Страница собрана из сообщений новостного канала. Никаких “я так думаю” — только факты, как в летописи болотных эпох.</p>
+      <p>Быстро. Удобно. По делу: команды, механики, арена, подземелья, кланы.</p>
       <div class="chip-row">
         <span class="chip">🗓️ Обновлено по выгрузке: <strong>30.12.2025</strong></span>
         <span class="chip">🔎 Поиск сверху — ищет по всем блокам</span>
-        <span class="chip">🧭 Слева — удобная навигация</span>
+        <span class="chip">🧭 Слева — навигация по разделам</span>
       </div>
     </section>
 
@@ -394,7 +378,7 @@
         <div class="panel__body" id="tocBody">
           <nav id="tocNav" class="toc"></nav>
           <div class="info">
-            <strong>Подсказка:</strong> нажми на раздел — и страница прыгнет куда надо (как жабка на кувшинку).
+            <strong>Подсказка:</strong> выбери раздел — и страница прыгнет к нужной механике.
           </div>
         </div>
       </aside>
@@ -410,26 +394,26 @@
           <div class="grid">
             <div class="card">
               <h3>🪪 Премиум-статус (Prime)</h3>
-              <p>Покупается навсегда за <strong>89 рублей</strong>, команда для покупки: <span class="kbd">Купить жабу</span>.</p>
+              <p>Покупается навсегда за <strong>89 рублей</strong>, команда: <span class="kbd">Купить жабу</span>.</p>
               <ul>
-                <li>Плюсы Prime — в отдельном разделе ниже</li>
+                <li>Полный список бонусов — ниже</li>
               </ul>
             </div>
 
             <div class="card">
               <h3>💪 Усилители</h3>
-              <p>В игре есть <strong>личные</strong> и <strong>клановые</strong> усилители.</p>
               <ul>
-                <li>Личный: команда <span class="kbd">Выбрать усилитель</span></li>
-                <li>Клановый: команда <span class="kbd">Выбрать усилитель клана</span></li>
+                <li>Личный усилитель: <span class="kbd">Выбрать усилитель</span></li>
+                <li>Клановый усилитель: <span class="kbd">Выбрать усилитель клана</span></li>
               </ul>
             </div>
 
             <div class="card">
               <h3>📸 Фото жабёнка</h3>
-              <p>Менять фото жабёнку может только родитель с <strong>прайм-статусом</strong>, и у жабёнка должен быть <strong>2 уровень</strong>.</p>
               <ul>
-                <li>Команда: <span class="kbd">Сменить фото жабенка</span> + фото</li>
+                <li>Менять фото может только родитель с <strong>Prime</strong></li>
+                <li>У жабёнка должен быть <strong>2 уровень</strong></li>
+                <li>Команда: <span class="kbd">Сменить фото жабенка</span></li>
               </ul>
             </div>
           </div>
@@ -445,7 +429,7 @@
             <div class="card">
               <h3>🔥 Что даёт Prime</h3>
               <ul>
-                <li>Кормить жабу <strong>в два раза чаще</strong>: сытость каждые <strong>6 часов</strong></li>
+                <li>Кормление жабы: сытость каждые <strong>6 часов</strong></li>
                 <li>Срок жизни без кормёжки: <strong>60 дней</strong> (обычные — 30)</li>
                 <li>Смена фото жабы и фото жабёнка</li>
                 <li>Верхний порог удара <strong>+10%</strong></li>
@@ -455,7 +439,7 @@
                 <li>Уведомление о скорой поломке снаряжения (когда остаётся 1 прочность)</li>
               </ul>
               <div class="info">
-                <strong>Цена:</strong> Prime покупается навсегда за <strong>89 рублей</strong>, команда: <span class="kbd">Купить жабу</span>.
+                <strong>Цена:</strong> <strong>89 рублей</strong> (навсегда), команда: <span class="kbd">Купить жабу</span>.
               </div>
             </div>
 
@@ -464,17 +448,14 @@
               <ul>
                 <li>Менять может только родитель с <strong>Prime</strong></li>
                 <li>У жабёнка должен быть <strong>2 уровень</strong></li>
-                <li>Команда: <span class="kbd">Сменить фото жабенка</span> и приложить фото</li>
+                <li>Команда: <span class="kbd">Сменить фото жабенка</span> + фото</li>
               </ul>
-              <p class="muted">Если хочется анимированное (GIF) — отдельная привилегия из сундука.</p>
+              <p class="muted">GIF — отдельная привилегия из сундука.</p>
             </div>
 
             <div class="card">
-              <h3>🎁 Про скидки</h3>
-              <p>В новостях встречаются акционные скидки на донат. Например, отдельной датой объявлялись скидки, действующие только в конкретный день.</p>
-              <ul>
-                <li>Это не “вечно”, а “когда объявили — тогда и было”</li>
-              </ul>
+              <h3>🎁 Акции</h3>
+              <p>В новостях публикуются временные скидки на донат (в рамках конкретных дат).</p>
             </div>
           </div>
         </section>
@@ -490,8 +471,8 @@
               <h3>🧍 Личный усилитель</h3>
               <ul>
                 <li>Команда покупки: <span class="kbd">Выбрать усилитель</span></li>
-                <li>Посмотреть активный — в меню <span class="kbd">Мое снаряжение</span></li>
-                <li>Действует <strong>48 часов</strong></li>
+                <li>Активный усилитель: <span class="kbd">Мое снаряжение</span></li>
+                <li>Длительность: <strong>48 часов</strong></li>
               </ul>
             </div>
 
@@ -500,8 +481,7 @@
               <ul>
                 <li>Команда: <span class="kbd">Выбрать усилитель клана</span></li>
                 <li>Покупается за <strong>клановые очки</strong></li>
-                <li>Действует <strong>120 часов</strong> (5 суток)</li>
-                <li>Для крафта в клане нужен <strong>ремесленник</strong></li>
+                <li>Длительность: <strong>120 часов</strong> (5 суток)</li>
                 <li>Заявку создаёт ремесленник, лидер подтверждает кнопкой</li>
               </ul>
             </div>
@@ -509,8 +489,8 @@
             <div class="card">
               <h3>🏆 Клановые очки</h3>
               <ul>
-                <li>За победу в клановой войне: <strong>+3</strong> клановых очка</li>
-                <li>За ничью: <strong>+1</strong> клановое очко</li>
+                <li>Победа в клановой войне: <strong>+3</strong></li>
+                <li>Ничья: <strong>+1</strong></li>
               </ul>
             </div>
           </div>
@@ -524,28 +504,27 @@
           </div>
           <div class="grid">
             <div class="card">
-              <h3>⏰ Тайминг и правила</h3>
+              <h3>✅ Доступ и старт</h3>
               <ul>
                 <li>Регистрация доступна с <strong>3 уровня</strong></li>
                 <li>Первая регистрация может дать стартовый комплект (если экипировка не лучше)</li>
-                <li>Победа над более сильной жабой может дать доп. сытость: +1 (разница &gt; 30 уровней) или +2 (разница &gt; 50 уровней)</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>🎯 Награды за победы</h3>
+              <ul>
+                <li>Победа над более сильной жабой может дать доп. сытость</li>
+                <li>+1 (если разница уровней &gt; 30)</li>
+                <li>+2 (если разница уровней &gt; 50)</li>
               </ul>
             </div>
 
             <div class="card">
               <h3>🔔 Prime и арена</h3>
-              <p>С Prime бот может напомнить о необходимости совершить атаку на арене.</p>
               <ul>
-                <li>Функция уведомления — часть Prime</li>
+                <li>С Prime доступно уведомление, чтобы не пропустить атаку на арене</li>
               </ul>
-            </div>
-
-            <div class="card">
-              <h3>🗓️ Сезоны</h3>
-              <p class="muted">Если у тебя в выгрузке есть конкретика про “арена сезон” (длительность/команда) — добавь сюда один абзац, и я встрою точный текст 1:1.</p>
-              <div class="info">
-                Я не добавляю цифры “на глаз”, чтобы не сломать правило “только из источника”.
-              </div>
             </div>
           </div>
         </section>
@@ -559,11 +538,12 @@
 
           <div class="grid">
             <div class="card">
-              <h3>🧭 Общая команда</h3>
-              <p>Вход: <span class="kbd">Отправиться в подземелье</span></p>
+              <h3>🧭 Вход и группа</h3>
               <ul>
-                <li>Можно ходить группой от 1 до 5 жаб</li>
+                <li>Команда входа: <span class="kbd">Отправиться в подземелье</span></li>
+                <li>Группа: от 1 до 5 жаб</li>
                 <li>Старт: <span class="kbd">Рейд старт</span></li>
+                <li>Выход: <span class="kbd">Выйти из подземелья</span> (возврат букашек)</li>
               </ul>
             </div>
 
@@ -572,7 +552,7 @@
               <ul>
                 <li>Цена: <strong>400 букашек</strong></li>
                 <li>Монстр: <strong>Насекомозавр</strong></li>
-                <li>Дроп: водоросли (80%), кувшинки (20%), оружейные кусочки, <strong>+2 сытости</strong></li>
+                <li>Дроп: водоросли 80%, кувшинки 20%, оружейные кусочки, <strong>+2 сытости</strong></li>
               </ul>
             </div>
 
@@ -581,7 +561,7 @@
               <ul>
                 <li>Цена: <strong>600 букашек</strong></li>
                 <li>Монстр: <strong>Пепе</strong></li>
-                <li>Дроп: водоросли (30%), кувшинки (50%), цапли (20%), <strong>+3 сытости</strong></li>
+                <li>Дроп: водоросли 30%, кувшинки 50%, цапли 20%, <strong>+3 сытости</strong></li>
               </ul>
             </div>
 
@@ -590,25 +570,8 @@
               <ul>
                 <li>Цена: <strong>800 букашек</strong></li>
                 <li>Монстр: <strong>Шрек</strong></li>
-                <li>Дроп: кувшинки (50%), цапли (50%), оружейные кусочки, <strong>+5 сытости</strong></li>
+                <li>Дроп: кувшинки 50%, цапли 50%, оружейные кусочки, <strong>+5 сытости</strong></li>
               </ul>
-            </div>
-
-            <div class="card">
-              <h3>👥 Групповой рейд — важное</h3>
-              <ul>
-                <li>Ожидание у входа — пока не соберутся остальные</li>
-                <li>Выход: <span class="kbd">Выйти из подземелья</span> (возврат букашек)</li>
-                <li>При 5 участниках рейд может стартовать автоматически</li>
-              </ul>
-            </div>
-
-            <div class="card">
-              <h3>🧑‍🎓 Авантюрист и подземелья</h3>
-              <p>В новостях упоминается возврат процента от стоимости похода в случае победы, зависящий от уровня класса.</p>
-              <div class="info">
-                Если хочешь — сделаю отдельный блок “Классы” и вставлю точные проценты/уровни ровно как в сообщении.
-              </div>
             </div>
           </div>
         </section>
@@ -622,30 +585,25 @@
 
           <div class="grid">
             <div class="card">
-              <h3>🧱 Клановые войны — ключевое</h3>
-              <ul>
-                <li>Покупка клановых усилителей — за клановые очки</li>
-                <li>За победу: <strong>+3</strong> клановых очка</li>
-                <li>За ничью: <strong>+1</strong> клановое очко</li>
-                <li>Если ничья — война заканчивается, оба клана получают по 1 очку</li>
-              </ul>
-            </div>
-
-            <div class="card">
-              <h3>⏳ Длительность клановой битвы</h3>
+              <h3>⚔️ Клановые войны</h3>
               <ul>
                 <li>Клановая битва идёт <strong>4 часа</strong></li>
-                <li>Каждый может атаковать один раз; за тебя тоже могут “отзеркалить” в чужом чате</li>
-                <li>Если ты не атаковал сам, очко за твою победу может не засчитаться — следи за таймингом</li>
+                <li>Если ничья — война заканчивается, оба клана получают по <strong>1</strong> клановому очку</li>
               </ul>
             </div>
 
             <div class="card">
-              <h3>🎁 Награды и прогресс клана</h3>
+              <h3>🏆 Клановые очки</h3>
               <ul>
-                <li>Опыт клана растёт от результатов</li>
-                <li>Когда опыт набирается до максимума — клан повышает уровень</li>
-                <li>При уровне клана &gt; 1 можно раз в 7 дней получать плюшки командой <span class="kbd">Клан вознаграждение</span></li>
+                <li>За победу: <strong>+3</strong></li>
+                <li>За ничью: <strong>+1</strong></li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>🎁 Вознаграждение клана</h3>
+              <ul>
+                <li>При уровне клана &gt; 1: раз в 7 дней доступна команда <span class="kbd">Клан вознаграждение</span></li>
               </ul>
             </div>
           </div>
@@ -664,7 +622,7 @@
               <ul>
                 <li>Команда: <span class="kbd">Отправить жабенка в детсад</span></li>
                 <li>Окно отправки: <strong>с 6:00 до 12:00</strong> по МСК</li>
-                <li>Забрать: через <strong>6 часов</strong>, но не позднее <strong>8 часов</strong></li>
+                <li>Забрать: через <strong>6 часов</strong>, но не позже <strong>8 часов</strong></li>
                 <li>Каждый уровень жабёнка сокращает время работы в садике на 5 минут (до 1ч 15м)</li>
               </ul>
             </div>
@@ -672,20 +630,20 @@
             <div class="card">
               <h3>🥊 Махач</h3>
               <ul>
-                <li>Отправить подраться можно <strong>через 2 часа</strong> после отправки в сад</li>
+                <li>Можно отправить через <strong>2 часа</strong> после отправки в сад</li>
                 <li>Команда: <span class="kbd">Отправить жабенка на махач</span></li>
                 <li>На победу влияет авторитет</li>
-                <li>Награда может поднять сытость родителям или дать бафф <strong>“Плевок жабенка”</strong></li>
+                <li>Можно получить бафф <strong>«Плевок жабенка»</strong></li>
                 <li>Бафф действует и исчезает <strong>через сутки</strong></li>
               </ul>
             </div>
 
             <div class="card">
-              <h3>😶 Настроения</h3>
-              <p>Любое настроение держится <strong>не дольше 48 часов</strong> (кроме спокойного), затем сбрасывается на спокойное.</p>
-              <div class="info">
-                Я не расписываю эффекты каждого настроения здесь, чтобы не “пересказать криво”. Если хочешь — вынесу отдельной секцией и вставлю точный текст из сообщения.
-              </div>
+              <h3>😐 Настроения</h3>
+              <ul>
+                <li>Любое настроение держится не дольше <strong>48 часов</strong> (кроме спокойного)</li>
+                <li>После этого сбрасывается на спокойное</li>
+              </ul>
             </div>
           </div>
         </section>
@@ -699,17 +657,9 @@
 
           <div class="grid">
             <div class="card">
-              <h3>📌 Требования (из новостей)</h3>
-              <p class="muted">Если ты хочешь, чтобы я добавил сюда полный список требований слово-в-слово — просто скажи “вставь требования официальных чатов”, и я вытащу точную формулировку из выгрузки (без перефраза).</p>
-              <div class="info">
-                Я сознательно не дописываю “похожие правила”, потому что ты просил: только источник.
-              </div>
-            </div>
-
-            <div class="card">
-              <h3>📰 Где следить за изменениями</h3>
+              <h3>📰 Где следить за обновлениями</h3>
               <ul>
-                <li>Новости и обновления — канал <span class="kbd">@toadbotnews</span></li>
+                <li>Новости и изменения публикуются в канале <span class="kbd">@toadbotnews</span></li>
               </ul>
             </div>
           </div>
@@ -736,7 +686,7 @@
               <details>
                 <summary>Сколько действует личный усилитель?</summary>
                 <div class="details-body">
-                  <strong>48 часов</strong>. Покупка: <span class="kbd">Выбрать усилитель</span>. Смотреть активный — <span class="kbd">Мое снаряжение</span>.
+                  <strong>48 часов</strong>. Покупка: <span class="kbd">Выбрать усилитель</span>. Активный: <span class="kbd">Мое снаряжение</span>.
                 </div>
               </details>
             </div>
@@ -745,7 +695,7 @@
               <details>
                 <summary>Сколько действует клановый усилитель?</summary>
                 <div class="details-body">
-                  <strong>120 часов</strong> (5 суток). Покупка: <span class="kbd">Выбрать усилитель клана</span>. Покупается за клановые очки.
+                  <strong>120 часов</strong> (5 суток). Команда: <span class="kbd">Выбрать усилитель клана</span>.
                 </div>
               </details>
             </div>
@@ -754,7 +704,7 @@
               <details>
                 <summary>Когда можно отправить жабёнка в сад и на махач?</summary>
                 <div class="details-body">
-                  В сад: с <strong>6:00 до 12:00</strong> МСК, забрать через 6–8 часов. На махач — <strong>через 2 часа</strong> после отправки в сад: <span class="kbd">Отправить жабенка на махач</span>.
+                  В сад: <strong>6:00–12:00</strong> МСК. Махач — через <strong>2 часа</strong> после отправки в сад: <span class="kbd">Отправить жабенка на махач</span>.
                 </div>
               </details>
             </div>
@@ -828,7 +778,6 @@
       clearHighlights();
       if (!q) return;
 
-      // Find matching sections/cards
       const matchedSectionIds = new Set();
 
       sections.forEach(sec => {
@@ -841,13 +790,11 @@
         }
       });
 
-      // Filter TOC to matched sections
       tocLinks().forEach(l => {
         const id = l.getAttribute('href').slice(1);
         l.style.display = matchedSectionIds.has(id) ? '' : 'none';
       });
 
-      // Scroll to first match
       const first = sections.find(s => matchedSectionIds.has(s.id));
       if (first) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
