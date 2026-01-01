@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Боты в ТГ для чатов — игровые, развлекательные, для общения и групп</title>
+    <meta name="description" content="Боты в ТГ для чатов: игровые боты для чатов, развлекательные и прикольные, чат-боты для общения, варианты бесплатно, для группы и личных чатов. Как выбрать и как добавить бота в Telegram-чат." />
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://жабабот.рф/bots-v-tg-dlya-chatov.html">
+
+    <meta property="og:title" content="Боты в ТГ для чатов — подборка форматов и как выбрать" />
+    <meta property="og:description" content="Игровые, развлекательные, для общения и групп. Бесплатные варианты, таблица сравнения, инструкция, FAQ." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://жабабот.рф/bots-v-tg-dlya-chatov.html" />
+
+    <style>
+        :root {
+            --primary: #2d1e0c;
+            --accent: #5fb878;
+            --light-bg: #faf8f3;
+            --card-bg: #fff;
+            --text-dark: #2c2c2c;
+            --text-light: #666;
+            --border: #e8e3d8;
+            --topbar-bg: #0b0f14;
+            --topbar-text: #f5f5f5;
+            --cta-gold: #d4af37;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.65;
+        }
+
+        /* TOPBAR STYLES */
+        .topbar {
+            background: var(--topbar-bg);
+            padding: 12px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .topbar__inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--topbar-text);
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .brand__logo { width: 28px; height: 28px; display: block; }
+        .brand__text { letter-spacing: -0.5px; }
+
+        .nav { display: flex; gap: 25px; align-items: center; }
+
+        .nav__link {
+            color: rgba(245, 245, 245, 0.7);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+        .nav__link:hover, .nav__link.is-active { color: var(--accent); }
+
+        .search {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            padding: 6px 12px;
+            flex: 0 1 240px;
+        }
+
+        .search__input {
+            background: none;
+            border: none;
+            color: var(--topbar-text);
+            font-size: 0.85em;
+            flex: 1;
+            outline: none;
+        }
+
+        .search__input::placeholder { color: rgba(245, 245, 245, 0.5); }
+
+        .search__btn {
+            background: none;
+            border: none;
+            color: rgba(245, 245, 245, 0.6);
+            cursor: pointer;
+            padding: 0 6px;
+            font-size: 1em;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .cta--gold { background: var(--cta-gold); color: var(--topbar-bg); }
+        .cta--gold:hover { background: #e5c158; transform: translateY(-2px); }
+        .cta__arr { font-size: 0.8em; opacity: 0.8; }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: left;
+            padding: 34px 22px;
+            background: linear-gradient(135deg, var(--primary) 0%, #3d2b1b 100%);
+            color: white;
+            border-radius: 12px;
+            margin: 18px 0 18px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 { font-size: 2.15em; margin-bottom: 10px; }
+        .hero p { font-size: 1.05em; opacity: 0.92; max-width: 950px; }
+        .hero .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.18);
+            font-size: 0.9em;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 18px;
+            align-items: start;
+        }
+
+        .panel {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .toc {
+            position: sticky;
+            top: 86px;
+        }
+
+        .toc h2 {
+            font-size: 1.05em;
+            margin-bottom: 10px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc a {
+            display: block;
+            padding: 10px 12px;
+            margin: 6px 0;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-dark);
+            border: 1px solid transparent;
+            background: var(--light-bg);
+            transition: 0.2s ease;
+            font-size: 0.95em;
+        }
+
+        .toc a:hover {
+            border-color: var(--border);
+            transform: translateX(2px);
+        }
+
+        .toc .hint {
+            margin-top: 12px;
+            font-size: 0.92em;
+            color: var(--text-light);
+            background: linear-gradient(135deg, #fef3e6 0%, #fef8f0 100%);
+            border-left: 4px solid var(--accent);
+            padding: 12px 12px;
+            border-radius: 10px;
+        }
+
+        .content .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            margin-bottom: 14px;
+        }
+
+        .content h2 {
+            color: var(--primary);
+            margin: 24px 0 10px;
+            font-size: 1.55em;
+            scroll-margin-top: 110px;
+        }
+
+        .content h3 {
+            color: var(--primary);
+            margin: 16px 0 10px;
+            font-size: 1.15em;
+        }
+
+        .content p { color: var(--text-light); margin: 10px 0; font-size: 1em; }
+        .content ul { padding-left: 18px; color: var(--text-light); margin: 8px 0 10px; }
+        .content li { margin: 6px 0; }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .info {
+            background: linear-gradient(135deg, #fef3e6 0%, #fef8f0 100%);
+            border-left: 4px solid var(--accent);
+            padding: 14px;
+            border-radius: 10px;
+            margin-top: 10px;
+            color: var(--text-dark);
+        }
+
+        .warning {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 14px;
+            border-radius: 10px;
+            margin-top: 10px;
+            color: #721c24;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(95, 184, 120, 0.12) 100%);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .cta-box p { margin: 0; color: var(--text-dark); }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 18px;
+            background: var(--cta-gold);
+            color: var(--topbar-bg);
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: 0.2s ease;
+            white-space: nowrap;
+        }
+        .cta-btn:hover { transform: translateY(-2px); background: #e5c158; }
+
+        .table-wrap { overflow-x: auto; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+        }
+        th, td {
+            border-bottom: 1px solid var(--border);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+        th { background: var(--light-bg); color: var(--primary); font-weight: 700; }
+
+        details {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #fff;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        summary {
+            cursor: pointer;
+            padding: 14px 16px;
+            font-weight: 700;
+            color: var(--primary);
+            list-style: none;
+        }
+        summary::-webkit-details-marker { display: none; }
+        details .body { padding: 0 16px 16px 16px; color: var(--text-light); }
+
+        .kbd {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--light-bg);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.92em;
+            color: var(--primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+            margin-top: 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 980px) {
+            .layout { grid-template-columns: 1fr; }
+            .toc { position: static; top: auto; }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.55em; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .topbar__inner { flex-direction: column; gap: 12px; }
+            .nav { gap: 15px; }
+            .search { flex: 1 1 100%; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- TOPBAR -->
+    <header class="topbar">
+        <div class="topbar__inner">
+            <a class="brand" href="index.html" aria-label="На главную">
+                <span class="brand__logo">🐸</span>
+                <span class="brand__text">жабабот.рф</span>
+            </a>
+
+            <nav class="nav" aria-label="Навигация">
+                <a class="nav__link" href="index.html">Главная</a>
+                <a class="nav__link" href="guides.html">Гайды</a>
+                <a class="nav__link is-active" href="wiki.html">Wiki</a>
+            </nav>
+
+            <form class="search" role="search" id="siteSearchForm">
+                <label class="sr-only" for="q">Поиск по странице</label>
+                <input id="q" class="search__input" placeholder="Поиск по странице…" autocomplete="off">
+                <button class="search__btn" type="submit" aria-label="Найти">🔍</button>
+            </form>
+
+            <a class="cta cta--gold" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
+                Играть в Жабабота <span class="cta__arr">↗</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section class="hero">
+            <h1>Боты в ТГ для чатов: игровые, развлекательные, для общения и групп</h1>
+            <p>
+                Если ты ищешь <strong>бота для чата в ТГ</strong>, чтобы оживить переписку, добавить игры или просто сделать чат веселее —
+                ниже собраны самые популярные форматы: <strong>игровые боты в ТГ для чатов</strong>, <strong>развлекательные боты</strong>,
+                <strong>чат-боты для общения</strong>, варианты <strong>бесплатно</strong> и советы для <strong>группы</strong> и <strong>личных чатов</strong>.
+            </p>
+            <div class="badges">
+                <span class="badge">🔎 Под низкочастотные запросы</span>
+                <span class="badge">📌 Таблица выбора</span>
+                <span class="badge">✅ Инструкция “как добавить”</span>
+                <span class="badge">❓ FAQ</span>
+            </div>
+
+            <div style="margin-top: 14px;" class="cta-box">
+                <p><strong>Хочешь пример игрового бота для чатов?</strong> Попробуй Жабабота — игра прямо в Telegram-чате.</p>
+                <a class="cta-btn" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">Открыть Жабабота ↗</a>
+            </div>
+        </section>
+
+        <section class="layout">
+            <!-- TOC -->
+            <aside class="panel toc" aria-label="Содержание">
+                <h2>🧭 Содержание</h2>
+                <a href="#boti-v-tg-dlya-chatov">Боты в ТГ для чатов — что это</a>
+                <a href="#vidy">Какие есть боты в ТГ для чатов</a>
+                <a href="#tablica">Таблица: лучшие боты для чатов по задачам</a>
+                <a href="#igrovye">Игровые боты в ТГ для чатов (игры)</a>
+                <a href="#razvlecheniya">Развлекательные, прикольные и смешные боты</a>
+                <a href="#obschenie">Чат-бот в ТГ для общения</a>
+                <a href="#dlya-gruppy">Чат-бот в ТГ для группы и групповых чатов</a>
+                <a href="#besplatno">Бот для чата в ТГ бесплатно</a>
+                <a href="#kak-dobavit">Как добавить бота в чат Telegram</a>
+                <a href="#bezopasnost">Безопасность: чего избегать</a>
+                <a href="#faq">FAQ: частые вопросы</a>
+
+                <div class="hint">
+                    Лайфхак: открой нужный раздел — и не листай “простыню”. Да, мы за человечность 🐸
+                </div>
+            </aside>
+
+            <!-- CONTENT -->
+            <article class="content">
+                <div class="card" id="boti-v-tg-dlya-chatov">
+                    <h2>Боты в ТГ для чатов — что это и зачем</h2>
+                    <p>
+                        <strong>Боты в ТГ для чатов</strong> — это Telegram-боты, которых добавляют в группу или личный чат,
+                        чтобы они выполняли полезные или развлекательные функции: запускали игры, проводили активности, помогали с общением
+                        и поддерживали интерес в переписке.
+                    </p>
+                    <p>
+                        Часто такой бот нужен, когда чат “засыпает”: люди читают, но мало пишут. Правильный <strong>бот для чата в ТГ</strong>
+                        создаёт поводы общаться — и делает это без лишнего шума.
+                    </p>
+                </div>
+
+                <div class="card" id="vidy">
+                    <h2>Какие есть боты в ТГ для чатов</h2>
+                    <div class="grid-2">
+                        <div>
+                            <h3>🎮 Игровые боты в ТГ для чатов</h3>
+                            <p>
+                                Подходят для “движовых” компаний: прокачка, события, соревнования, мини-игры прямо в переписке.
+                                Это частый ответ на запрос <strong>боты в ТГ для чатов игры</strong>.
+                            </p>
+                            <ul>
+                                <li>постоянный прогресс и интерес</li>
+                                <li>игра в чате без установки приложений</li>
+                                <li>отлично работает в группе</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>😂 Боты для чата в ТГ развлекательные</h3>
+                            <p>
+                                Это <strong>прикольные боты для чатов в ТГ</strong>: реакции, мини-активности, “рандом”, весёлые сценарии,
+                                которые помогают разогреть общение.
+                            </p>
+                            <ul>
+                                <li>удобно для дружеских групп</li>
+                                <li>хорошо заходят “смешные” форматы</li>
+                                <li>часто работают бесплатно</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="grid-2" style="margin-top: 10px;">
+                        <div>
+                            <h3>💬 Чат-бот в ТГ для общения</h3>
+                            <p>
+                                Такой <strong>чат бот в ТГ для общения</strong> помогает организовать диалог, обсуждения или активности,
+                                особенно когда в чате много людей и нужна структура.
+                            </p>
+                            <ul>
+                                <li>помогает вовлекать участников</li>
+                                <li>удобен для групп и сообществ</li>
+                                <li>может работать как “сценарист” общения</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>🧩 Полезные боты для чата в ТГ</h3>
+                            <p>
+                                Это <strong>полезные боты для чата в ТГ</strong>, которые помогают с порядком и удобством:
+                                напоминания, закрепы, правила, мини-управление активностями.
+                            </p>
+                            <ul>
+                                <li>упрощают жизнь админам</li>
+                                <li>удобны в больших чатах</li>
+                                <li>повышают “качество” общения</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info">
+                        <strong>Если нужна игра для чата:</strong> Жабабот — пример игрового бота, который реально держит активность.
+                        <div style="margin-top:10px;">
+                            <a class="cta-btn" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">Запустить Жабабота ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="tablica">
+                    <h2>Таблица: лучшие боты для чатов в ТГ по задачам</h2>
+                    <p>
+                        Если ты гуглишь <strong>лучшие боты для чатов в ТГ</strong> или <strong>топ ботов для чата в ТГ</strong>,
+                        сначала выбери задачу. Таблица помогает понять, какой формат бота нужен именно твоему чату.
+                    </p>
+
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Задача</th>
+                                    <th>Какой бот подходит</th>
+                                    <th>Где лучше работает</th>
+                                    <th>Что проверять перед добавлением</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Оживить чат, добавить игру</td>
+                                    <td>Игровые боты в ТГ для чатов</td>
+                                    <td>Группа / чат друзей</td>
+                                    <td>Понятные команды, не “флудит”, есть прогресс</td>
+                                </tr>
+                                <tr>
+                                    <td>Развлечения без сложных правил</td>
+                                    <td>Развлекательные, прикольные и смешные боты</td>
+                                    <td>Личные и групповые чаты</td>
+                                    <td>Частота сообщений, удобство управления</td>
+                                </tr>
+                                <tr>
+                                    <td>Общение и активности</td>
+                                    <td>Чат-бот в ТГ для общения</td>
+                                    <td>Сообщества, группы</td>
+                                    <td>Сценарии, вовлечение, настройки</td>
+                                </tr>
+                                <tr>
+                                    <td>Порядок и правила</td>
+                                    <td>Полезные боты / управление чатом</td>
+                                    <td>Большие группы</td>
+                                    <td>Нужные права, логика правил, удобные команды</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="info">
+                        <strong>Мини-вывод:</strong> для “движухи” чаще всего лучше всего заходят игровые боты в ТГ для чатов.
+                    </div>
+                </div>
+
+                <div class="card" id="igrovye">
+                    <h2>Игровые боты в ТГ для чатов (боты в ТГ для чатов игры)</h2>
+                    <p>
+                        <strong>Игровые боты в ТГ для чатов</strong> — лучший вариант, если хочется, чтобы чат был живым каждый день.
+                        Игры в чате работают так: участники выполняют команды, получают прогресс, соревнуются и обсуждают события.
+                    </p>
+                    <ul>
+                        <li>подходят для чатов друзей и групп</li>
+                        <li>дают постоянные поводы для общения</li>
+                        <li>часто поддерживают разные активности</li>
+                    </ul>
+
+                    <div class="cta-box" style="margin-top:12px;">
+                        <p><strong>Жабабот</strong> — пример игрового бота для чатов в Telegram, который легко добавить и начать играть.</p>
+                        <a class="cta-btn" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">Играть в Жабабота ↗</a>
+                    </div>
+                </div>
+
+                <div class="card" id="razvlecheniya">
+                    <h2>Боты для чата в ТГ развлекательные: прикольные, смешные, угарные</h2>
+                    <p>
+                        <strong>Боты для чатов в ТГ смешные</strong> и <strong>прикольные боты для чатов в ТГ</strong> нужны,
+                        когда хочется “лайтового” формата: без сложной прокачки, но с регулярными поводами посмеяться.
+                    </p>
+
+                    <h3>Что обычно нравится в развлекательных ботах</h3>
+                    <ul>
+                        <li>короткие активности на 1–2 минуты</li>
+                        <li>команд меньше — вход проще</li>
+                        <li>бот не должен спамить</li>
+                    </ul>
+
+                    <div class="info">
+                        Если чат любит игры — игровой бот часто даёт больше долгого интереса, чем просто “рандом-шутки”.
+                    </div>
+                </div>
+
+                <div class="card" id="obschenie">
+                    <h2>Чат бот в ТГ для общения: когда он нужен</h2>
+                    <p>
+                        <strong>Чат бот в ТГ для общения</strong> полезен, когда людей много и “разговор распадается”.
+                        Он помогает запускать активности, поддерживать обсуждения и вовлекать тех, кто обычно молчит.
+                    </p>
+
+                    <h3>Кому подходит</h3>
+                    <ul>
+                        <li>сообществам и группам по интересам</li>
+                        <li>чатам, где много новичков</li>
+                        <li>группам, где нужны темы и поводы</li>
+                    </ul>
+                </div>
+
+                <div class="card" id="dlya-gruppy">
+                    <h2>Чат бот в ТГ для группы и боты для групповых чатов</h2>
+                    <p>
+                        <strong>Чат бот в ТГ для группы</strong> и <strong>боты в ТГ для групповых чатов</strong> чаще всего добавляются админом.
+                        Для нормальной работы боту обычно нужны права (например, читать сообщения или писать в чат).
+                    </p>
+
+                    <h3>Что важно для группы</h3>
+                    <ul>
+                        <li>настройки частоты сообщений (чтобы не превращалось в флуд)</li>
+                        <li>простые команды</li>
+                        <li>понятные правила использования в чате</li>
+                    </ul>
+                </div>
+
+                <div class="card" id="besplatno">
+                    <h2>Бот для чата в ТГ бесплатно: что ожидать</h2>
+                    <p>
+                        Запрос <strong>бот для чата в ТГ бесплатно</strong> — один из самых частых.
+                        Обычно бесплатной версии хватает, чтобы попробовать и понять, “заходит” ли формат именно вашему чату.
+                    </p>
+
+                    <ul>
+                        <li>бесплатный старт — нормальная практика</li>
+                        <li>платные функции чаще всего “ускоряют” или расширяют возможности</li>
+                        <li>важнее всего — чтобы бот реально был удобен в чате</li>
+                    </ul>
+                </div>
+
+                <div class="card" id="kak-dobavit">
+                    <h2>Как добавить бота в чат Telegram (коротко и без боли)</h2>
+                    <p>
+                        Если ты ищешь <strong>боты в ТГ для чатов</strong>, почти всегда финальный шаг один: добавить бота в группу/чат.
+                    </p>
+
+                    <h3>Пошагово</h3>
+                    <ol style="padding-left: 18px; color: var(--text-light);">
+                        <li>Открой профиль бота в Telegram.</li>
+                        <li>Нажми “Добавить в группу” (или “Добавить в чат”).</li>
+                        <li>Выбери нужный чат.</li>
+                        <li>Если бот требует — выдай нужные права админа.</li>
+                        <li>Выполни стартовую команду (обычно /start) или кнопку “Запустить”.</li>
+                    </ol>
+
+                    <div class="info">
+                        Пример: Жабабота можно открыть по ссылке и запустить — дальше он подскажет команды.
+                        <div style="margin-top:10px;">
+                            <a class="cta-btn" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">Открыть Жабабота ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="bezopasnost">
+                    <h2>Безопасность: чего избегать</h2>
+                    <p>
+                        В Telegram встречаются запросы на ботов “для сомнительных задач”. Это плохая идея: такие штуки часто ведут к блокировкам,
+                        утечкам данных и проблемам с аккаунтом.
+                    </p>
+
+                    <div class="warning">
+                        <strong>Лучше избегать:</strong> ботов для спама, “пробива”, скрытого просмотра/слежки и любых 18+ сценариев.
+                        Это небезопасно и вредит чату.
+                    </div>
+                </div>
+
+                <div class="card" id="faq">
+                    <h2>FAQ: частые вопросы про боты для чата в ТГ</h2>
+
+                    <details>
+                        <summary>Какие есть боты в ТГ для чатов?</summary>
+                        <div class="body">
+                            Обычно выделяют игровые боты для чатов, развлекательные (прикольные/смешные) и чат-боты для общения. Выбор зависит от того, что нужно вашему чату: игра, активность или порядок.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Какой чат бот в ТГ для группы лучше?</summary>
+                        <div class="body">
+                            Для группы чаще всего подходят игровые и развлекательные боты с настройками частоты сообщений. Важно, чтобы бот не превращал чат в флуд и имел понятные команды.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Есть ли бот для чата в ТГ бесплатно?</summary>
+                        <div class="body">
+                            Да, у многих ботов есть бесплатный режим. Обычно этого хватает, чтобы попробовать и решить, нужен ли расширенный функционал.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Что выбрать: игровые боты в ТГ для чатов или развлекательные?</summary>
+                        <div class="body">
+                            Развлекательные — проще “войти” и быстро поднять настроение. Игровые — лучше удерживают активность на дистанции, потому что дают прогресс и соревнование.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Где попробовать игровой бот для чата в Telegram?</summary>
+                        <div class="body">
+                            Можно попробовать Жабабота по ссылке: <a href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">https://t.me/toadbot?start=228691787</a>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="cta-box" style="margin-top: 14px;">
+                    <p><strong>Готов оживить чат?</strong> Игровой бот = меньше тишины, больше движухи.</p>
+                    <a class="cta-btn" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">Запустить Жабабота ↗</a>
+                </div>
+
+                <footer>
+                    <p><strong>жабабот.рф</strong> • Боты в ТГ для чатов • Игры • Общение • Развлечения</p>
+                </footer>
+            </article>
+        </section>
+    </div>
+
+    <script>
+        // Поиск по странице (простой)
+        const form = document.getElementById('siteSearchForm');
+        const input = document.getElementById('q');
+
+        function clearMarks() {
+            document.querySelectorAll('mark').forEach(m => {
+                const text = document.createTextNode(m.textContent);
+                m.replaceWith(text);
+            });
+        }
+
+        function markMatches(query) {
+            clearMarks();
+            const q = query.trim().toLowerCase();
+            if (!q) return;
+
+            const nodes = document.querySelectorAll('.content p, .content li, .content summary');
+            nodes.forEach(node => {
+                const text = node.textContent;
+                const lower = text.toLowerCase();
+                const idx = lower.indexOf(q);
+                if (idx === -1) return;
+
+                const before = document.createTextNode(text.slice(0, idx));
+                const match = document.createElement('mark');
+                match.textContent = text.slice(idx, idx + q.length);
+                const after = document.createTextNode(text.slice(idx + q.length));
+
+                node.textContent = '';
+                node.appendChild(before);
+                node.appendChild(match);
+                node.appendChild(after);
+            });
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            markMatches(input.value);
+        });
+    </script>
+
+    <!-- FAQPage микроразметка -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Какие есть боты в ТГ для чатов?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Обычно выделяют игровые боты для чатов, развлекательные (прикольные/смешные) и чат-боты для общения. Выбор зависит от задач: игра, активность или порядок."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какой чат бот в ТГ для группы лучше?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Для группы чаще всего подходят игровые и развлекательные боты с настройками частоты сообщений. Важно, чтобы бот не превращал чат в флуд и имел понятные команды."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Есть ли бот для чата в ТГ бесплатно?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, у многих ботов есть бесплатный режим. Обычно этого хватает, чтобы попробовать и решить, нужен ли расширенный функционал."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что выбрать: игровые боты в ТГ для чатов или развлекательные?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Развлекательные проще для старта и быстро поднимают настроение. Игровые лучше удерживают активность на дистанции, потому что дают прогресс и соревнование."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Где попробовать игровой бот для чата в Telegram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Можно попробовать Жабабота по ссылке: https://t.me/toadbot?start=228691787"
+          }
+        }
+      ]
+    }
+    </script>
+
+</body>
+</html>
