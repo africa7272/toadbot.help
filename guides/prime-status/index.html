@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prime-статус — Гайды Жабабота</title>
+  <style>
+    :root{--primary:#2d1e0c;--accent:#5fb878;--bg:#faf8f3;--card:#fff;--text:#2c2c2c;--muted:#666;--border:#e8e3d8;--top:#0b0f14;--topText:#f5f5f5;--gold:#d4af37}
+    *{box-sizing:border-box} body{margin:0;font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    .topbar{position:sticky;top:0;z-index:100;background:var(--top);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+    .topbar__inner{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .brand{display:flex;gap:10px;align-items:center;color:var(--topText);text-decoration:none;font-weight:700}
+    .nav{display:flex;gap:14px;align-items:center}
+    .nav a{color:rgba(245,245,245,.7);text-decoration:none;font-size:.92em}
+    .nav a:hover,.nav a.is-active{color:var(--accent)}
+    .cta{display:inline-flex;gap:8px;align-items:center;background:var(--gold);color:var(--top);text-decoration:none;padding:8px 14px;border-radius:10px;font-weight:700;font-size:.9em;white-space:nowrap}
+    .container{max-width:1100px;margin:0 auto;padding:18px 16px}
+    .crumbs{font-size:.92em;color:var(--muted);margin:10px 0 14px}
+    .crumbs a{color:var(--muted);text-decoration:none;border-bottom:1px dashed rgba(0,0,0,.25)}
+    .hero{background:linear-gradient(135deg,var(--primary),#3d2b1b);color:#fff;border-radius:16px;padding:22px 18px;box-shadow:0 8px 22px rgba(0,0,0,.10)}
+    .hero h1{margin:0 0 6px;font-size:1.6em}
+    .hero p{margin:0;opacity:.92}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:16px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    .card h2{margin:0 0 10px;font-size:1.05em;display:flex;gap:10px;align-items:center;color:var(--primary)}
+    ul{margin:10px 0 0;padding:0;list-style:none}
+    li{padding:6px 0 6px 22px;position:relative;color:var(--muted)}
+    li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+    .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .pill{border:1px solid var(--border);background:#fff;border-radius:999px;padding:6px 10px;font-size:.85em;color:var(--muted)}
+    .note{background:linear-gradient(135deg,#fef3e6,#fef8f0);border-left:4px solid var(--accent);padding:12px;border-radius:12px;color:var(--muted)}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#fff;border:1px solid var(--border);padding:2px 6px;border-radius:8px;color:#333}
+    .pager{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:18px;flex-wrap:wrap}
+    .btn{display:inline-flex;gap:8px;align-items:center;text-decoration:none;border-radius:12px;padding:10px 12px;border:1px solid var(--border);background:#fff;color:var(--text);font-weight:700}
+    .btn:hover{border-color:rgba(95,184,120,.6)}
+    footer{margin:22px 0 6px;color:var(--muted);font-size:.9em;text-align:center}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="/" aria-label="На главную"><span>🐸</span><span>жабабот.рф</span></a>
+      <nav class="nav" aria-label="Навигация">
+        <a href="/">Главная</a>
+        <a class="is-active" href="/guides/">Гайды</a>
+        <a href="/wiki/">Wiki</a>
+      </nav>
+      <a class="cta" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">Играть в Жабабота ↗</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="crumbs"><a href="/guides/">Гайды</a> → Prime-статус</div>
+
+    <section class="hero">
+      <h1>👑 Prime-статус</h1>
+      <p>Что даёт Prime и кому он реально нужен.</p>
+    </section>
+
+    <section class="grid" aria-label="Содержание гайда">
+      <article class="card">
+        <h2>💳 Цена и покупка</h2>
+        <ul>
+          <li>Prime покупается за <strong>89 рублей</strong>.</li>
+          <li>Команда для покупки: <span class="kbd">Купить жабу</span>.</li>
+        </ul>
+        <div class="pillrow">
+          <span class="pill">#Жаба_Всезнамус</span>
+          <span class="pill">prime</span>
+          <span class="pill">удобство</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>⏱️ Кормление и “запас жизни”</h2>
+        <ul>
+          <li>Prime-жаба может кормиться чаще: <strong>раз в 6 часов</strong>.</li>
+          <li>Если не кормить: обычная жаба умирает через <strong>30 дней</strong>, Prime — через <strong>60 дней</strong>.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>📛 Имя и фото</h2>
+        <ul>
+          <li>Prime-жабы меняют имя <strong>бесплатно неограниченно</strong>.</li>
+          <li>Есть возможность <strong>смены фото</strong> жабы.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>✅ Пропуски в дейликах</h2>
+        <ul>
+          <li>Обычная жаба: <strong>3</strong> пропуска в месяц.</li>
+          <li>Prime-жаба: <strong>5</strong> пропусков в месяц.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>🔔 Уведомления (Prime-фишки)</h2>
+        <ul>
+          <li>С Prime бот напомнит про необходимость совершить атаку на арене.</li>
+          <li>Есть уведомление о скорой поломке снаряжения (когда остаётся 1 прочность).</li>
+        </ul>
+        <div class="note" style="margin-top:10px;">
+          Про меню уведомлений см. отдельный гайд “Уведомления”.
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>🎁 Подарки</h2>
+        <ul>
+          <li>Можно подарить другу Prime-жабу (в новостях это привязано к командам покупки).</li>
+        </ul>
+      </article>
+    </section>
+
+    <nav class="pager" aria-label="Навигация по гайдам">
+      <a class="btn" href="/guides/">← К разделам</a>
+      <a class="btn" href="/guides/bands-loyalty/">Следующий: Банды и верность →</a>
+    </nav>
+
+    <footer>Жабабот • Гайды • Обновлено по данным из вашего канала и страницы</footer>
+  </main>
+</body>
+</html>
