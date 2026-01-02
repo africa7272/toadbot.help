@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Настольные игры — правила, подборки и советы | Жабабот</title>
+  <meta name="description" content="Настольные игры: что выбрать для семьи, детей и компании. Подборки лучших игр, правила, советы по выбору и ответы на частые вопросы — всё в одном разделе." />
+  <link rel="canonical" href="https://жабабот.рф/boardgames/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="жабабот.рф" />
+  <meta property="og:title" content="Настольные игры — правила, подборки и советы" />
+  <meta property="og:description" content="Подборки лучших настольных игр, правила, советы по выбору. Для семьи, детей, компании и двоих — без воды." />
+  <meta property="og:url" content="https://жабабот.рф/boardgames/" />
+  <meta property="og:image" content="https://жабабот.рф/assets/img/boardgames/boardgames-hero.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Настольные игры — правила, подборки и советы" />
+  <meta name="twitter:description" content="Лучшие настольные игры: семья, дети, компания, двое. Правила, советы и FAQ." />
+  <meta name="twitter:image" content="https://жабабот.рф/assets/img/boardgames/boardgames-hero.webp" />
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Настольные игры — правила, подборки и советы",
+    "description":"Настольные игры: что выбрать для семьи, детей и компании. Подборки лучших игр, правила, советы по выбору и ответы на частые вопросы — всё в одном разделе.",
+    "url":"https://жабабот.рф/boardgames/",
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"жабабот.рф",
+      "url":"https://жабабот.рф/"
+    },
+    "primaryImageOfPage":{
+      "@type":"ImageObject",
+      "url":"https://жабабот.рф/assets/img/boardgames/boardgames-hero.webp"
+    },
+    "breadcrumb":{
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Главная","item":"https://жабабот.рф/"},
+        {"@type":"ListItem","position":2,"name":"Настольные игры","item":"https://жабабот.рф/boardgames/"}
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    :root{
+      --primary:#2d1e0c;
+      --accent:#5fb878;
+      --bg:#faf8f3;
+      --card:#fff;
+      --text:#2c2c2c;
+      --muted:#666;
+      --border:#e8e3d8;
+      --top:#0b0f14;
+      --topText:#f5f5f5;
+      --gold:#d4af37;
+      --shadow:0 10px 24px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+
+    /* TOPBAR (как в проекте) */
+    .topbar{position:sticky;top:0;z-index:100;background:var(--top);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+    .topbar__inner{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .brand{display:flex;gap:10px;align-items:center;color:var(--topText);text-decoration:none;font-weight:700}
+    .nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .nav a{color:rgba(245,245,245,.7);text-decoration:none;font-size:.92em}
+    .nav a:hover,.nav a.is-active{color:var(--accent)}
+    .cta{display:inline-flex;gap:8px;align-items:center;background:var(--gold);color:var(--top);text-decoration:none;padding:8px 14px;border-radius:10px;font-weight:700;font-size:.9em;white-space:nowrap}
+    .cta:hover{filter:brightness(1.05);transform:translateY(-1px)}
+    .container{max-width:1100px;margin:0 auto;padding:18px 16px}
+
+    /* Hero */
+    .crumbs{font-size:.92em;color:var(--muted);margin:10px 0 14px}
+    .crumbs a{color:var(--muted);text-decoration:none;border-bottom:1px dashed rgba(0,0,0,.25)}
+
+    .hero{
+      background:linear-gradient(135deg,var(--primary),#3d2b1b);
+      color:#fff;border-radius:16px;padding:18px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero__grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      align-items:center;
+    }
+    .hero h1{margin:0 0 8px;font-size:1.8em}
+    .hero p{margin:0;opacity:.92;max-width:720px}
+    .hero__badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
+      padding:8px 10px;border-radius:999px;
+      font-size:.9em;
+    }
+
+    .hero__img{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:14px;
+      padding:10px;
+    }
+    .hero__img img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:12px;
+    }
+
+    /* Sections */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:16px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    .card h2{margin:0 0 10px;font-size:1.05em;display:flex;gap:10px;align-items:center;color:var(--primary)}
+    .list{margin:10px 0 0;padding:0;list-style:none}
+    .list li{padding:6px 0 6px 22px;position:relative;color:var(--muted)}
+    .list li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+
+    .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px}
+    .tile{
+      display:flex;gap:12px;align-items:flex-start;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:14px;
+      text-decoration:none;
+      color:inherit;
+      transition:.2s;
+      min-height:92px;
+    }
+    .tile:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .icon{
+      width:48px;height:48px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg, rgba(95,184,120,.18), rgba(212,175,55,.14));
+      border:1px solid rgba(95,184,120,.25);
+      font-size:24px;flex:0 0 auto;
+    }
+    .tile h3{margin:0 0 4px;font-size:1.02em;color:var(--primary)}
+    .tile p{margin:0;color:var(--muted);font-size:.93em}
+
+    .faq details{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px 14px;
+      margin-top:10px;
+    }
+    .faq summary{cursor:pointer;font-weight:800;color:var(--primary)}
+    .faq p{margin:8px 0 0;color:var(--muted)}
+
+    .note{
+      margin-top:14px;
+      background:linear-gradient(135deg,#fef3e6,#fef8f0);
+      border-left:4px solid var(--accent);
+      padding:12px 14px;border-radius:12px;color:var(--muted)
+    }
+
+    .pager{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:18px;flex-wrap:wrap}
+    .btn{display:inline-flex;gap:8px;align-items:center;text-decoration:none;border-radius:12px;padding:10px 12px;border:1px solid var(--border);background:#fff;color:var(--text);font-weight:800}
+    .btn:hover{border-color:rgba(95,184,120,.6)}
+    footer{margin:22px 0 6px;color:var(--muted);font-size:.9em;text-align:center}
+
+    @media (max-width: 860px){
+      .hero__grid{grid-template-columns:1fr}
+      .hero h1{font-size:1.55em}
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="/"><span>🐸</span><span>жабабот.рф</span></a>
+    <nav class="nav" aria-label="Навигация">
+      <a href="/">Главная</a>
+      <a href="/guides/">Гайды</a>
+      <a href="/wiki/">Wiki</a>
+      <a class="is-active" href="/boardgames/">Настолки</a>
+    </nav>
+    <a class="cta" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">Играть в Жабабота ↗</a>
+  </div>
+</header>
+
+<main class="container">
+  <div class="crumbs"><a href="/">Главная</a> → Настольные игры</div>
+
+  <section class="hero">
+    <div class="hero__grid">
+      <div>
+        <h1>🎲 Настольные игры</h1>
+        <p>
+          Раздел, который закрывает вопросы по настолкам: <strong>что выбрать</strong>,
+          <strong>во что играть</strong>, <strong>какие правила</strong>, и какие игры лучше для
+          <strong>семьи</strong>, <strong>детей</strong>, <strong>компании</strong> и <strong>двоих</strong>.
+        </p>
+        <div class="hero__badges">
+          <span class="badge">🧠 Подборки по жанрам</span>
+          <span class="badge">👨‍👩‍👧 Для семьи и детей</span>
+          <span class="badge">🥳 Для компании</span>
+          <span class="badge">🧩 Правила и советы</span>
+        </div>
+        <div class="note">
+          Мы не продаём “всё подряд”. Тут — понятные подборки, правила и навигация по теме, чтобы быстро найти “свою” игру.
+        </div>
+      </div>
+
+      <div class="hero__img">
+        <img
+          src="/assets/img/boardgames/boardgames-hero.webp"
+          alt="настольные игры для семьи и компании за столом"
+          loading="lazy"
+          width="960"
+          height="640"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- НАВИГАЦИЯ ПО РАЗДЕЛУ (вниз) -->
+  <section class="grid" aria-label="Куда дальше">
+    <article class="card">
+      <h2>⭐ С чего начать</h2>
+      <ul class="list">
+        <li>Если нужна универсальная подборка — начни с “Лучшие настольные игры”.</li>
+        <li>Если играете с детьми — открой “Настолки для детей”.</li>
+        <li>Если собрали друзей — смотри “Настолки для компании”.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>🎯 Как мы собрали раздел</h2>
+      <ul class="list">
+        <li>Одна страница = один главный запрос (без дублей и пересечений).</li>
+        <li>Страницы связаны внутри раздела — легко ходить по теме.</li>
+        <li>На каждой странице будет 1 изображение и понятная структура.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>📌 Быстрые ответы</h2>
+      <ul class="list">
+        <li>Для семьи: спокойные правила, 30–60 минут, 2–5 игроков.</li>
+        <li>Для компании: динамика, юмор, 6+ игроков — “вечеринка”.</li>
+        <li>Для двоих: дуэльные или кооперативные сценарии.</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- ДЕТСКИЕ / СЕМЕЙНЫЕ / КОМПАНИЯ / ДВОЕ -->
+  <section style="margin-top:18px;">
+    <div class="tiles" aria-label="Основные направления">
+      <a class="tile" href="/boardgames/best/">
+        <div class="icon">🏆</div>
+        <div>
+          <h3>Лучшие настольные игры</h3>
+          <p>Подборки по жанрам и ситуациям: семья, компания, двое, новичкам.</p>
+        </div>
+      </a>
+
+      <a class="tile" href="/boardgames/for-family/">
+        <div class="icon">👨‍👩‍👧</div>
+        <div>
+          <h3>Настольные игры для всей семьи</h3>
+          <p>Игры “на вечер”, понятные правила и комфортная сложность.</p>
+        </div>
+      </a>
+
+      <a class="tile" href="/boardgames/for-kids/">
+        <div class="icon">🧒</div>
+        <div>
+          <h3>Настольные игры для детей</h3>
+          <p>По возрастам: 4+, 5+, 6+, 7+, 10+ — без каши и дублей.</p>
+        </div>
+      </a>
+
+      <a class="tile" href="/boardgames/for-company/">
+        <div class="icon">🥳</div>
+        <div>
+          <h3>Настольные игры для компании</h3>
+          <p>Весёлые, громкие, быстрые — чтобы стол ожил.</p>
+        </div>
+      </a>
+
+      <a class="tile" href="/boardgames/for-two/">
+        <div class="icon">🤝</div>
+        <div>
+          <h3>Настольные игры для двоих</h3>
+          <p>Дуэли и кооперативы — когда хочется играть “вдвоём и по-взрослому”.</p>
+        </div>
+      </a>
+
+      <a class="tile" href="/boardgames/rules/">
+        <div class="icon">📘</div>
+        <div>
+          <h3>Правила и как играть</h3>
+          <p>Как объяснять правила быстро, что делать, если спор, и как выбрать игру.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" style="margin-top:18px;">
+    <h2 style="margin:0 0 8px;color:var(--primary);font-size:1.2em;">❓ FAQ про настольные игры</h2>
+
+    <details>
+      <summary>Какие настольные игры лучше для новичков?</summary>
+      <p>Ищи игры с простыми правилами и партией до часа. В подборках для новичков мы будем отмечать сложность и время.</p>
+    </details>
+
+    <details>
+      <summary>Какие настольные игры подойдут для компании взрослых?</summary>
+      <p>Обычно это “вечериночные” игры: быстрые раунды, много участников, минимум ожидания хода. У нас для этого отдельный раздел.</p>
+    </details>
+
+    <details>
+      <summary>Где смотреть правила настольных игр?</summary>
+      <p>Мы будем собирать страницы “правила + как играть” отдельным блоком, а для популярных игр — отдельные страницы с понятным разбором.</p>
+    </details>
+  </section>
+
+  <!-- ПЕЙДЖЕР: только вперед (это ХАБ) -->
+  <nav class="pager" aria-label="Навигация по разделу">
+    <span></span>
+    <a class="btn" href="/boardgames/best/">Следующий: Лучшие настольные игры →</a>
+  </nav>
+
+  <footer>жабабот.рф • Настольные игры</footer>
+</main>
+</body>
+</html>
