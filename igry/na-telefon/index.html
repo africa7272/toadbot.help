@@ -1,0 +1,724 @@
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Игры на телефон в браузере - 1000+ игр для мобильного</title>
+<meta name="description" content="1000+ игр на телефон в браузере без скачивания. Мобильные шутеры, головоломки, гонки - играй онлайн бесплатно на iOS и Android в мобильном браузере."/>
+<meta name="keywords" content="игры на телефон, мобильные игры, браузерные игры, игры для мобильного, без скачивания, iOS, Android, мобильный браузер"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<meta name="revisit-after" content="7 days"/>
+<link rel="canonical" href="https://жабабот.рф/igry/na-telefon/"/>
+<meta property="og:title" content="Игры на телефон - 1000+ игр в браузере"/>
+<meta property="og:description" content="Лучшие игры на мобильный телефон без скачивания. Играй прямо в браузере на iOS и Android."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://жабабот.рф/igry/na-telefon/"/>
+<meta property="og:site_name" content="жабабот.рф"/>
+<meta property="og:locale" content="ru_RU"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Игры на телефон - 1000+ игр"/>
+<meta name="twitter:description" content="Лучшие мобильные игры без скачивания. Играй бесплатно в браузере."/>
+<meta name="author" content="жабабот.рф"/>
+<meta name="copyright" content="жабабот.рф"/>
+<link rel="alternate" hreflang="ru" href="https://жабабот.рф/igry/na-telefon/"/>
+<style>
+    :root {
+      --primary: #2d1e0c;
+      --accent: #5fb878;
+      --light-bg: #faf8f3;
+      --card-bg: #fff;
+      --text-dark: #2c2c2c;
+      --text-light: #666;
+      --border: #e8e3d8;
+      --topbar-bg: #0b0f14;
+      --topbar-text: #f5f5f5;
+      --cta-gold: #d4af37;
+      --mobile-primary: #00a8e8;
+      --mobile-accent: #00c9ff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .topbar {
+      background: var(--topbar-bg);
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .topbar__inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--topbar-text);
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+    .brand__logo { width: 28px; height: 28px; display: block; }
+    .brand__text { letter-spacing: -0.5px; }
+    .nav { display: flex; gap: 25px; align-items: center; }
+    .nav__link {
+      color: rgba(245, 245, 245, 0.7);
+      text-decoration: none;
+      font-size: 0.9em;
+      transition: color 0.3s;
+    }
+    .nav__link:hover, .nav__link.is-active { color: var(--accent); }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85em;
+      font-weight: 500;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .cta--gold { background: var(--cta-gold); color: var(--topbar-bg); }
+    .cta--gold:hover { background: #e5c158; transform: translateY(-2px); }
+    .cta__arr { font-size: 0.8em; opacity: 0.8; }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+
+    .breadcrumb {
+      font-size: 0.9em;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      padding: 10px 0;
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .hero {
+      padding: 34px 20px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00a8e8 0%, #00c9ff 100%);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 18px 0 22px 0;
+    }
+    .hero h1 { font-size: 2.2em; margin-bottom: 8px; font-weight: 700; }
+    .hero p { opacity: 0.95; max-width: 900px; font-size: 1.05em; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .panel__head {
+      padding: 16px 16px 12px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .panel__title {
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .panel__body { padding: 14px 16px 16px 16px; }
+
+    .toc { position: sticky; top: 86px; }
+    .toc a {
+      display: block;
+      padding: 10px 10px;
+      margin: 6px 0;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text-dark);
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      background: var(--light-bg);
+      font-size: 0.95em;
+    }
+    .toc a:hover { border-color: var(--border); transform: translateX(2px); }
+    .toc a.is-active { background: rgba(0, 168, 232, 0.14); border-color: rgba(0, 168, 232, 0.3); color: var(--primary); }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--light-bg);
+      cursor: pointer;
+      transition: 0.2s ease;
+      font-size: 0.9em;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,0,0,0.08); }
+
+    .section { margin-bottom: 18px; scroll-margin-top: 110px; }
+    .section__title {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .section__title h2 {
+      font-size: 1.25em;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section__meta { font-size: 0.85em; color: var(--text-light); white-space: nowrap; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 14px;
+      padding: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: 0.2s ease;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,0.08); }
+    .card h3 {
+      color: var(--primary);
+      font-size: 1.05em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card p { color: var(--text-light); font-size: 0.95em; margin-bottom: 8px; line-height: 1.5; }
+    .card ul { list-style: none; padding-left: 0; }
+    .card li {
+      padding: 8px 0 8px 24px;
+      position: relative;
+      color: var(--text-light);
+      font-size: 0.95em;
+    }
+    .card li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #00a8e8;
+      font-weight: 700;
+    }
+
+    .info {
+      background: linear-gradient(135deg, #e0f7ff 0%, #b3f0ff 100%);
+      border-left: 4px solid #00a8e8;
+      padding: 14px 14px;
+      border-radius: 10px;
+      margin-top: 10px;
+      color: var(--text-dark);
+      font-size: 0.95em;
+    }
+
+    details {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    details summary {
+      cursor: pointer;
+      padding: 14px 16px;
+      font-weight: 700;
+      color: var(--primary);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details .details-body { padding: 0 16px 16px 16px; color: var(--text-light); }
+
+    .cta-section {
+      text-align: center;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, rgba(0,168,232,0.08) 0%, rgba(0,201,255,0.08) 100%);
+      border-radius: 12px;
+      margin: 30px 0;
+    }
+
+    .cta-section h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+      font-size: 1.3em;
+    }
+
+    .cta-section p {
+      color: var(--text-light);
+      margin-bottom: 16px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--cta-gold);
+      color: var(--topbar-bg);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1em;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-btn:hover {
+      background: #e5c158;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--text-light);
+      font-size: 0.9em;
+      margin-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { position: static; top: auto; }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.6em; }
+      .topbar__inner { flex-direction: column; gap: 12px; }
+      .nav { gap: 15px; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+<div class="topbar__inner">
+<a aria-label="На главную" class="brand" href="https://жабабот.рф/">
+<span class="brand__logo">🐸</span>
+<span class="brand__text">жабабот.рф</span>
+</a>
+<nav aria-label="Навигация" class="nav">
+<a class="nav__link" href="https://жабабот.рф/igry/">Все игры</a>
+<a class="nav__link" href="https://жабабот.рф/igry/shutery/">Шутеры</a>
+<a class="nav__link" href="https://жабабот.рф/igry/rpg/">РПГ</a>
+<a class="nav__link is-active" href="https://жабабот.рф/igry/na-telefon/">На телефон</a>
+</nav>
+<a class="cta cta--gold" href="https://t.me/toadbot?start=228691787" rel="noopener" target="_blank">
+Играть в Жабабота <span class="cta__arr">↗</span>
+</a>
+</div>
+</header>
+<main class="container">
+<div class="breadcrumb">
+<a href="https://жабабот.рф/">Главная</a> / 
+<a href="https://жабабот.рф/igry/">Все игры</a> / 
+<strong>Игры на телефон</strong>
+</div>
+<section class="hero">
+<h1>📱 Игры на телефон в браузере: 1000+ игр для мобильного</h1>
+<p>Лучшие мобильные игры без скачивания. Шутеры, гонки, головоломки, казуальные игры — всё оптимизировано для маленького экрана. Играй в пути, в очереди, на перерыве. iOS, Android, мобильный браузер — везде работает.</p>
+</section>
+<section class="layout">
+<aside aria-label="Содержание" class="panel toc">
+<div class="panel__head">
+<div class="panel__title">🧭 Быстрый переход</div>
+<button class="btn" id="btnCollapseToc" title="Свернуть/развернуть" type="button">↕️</button>
+</div>
+<div class="panel__body" id="tocBody">
+<nav class="toc" id="tocNav"></nav>
+<div class="info">
+<strong>Совет:</strong> Все игры оптимизированы под мобильный экран. Неограниченный доступ, без приложения!
+</div>
+</div>
+</aside>
+<div class="panel">
+<section class="section" id="sec-popular">
+<div class="section__title">
+<h2>🔥 Лучшие мобильные игры 2026</h2>
+<div class="section__meta">топ рейтинга на мобильных устройствах</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>🎮 Мобильные шутеры</h3>
+<p>Быстрые сражения на маленьком экране. Сенсорное управление, простые правила, экстремальный экшн.</p>
+<ul>
+<li>2-10 минутные матчи</li>
+<li>Сенсорное прицеливание</li>
+<li>Кроссплатформенные сражения</li>
+<li>Низкий пинг на мобильных сетях</li>
+</ul>
+</div>
+<div class="card">
+<h3>🏎️ Гонки и раннеры</h3>
+<p>Сенсорное управление, уклоны, ускорения. От простых раннеров до сложных трасс.</p>
+<ul>
+<li>Управление одной рукой</li>
+<li>Быстрые сессии (2-5 минут)</li>
+<li>Множество машин и трасс</li>
+<li>Мультиплеер и рекорды</li>
+</ul>
+</div>
+<div class="card">
+<h3>🧩 Мобильные головоломки</h3>
+<p>Судоку, Match-3, паззлы, оптимизированные для смартфона.</p>
+<ul>
+<li>Сенсорный интерфейс</li>
+<li>Без таймеров</li>
+<li>Могу играть в метро</li>
+<li>Сохранение прогресса в облаке</li>
+</ul>
+</div>
+<div class="card">
+<h3>🎯 Экшн и боевики</h3>
+<p>Динамичный экшн на мобильном. Нарезка, спринт, комбо.</p>
+<ul>
+<li>Двуручное управление</li>
+<li>Реактивный геймплей</li>
+<li>Боевые комбинации</li>
+<li>Боссы и рейды</li>
+</ul>
+</div>
+<div class="card">
+<h3>🌐 Мобильные MMORPG</h3>
+<p>Полноценные RPG в кармане. Кооп, гильдии, рейды, экономика.</p>
+<ul>
+<li>Развитие персонажа</li>
+<li>Кланы и командные рейды</li>
+<li>Мобильная оптимизация</li>
+<li>Постоянный контент</li>
+</ul>
+</div>
+<div class="card">
+<h3>🎲 Казуальные аркады</h3>
+<p>Три в ряд, кликеры, тайперы на телефон. Максимум веселья, минимум времени.</p>
+<ul>
+<li>Быстрый старт</li>
+<li>Минимальное место на диске</li>
+<li>АФК-игры поддерживаются</li>
+<li>Мобильная оптимизация</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section" id="sec-genres">
+<div class="section__title">
+<h2>📲 Все жанры мобильных игр</h2>
+<div class="section__meta">выбери игру для любого момента</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>⚡ Быстрые игры (до 10 минут)</h3>
+<p>Идеальны для перерыва. Загрузишься, сыграешь, закончишь — за 10 минут.</p>
+<ul>
+<li>Раннеры и гонки</li>
+<li>Быстрые матчи</li>
+<li>Кликеры и тайперы</li>
+<li>Идеально в пути</li>
+</ul>
+</div>
+<div class="card">
+<h3>🎮 Средние сессии (15-30 минут)</h3>
+<p>Для более серьёзного игрового процесса. История развивается, прогресс растёт.</p>
+<ul>
+<li>Приключения и квесты</li>
+<li>Головоломки и паззлы</li>
+<li>Боевые системы</li>
+<li>Развитие персонажа</li>
+</ul>
+</div>
+<div class="card">
+<h3>👥 Мультиплеер и кооп</h3>
+<p>Играй с друзьями или случайными игроками. Командные боевые действия, турниры.</p>
+<ul>
+<li>РvP матчи</li>
+<li>Кооп рейды</li>
+<li>Гильдии и кланы</li>
+<li>Командные турниры</li>
+</ul>
+</div>
+<div class="card">
+<h3>🧠 Для развития мышления</h3>
+<p>Судоку, кроссворды, логические игры на мобильном.</p>
+<ul>
+<li>Судоку и логика</li>
+<li>Слова и кроссворды</li>
+<li>Головоломки</li>
+<li>Чистый мозговой тренинг</li>
+</ul>
+</div>
+<div class="card">
+<h3>🎨 Творческие игры</h3>
+<p>Раскраски, рисование, музыкальные игры для творческих людей.</p>
+<ul>
+<li>Раскраски и рисование</li>
+<li>Музыкальные линии</li>
+<li>Дизайн и создание</li>
+<li>Арт-проекты</li>
+</ul>
+</div>
+<div class="card">
+<h3>🏆 Конкурсные игры</h3>
+<p>Лидерборды, рекорды, турниры с реальными призами.</p>
+<ul>
+<li>Ежедневные вызовы</li>
+<li>Рейтинг и звания</li>
+<li>Турниры с призами</li>
+<li>Социальное соревнование</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section" id="sec-tips">
+<div class="section__title">
+<h2>💡 Советы для мобильного геймера</h2>
+<div class="section__meta">как максимально использовать смартфон для игр</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>1️⃣ Проверь интернет</h3>
+<p>Wi-Fi лучше, но многие игры работают и на 4G. Проверь скорость перед матчем.</p>
+<ul>
+<li>Wi-Fi: идеально</li>
+<li>4G LTE: хорошо</li>
+<li>3G: рискованно</li>
+<li>Офлайн игры: всегда работают</li>
+</ul>
+</div>
+<div class="card">
+<h3>2️⃣ Очисти место на диске</h3>
+<p>Браузер кэширует игры. Освободи место в памяти телефона.</p>
+<ul>
+<li>Удали старые кэши</li>
+<li>Закрой другие вкладки</li>
+<li>Перезагрузи браузер</li>
+<li>Минимум 500 МБ свободного</li>
+</ul>
+</div>
+<div class="card">
+<h3>3️⃣ Используй портретную ориентацию</h3>
+<p>Большинство мобильных игр оптимизированы под портрет. Включи автоповорот.</p>
+<ul>
+<li>Портрет: стандарт</li>
+<li>Пейзаж: для некоторых игр</li>
+<li>Двуручное управление удобнее</li>
+<li>На подставке — лучше</li>
+</ul>
+</div>
+<div class="card">
+<h3>4️⃣ Включи звук (наушники)</h3>
+<p>Звук важен. В наушниках слышны шаги врагов, сигналы, музыка.</p>
+<ul>
+<li>Подключи наушники</li>
+<li>Не играй с включённым динамиком</li>
+<li>Настрой громкость</li>
+<li>Вибрация может помочь</li>
+</ul>
+</div>
+<div class="card">
+<h3>5️⃣ Делай перерывы и защищай глаза</h3>
+<p>Экран телефона утомляет. Смотри вдаль каждые 30 минут.</p>
+<ul>
+<li>Каждый час — 10 минут отдыха</li>
+<li>Смотри вдаль (3+ метра)</li>
+<li>Меньше яркости перед сном</li>
+<li>Подходит ночной режим</li>
+</ul>
+</div>
+<div class="card">
+<h3>6️⃣ Зарядись перед сеансом</h3>
+<p>Батарея телефона садится быстро. Зарядись перед игровой сессией.</p>
+<ul>
+<li>100% перед началом</li>
+<li>Включи режим экономии</li>
+<li>Отключи Bluetooth и GPS</li>
+<li>Батарейка — твой враг</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section" id="sec-faq">
+<div class="section__title">
+<h2>❓ Вопросы о мобильных играх</h2>
+<div class="section__meta">ответы на частые вопросы</div>
+</div>
+<div class="grid">
+<div class="card">
+<details>
+<summary>Какая скорость интернета нужна для мобильных игр?</summary>
+<div class="details-body">
+Для большинства игр достаточно 2-5 Мбит/сек. Wi-Fi идеален, но 4G LTE тоже работает. На 3G может быть лаг. Офлайн игры работают без интернета вообще.
+</div>
+</details>
+</div>
+<div class="card">
+<details>
+<summary>Почему игра глючит на мобильном?</summary>
+<div class="details-body">
+Причины: слабый интернет, перегрева процессор, мало оперативной памяти, кэш браузера. Решение: очистить кэш, закрыть другие вкладки, перезагрузить браузер, освободить оперативку.
+</div>
+</details>
+</div>
+<div class="card">
+<details>
+<summary>Какой браузер лучше для мобильных игр?</summary>
+<div class="details-body">
+Chrome и Safari — быстрые и стабильные. Firefox тоже хорош. Главное: свежая версия браузера. Старые версии медленнее. Обновляй регулярно.
+</div>
+</details>
+</div>
+<div class="card">
+<details>
+<summary>Сколько батареи расходует игра?</summary>
+<div class="details-body">
+Зависит от игры. Простые — 5-10% в час. Требовательные (шутеры, MMORPG) — 15-20% в час. Совет: играй, подключив зарядное устройство.
+</div>
+</details>
+</div>
+<div class="card">
+<details>
+<summary>Можно ли играть на планшете также?</summary>
+<div class="details-body">
+Да! Все браузерные игры работают на планшетах. Экран больше — удобнее. Управление удобнее двумя руками. Рекомендуем планшет для долгих сессий.
+</div>
+</details>
+</div>
+<div class="card">
+<details>
+<summary>Нужна ли загрузка приложения?</summary>
+<div class="details-body">
+Нет! Все игры открываются в браузере. Ничего скачивать не нужно. Это экономит место и упрощает жизнь. Одна переход по ссылке — и уже в игре.
+</div>
+</details>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<h3>🐸 Попробуй Жабабота на мобильном!</h3>
+<p>Телеграм-бот работает идеально на смартфоне. Быстрые матчи, мобильная оптимизация, кланы и турниры — всё в одном месте.</p>
+<a href="https://t.me/toadbot?start=228691787" class="cta-btn" rel="noopener" target="_blank">
+🐸 Играть в Жабабота <span class="cta__arr">↗</span>
+</a>
+</section>
+
+<footer>
+<p><strong>Игры на телефон на жабабот.рф</strong> • 1000+ мобильных игр в браузере • iOS, Android, без скачивания • Бесплатно, без приложения</p>
+<p style="margin-top: 10px; font-size: 0.85em;">
+<a href="https://жабабот.рф/">На главную</a> • 
+<a href="https://жабабот.рф/igry/">Все игры</a> • 
+<a href="https://жабабот.рф/igry/shutery/">Шутеры и экшн</a> • 
+<a href="https://жабабот.рф/igry/rpg/">РПГ и приключения</a> • 
+<a href="https://жабабот.рф/igry/kazualnye/">Казуальные игры</a> • 
+<a href="https://t.me/toadbot">Телеграм бот</a>
+</p>
+<p style="margin-top: 15px; font-size: 0.8em; opacity: 0.7;">
+Категория: Игры на телефон в браузере. Все игры бесплатные, без скачивания, работают на iOS и Android. Оптимизировано для быстрого интернета и мобильных сетей. Последнее обновление: 02.01.2026.
+</p>
+</footer>
+</div>
+</section>
+</main>
+<script>
+    const tocNav = document.getElementById('tocNav');
+    const sections = Array.from(document.querySelectorAll('.section[id]'));
+
+    function buildToc() {
+      tocNav.innerHTML = '';
+      sections.forEach(sec => {
+        const h2 = sec.querySelector('h2');
+        if (!h2) return;
+        const a = document.createElement('a');
+        a.href = '#' + sec.id;
+        a.textContent = h2.textContent.trim();
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.getElementById(sec.id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', '#' + sec.id);
+        });
+        tocNav.appendChild(a);
+      });
+    }
+    buildToc();
+
+    const tocLinks = () => Array.from(tocNav.querySelectorAll('a'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        tocLinks().forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === '#' + id));
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0.01 });
+
+    sections.forEach(s => observer.observe(s));
+
+    const btnCollapse = document.getElementById('btnCollapseToc');
+    const tocBody = document.getElementById('tocBody');
+    let tocCollapsed = false;
+    btnCollapse.addEventListener('click', () => {
+      tocCollapsed = !tocCollapsed;
+      tocBody.style.display = tocCollapsed ? 'none' : 'block';
+    });
+</script>
+</body>
+</html>
