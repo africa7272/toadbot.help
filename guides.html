@@ -1,1864 +1,297 @@
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Жабабот - Полный Гайд</title>
-    <style>
-        :root {
-            --primary: #2d1e0c;
-            --accent: #5fb878;
-            --light-bg: #faf8f3;
-            --card-bg: #fff;
-            --text-dark: #2c2c2c;
-            --text-light: #666;
-            --border: #e8e3d8;
-            --topbar-bg: #0b0f14;
-            --topbar-text: #f5f5f5;
-            --cta-gold: #d4af37;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Гайды — Жабабот</title>
+  <style>
+    :root{
+      --primary:#2d1e0c;
+      --accent:#5fb878;
+      --light-bg:#faf8f3;
+      --card-bg:#fff;
+      --text-dark:#2c2c2c;
+      --text-light:#666;
+      --border:#e8e3d8;
+      --topbar-bg:#0b0f14;
+      --topbar-text:#f5f5f5;
+      --cta-gold:#d4af37;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:var(--light-bg);color:var(--text-dark);line-height:1.6}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    /* TOPBAR */
+    .topbar{background:var(--topbar-bg);padding:12px 20px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+    .topbar__inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--topbar-text);font-weight:600;font-size:.95em}
+    .brand__logo{width:28px;height:28px;display:block}
+    .nav{display:flex;gap:18px;align-items:center}
+    .nav__link{color:rgba(245,245,245,.7);text-decoration:none;font-size:.9em;transition:.2s}
+    .nav__link:hover,.nav__link.is-active{color:var(--accent)}
+    .cta{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;text-decoration:none;font-size:.85em;font-weight:600;transition:.2s;border:none;cursor:pointer;white-space:nowrap}
+    .cta--gold{background:var(--cta-gold);color:var(--topbar-bg)}
+    .cta--gold:hover{background:#e5c158;transform:translateY(-2px)}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+    /* LAYOUT */
+    .container{max-width:1200px;margin:0 auto;padding:20px}
+    .hero{
+      padding:28px 20px;
+      background:linear-gradient(135deg,var(--primary) 0%, #3d2b1b 100%);
+      color:#fff;border-radius:14px;
+      box-shadow:0 4px 15px rgba(0,0,0,.1);
+      margin:18px 0 22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero h1{font-size:2.1em;margin-bottom:6px}
+    .hero p{opacity:.9;max-width:760px}
+    .hero .hint{
+      margin-top:14px;
+      display:inline-flex;gap:8px;align-items:center;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      padding:10px 12px;border-radius:12px;
+      font-size:.92em;
+    }
 
-        /* TOPBAR STYLES */
-        .topbar {
-            background: var(--topbar-bg);
-            padding: 12px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
+    /* Sections */
+    .section{margin:22px 0}
+    .section-title{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      margin:0 0 10px;
+    }
+    .section-title h2{font-size:1.25em;color:var(--primary)}
+    .section-title .sub{color:var(--text-light);font-size:.95em}
 
-        .topbar__inner {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+    /* Grid tiles */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+      gap:14px;
+    }
+    .tile{
+      background:var(--card-bg);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 2px 8px rgba(0,0,0,.05);
+      text-decoration:none;
+      color:inherit;
+      transition:.2s;
+      display:flex;gap:12px;align-items:flex-start;
+      min-height:94px;
+    }
+    .tile:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.09)}
+    .icon{
+      width:52px;height:52px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg, rgba(95,184,120,.18), rgba(212,175,55,.14));
+      border:1px solid rgba(95,184,120,.25);
+      font-size:26px;
+      flex:0 0 auto;
+    }
+    .tile h3{font-size:1.02em;margin:0 0 4px;color:var(--primary)}
+    .tile p{margin:0;color:var(--text-light);font-size:.92em}
+    .tags{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+    .tag{
+      font-size:.78em;
+      padding:4px 8px;border-radius:999px;
+      background:var(--light-bg);
+      border:1px solid var(--border);
+      color:var(--text-light);
+    }
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--topbar-text);
-            font-weight: 600;
-            font-size: 0.95em;
-        }
+    /* Footer */
+    footer{margin-top:28px;padding:18px 0;color:var(--text-light);font-size:.9em;border-top:1px solid var(--border);text-align:center}
 
-        .brand__logo {
-            width: 28px;
-            height: 28px;
-            display: block;
-        }
-
-        .brand__text {
-            letter-spacing: -0.5px;
-        }
-
-        .nav {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .nav__link {
-            color: rgba(245, 245, 245, 0.7);
-            text-decoration: none;
-            font-size: 0.9em;
-            transition: color 0.3s;
-        }
-
-        .nav__link:hover,
-        .nav__link.is-active {
-            color: var(--accent);
-        }
-
-        .search {
-            display: flex;
-            align-items: center;
-            background: rgba(255,255,255,0.1);
-            border-radius: 6px;
-            padding: 6px 12px;
-            flex: 0 1 200px;
-        }
-
-        .search__input {
-            background: none;
-            border: none;
-            color: var(--topbar-text);
-            font-size: 0.85em;
-            flex: 1;
-            outline: none;
-        }
-
-        .search__input::placeholder {
-            color: rgba(245, 245, 245, 0.5);
-        }
-
-        .search__btn {
-            background: none;
-            border: none;
-            color: rgba(245, 245, 245, 0.6);
-            cursor: pointer;
-            padding: 0 6px;
-            font-size: 1em;
-        }
-
-        .cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.85em;
-            font-weight: 500;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .cta--gold {
-            background: var(--cta-gold);
-            color: var(--topbar-bg);
-        }
-
-        .cta--gold:hover {
-            background: #e5c158;
-            transform: translateY(-2px);
-        }
-
-        .cta__arr {
-            font-size: 0.8em;
-            opacity: 0.8;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, var(--primary) 0%, #3d2b1b 100%);
-            color: white;
-            border-radius: 12px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-
-        .nav-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 30px;
-            padding: 15px;
-            background: white;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            overflow-x: auto;
-        }
-
-        .nav-tabs button {
-            padding: 10px 20px;
-            border: none;
-            background: var(--light-bg);
-            border-bottom: 3px solid transparent;
-            cursor: pointer;
-            font-size: 0.95em;
-            font-weight: 500;
-            color: var(--text-dark);
-            transition: all 0.3s ease;
-            border-radius: 6px;
-            white-space: nowrap;
-        }
-
-        .nav-tabs button:hover {
-            background: var(--accent);
-            color: white;
-        }
-
-        .nav-tabs button.active {
-            background: var(--accent);
-            color: white;
-            border-bottom-color: var(--accent);
-        }
-
-        .content {
-            display: none;
-        }
-
-        .content.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.3em;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .emoji {
-            font-size: 1.3em;
-        }
-
-        .card p {
-            color: var(--text-light);
-            margin-bottom: 10px;
-            font-size: 0.95em;
-        }
-
-        .card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .card li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            color: var(--text-light);
-            font-size: 0.95em;
-        }
-
-        .card li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        .full-width {
-            grid-column: 1 / -1;
-        }
-
-        .info-box {
-            background: linear-gradient(135deg, #fef3e6 0%, #fef8f0 100%);
-            border-left: 4px solid var(--accent);
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .info-box strong {
-            color: var(--primary);
-        }
-
-        /* CTA BUTTON FOR EACH TAB */
-        .content-footer {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(95, 184, 120, 0.1) 100%);
-            border-radius: 12px;
-            margin-top: 40px;
-            border: 1px solid var(--border);
-        }
-
-        .content-footer p {
-            margin: 0 0 20px 0;
-            font-size: 1em;
-            color: var(--text-light);
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            background: var(--cta-gold);
-            color: var(--topbar-bg);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95em;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-btn:hover {
-            background: #e5c158;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
-        }
-
-        .cta-btn span {
-            font-size: 0.9em;
-            opacity: 0.9;
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0,0,0,0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-
-        .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin: 15px 0;
-        }
-
-        .stat {
-            background: var(--light-bg);
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid var(--border);
-        }
-
-        .stat .value {
-            font-size: 1.3em;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        .stat .label {
-            font-size: 0.85em;
-            color: var(--text-light);
-            margin-top: 5px;
-        }
-
-        .compare-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 15px 0;
-        }
-
-        .compare-item {
-            background: var(--light-bg);
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-
-        .compare-item h4 {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1em;
-        }
-
-        .price {
-            background: #fff3cd;
-            padding: 8px 12px;
-            border-radius: 6px;
-            display: inline-block;
-            font-size: 0.9em;
-            color: #856404;
-            margin: 5px 0;
-        }
-
-        .warning {
-            background: #f8d7da;
-            border-left: 4px solid #dc3545;
-            padding: 15px;
-            border-radius: 6px;
-            margin: 15px 0;
-            color: #721c24;
-            font-size: 0.95em;
-        }
-
-        .success {
-            background: #d4edda;
-            border-left: 4px solid var(--accent);
-            padding: 15px;
-            border-radius: 6px;
-            margin: 15px 0;
-            color: #155724;
-            font-size: 0.95em;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: var(--text-light);
-            font-size: 0.9em;
-            margin-top: 40px;
-            border-top: 1px solid var(--border);
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 1.8em; }
-            .section { grid-template-columns: 1fr; }
-            .compare-grid { grid-template-columns: 1fr; }
-            .nav-tabs { gap: 5px; }
-            .nav-tabs button { padding: 8px 12px; font-size: 0.85em; }
-            .topbar__inner { flex-direction: column; gap: 12px; }
-            .nav { gap: 15px; }
-            .search { flex: 1 1 100%; }
-            .cta-btn { width: 100%; justify-content: center; }
-        }
-    </style>
+    @media (max-width:768px){
+      .hero h1{font-size:1.6em}
+      .topbar__inner{flex-direction:column;align-items:stretch}
+      .nav{justify-content:center}
+      .cta{width:100%;justify-content:center}
+    }
+  </style>
 </head>
 <body>
-    <!-- TOPBAR -->
-    <header class="topbar">
-        <div class="topbar__inner">
-            <a class="brand" href="index.html" aria-label="На главную">
-                <span class="brand__logo">🐸</span>
-                <span class="brand__text">жабабот.рф</span>
-            </a>
-
-            <nav class="nav" aria-label="Навигация">
-                <a class="nav__link" href="index.html">Главная</a>
-                <a class="nav__link is-active" href="guides.html">Гайды</a>
-                <a class="nav__link" href="wiki.html">Wiki</a>
-            </nav>
-
-            <form class="search" role="search">
-                <label class="sr-only" for="q">Поиск по гайдам</label>
-                <input id="q" class="search__input" placeholder="Поиск по гайдам, wiki…" autocomplete="off">
-                <button class="search__btn" type="submit" aria-label="Найти">🔍</button>
-            </form>
-
-            <a class="cta cta--gold" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
-                Играть в Жабабота <span class="cta__arr">↗</span>
-            </a>
-        </div>
-    </header>
-
-    <div class="container">
-        <header>
-            <h1>🐸 Жабабот - Полный Гайд</h1>
-            <p class="subtitle">Всё, что нужно знать чатовой MMORPg</p>
-        </header>
-
-        <div class="nav-tabs">
-            <button class="tab-btn active" onclick="switchTab('start')">Начало</button>
-            <button class="tab-btn" onclick="switchTab('character')">Персонаж</button>
-            <button class="tab-btn" onclick="switchTab('equipment')">Снаряжение</button>
-            <button class="tab-btn" onclick="switchTab('battles')">Боевая система</button>
-            <button class="tab-btn" onclick="switchTab('social')">Социум</button>
-            <button class="tab-btn" onclick="switchTab('clans')">Кланы</button>
-            <button class="tab-btn" onclick="switchTab('advanced')">Продвинутое</button>
-        </div>
-
-        <!-- НАЧАЛО -->
-        <div id="start" class="content active">
-            <div class="section">
-                <div class="card full-width">
-                    <h3><span class="emoji">🎮</span> Как добавить бота и взять первую жабу</h3>
-                    <ol style="padding-left: 20px; color: var(--text-light);">
-                        <li>Добавьте бота @toadbot в свою беседу (нажмите две кнопки в профиле бота)</li>
-                        <li>Выдайте боту права администратора</li>
-                        <li>Подпишитесь на рассылку жаб (команда "Подписаться на рассылку")</li>
-                        <li>Когда бот отправит жабу, напишите команду "Взять жабу"</li>
-                    </ol>
-                    <div class="info-box" style="margin-top: 20px;">
-                        <strong>⏱️ Важно:</strong> В новых чатах первые 24 часа можно брать всем по одной жабе в день. Потом жабы лимитированы - можно брать только ту, которую отправил бот.
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">📋</span> Подписка на рассылку</h3>
-                    <p>Бесплатная подписка на получение жаб в чат</p>
-                    <ul>
-                        <li>Первая задержка: до 5 часов</li>
-                        <li>Далее: раз в 2 часа по расписанию</li>
-                        <li>Команда: "Подписаться на рассылку"</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🚀</span> Официальный сервер</h3>
-                    <p>Если нет друзей для игры, присоединитесь к официальному игровому чату</p>
-                    <p><strong>Как найти:</strong> напишите команду "Помощь" - там найдёте ссылку на сервер</p>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">⚙️</span> Настройки чата</h3>
-                    <p>Команда: "Настройки чата"</p>
-                    <ul>
-                        <li>Подписка на рассылку жаб</li>
-                        <li>Удаление сообщений бота (через X минут)</li>
-                        <li>Безопасные ники (фильтр мата)</li>
-                        <li>Управление активностями (тусы, гонки)</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- CTA БЛОК -->
-            <div class="content-footer">
-                <p>Ещё нет жабы? Заведи скорее и начни своё приключение в мире болота! 🐸</p>
-                <a href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener" class="cta-btn">
-                    Завести жабу <span>↗</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- ПЕРСОНАЖ -->
-        <div id="character" class="content">
-            <div class="section">
-                <div class="card full-width">
-                    <h3><span class="emoji">🐸</span> Базовая информация о жабе</h3>
-                    <div class="stat-grid">
-                        <div class="stat">
-                            <div class="label">Уровень</div>
-                            <div class="value">1-???</div>
-                        </div>
-                        <div class="stat">
-                            <div class="label">Сытость</div>
-                            <div class="value">0-500</div>
-                        </div>
-                        <div class="stat">
-                            <div class="label">Настроение</div>
-                            <div class="value">0-500</div>
-                        </div>
-                        <div class="stat">
-                            <div class="label">Состояние</div>
-                            <div class="value">Здоро́вая</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">📛</span> Имя жабы</h3>
-                    <p>Дайте имя своей жабе командой "Дать жабе имя НАЗВАНИЕ"</p>
-                    <div class="compare-grid">
-                        <div class="compare-item">
-                            <h4>Первая смена</h4>
-                            <div class="price">Бесплатно</div>
-                        </div>
-                        <div class="compare-item">
-                            <h4>Последующие</h4>
-                            <div class="price">250 букашек</div>
-                        </div>
-                    </div>
-                    <p style="margin-top: 10px; font-size: 0.9em;">Prime-жабы меняют имя <strong>бесплатно неограниченно</strong></p>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">⭐️</span> Уровень и сытость</h3>
-                    <p>Уровень растёт с сытостью - нужно довести сытость до максимума для уровня</p>
-                    <ul>
-                        <li>За каждые 2 уровня: +1 атака, +1 здоровье</li>
-                        <li>Сытость повышается кормлением</li>
-                        <li>Также дают за победы в клановых войнах</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🍰</span> Кормление</h3>
-                    <div class="stat-grid">
-                        <div class="compare-item">
-                            <h4>Обычная жаба</h4>
-                            <p>Раз в 12 часов</p>
-                            <p><strong>Команда:</strong> "Покормить жабу"</p>
-                        </div>
-                        <div class="compare-item">
-                            <h4>Prime-жаба</h4>
-                            <p>Раз в 6 часов</p>
-                            <p>Плюсы Prime смотрите ниже</p>
-                        </div>
-                    </div>
-                    <div class="success" style="margin-top: 15px;">
-                        <strong>За кормление:</strong> +1 сытость, +15 настроение, букашки
-                    </div>
-                    <div class="warning" style="margin-top: 10px;">
-                        Если не кормить 30 дней (60 для Prime) - жаба умрёт!
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">👑</span> Prime-статус</h3>
-                    <p>Платный статус за <strong>89 рублей</strong></p>
-                    <ul>
-                        <li>Кормление в 2x чаще (раз в 6 часов)</li>
-                        <li>Больше времени на жизнь (60 дней без корма)</li>
-                        <li>Неограниченная смена имени</li>
-                        <li>Пропуск 5 дней в месяц вместо 3</li>
-                        <li>Смена фото жабенка</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">👻</span> Настроение</h3>
-                    <p>Влияет на заработок букашек</p>
-                    <div class="stat-grid">
-                        <div class="compare-item">
-                            <h4>Ужасное</h4>
-                            <p>−10% букашек</p>
-                        </div>
-                        <div class="compare-item">
-                            <h4>Отличное</h4>
-                            <p>+10% букашек</p>
-                        </div>
-                    </div>
-                    <p style="margin-top: 15px;"><strong>Поднять настроение:</strong></p>
-                    <ul>
-                        <li>Леденцы: +25 единиц (300 букашек)</li>
-                        <li>Туса: +5 за каждую жабу (макс +50 за 10 жаб)</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">❤️</span> Состояние здоровья</h3>
-                    <p>Может измениться после сражений</p>
-                    <ul>
-                        <li><strong>Здоровая:</strong> боевая готовность 100%</li>
-                        <li><strong>Нуждается в реанимации:</strong> нужна аптечка</li>
-                    </ul>
-                    <p style="margin-top: 10px;"><strong>Восстанавливается:</strong> после кормления, откорма, работой в столовой</p>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🐞</span> Букашки (валюта)</h3>
-                    <p>Игровая валюта. Команда проверки: "Мой баланс"</p>
-                    <p><strong>На что тратить:</strong></p>
-                    <ul>
-                        <li>Леденцы, аптечки, снаряжение</li>
-                        <li>Вход в подземелья и клан</li>
-                        <li>Создание брака и забота о жабенке</li>
-                        <li>Аренда, рулетка, карты болота</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🥇</span> Ачивки</h3>
-                    <p>Получаются за определённые достижения</p>
-                    <ul>
-                        <li>Команда просмотра: "Ачивки"</li>
-                        <li>Мой прогресс: "Мои ачивки"</li>
-                        <li>Обновляются после кормления</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">⚔️☠️</span> Боевая статистика</h3>
-                    <p>Отслеживание побед и поражений</p>
-                    <ul>
-                        <li>Количество побед ⚔️</li>
-                        <li>Количество поражений ☠️</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- КЛАССЫ -->
-            <div style="margin-top: 40px;">
-                <h2 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8em;">🐸 Классы жаб</h2>
-                <p style="color: var(--text-light); margin-bottom: 20px;">Выбираются на 5-м уровне. Команда: "Выбрать класс"</p>
-                
-                <div class="section">
-                    <div class="card">
-                        <h3><span class="emoji">👷</span> Ремесленник</h3>
-                        <p><strong>Специалист по крафту броні</strong></p>
-                        <ul>
-                            <li>Повышенные показатели брони</li>
-                            <li>Сниженный урон из-за веса</li>
-                            <li>+% урона в подземельях</li>
-                        </ul>
-                        <p style="margin-top: 10px; color: var(--accent);"><strong>Идеален для:</strong> танков и подземелий</p>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🦹</span> Ассасин</h3>
-                        <p><strong>Ловкий ниндзя болота</strong></p>
-                        <ul>
-                            <li>Сначала слабая броня, потом улучшается</li>
-                            <li>Лучше работают отмычки в ограблениях</li>
-                            <li>Уклоняются от ударов врага</li>
-                        </ul>
-                        <p style="margin-top: 10px; color: var(--accent);"><strong>Идеален для:</strong> ограблений и уворотов</p>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🧙</span> Авантюрист</h3>
-                        <p><strong>Любитель сражений и приключений</strong></p>
-                        <ul>
-                            <li>Банда срабатывает чаще (до 9% на 3-м уровне)</li>
-                            <li>Дополнительный урон оружию</li>
-                            <li>Банда может убежать быстрее</li>
-                        </ul>
-                        <p style="margin-top: 10px; color: var(--accent);"><strong>Идеален для:</strong> агрессивного плея</p>
-                    </div>
-                </div>
-
-                <div class="info-box" style="margin-top: 20px;">
-                    <strong>💰 Стоимость выбора:</strong> 1000 букашек за первый выбор, 5000 за смену. 
-                    <strong>⏳ Повышение уровня класса:</strong> 7500 (уровень 2) и 10000 (уровень 3) букашек + 30/45 дней ожидания.
-                </div>
-            </div>
-
-            <!-- CTA БЛОК -->
-            <div class="content-footer">
-                <p>Ещё нет жабы? Заведи скорее и начни своё приключение в мире болота! 🐸</p>
-                <a href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener" class="cta-btn">
-                    Завести жабу <span>↗</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- СНАРЯЖЕНИЕ -->
-        <div id="equipment" class="content">
-            <div class="section">
-                <div class="card full-width">
-                    <h3><span class="emoji">🛡️</span> Система снаряжения</h3>
-                    <p>Усилить характеристики жабы помогает снаряжение. Команда: "Снаряжение"</p>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">❤️</span> Здоровье</h3>
-                    <p>Показывает запас здоровья в боях</p>
-                    <ul>
-                        <li>+1 за каждые 2 уровня</li>
-                        <li>Увеличивается броней</li>
-                        <li>Стаж охранника банка +1 за 10 опыта</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🗡️</span> Атака</h3>
-                    <p>Урон, наносимый в боях</p>
-                    <ul>
-                        <li>+1 за каждые 2 уровня</li>
-                        <li>Увеличивается оружием</li>
-                        <li>Авантюристы +доп урон</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🛡️</span> Защита (Броня)</h3>
-                    <p>Урон, который может поглотить броня</p>
-                    <ul>
-                        <li>Только от снаряжения</li>
-                        <li>Ремесленники +бонус</li>
-                        <li>Подарок от супруга даёт бонус</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🏪</span> Простое снаряжение</h3>
-                    <p>Покупается за букашки</p>
-                    <ul>
-                        <li><strong>Наголовник из грязи:</strong> 300 букашек, прочность 10</li>
-                        <li>Сломается через 10 боев</li>
-                        <li>Нужно постоянно чинить/заменять</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">⚒️</span> Крафтованное снаряжение</h3>
-                    <p>Крафтится из кусочков (сильнее и долговечнее)</p>
-                    <ul>
-                        <li>Кусочки выпадают в подземельях</li>
-                        <li>Команда: "Конвертировать" - замена ненужных кусочков</li>
-                        <li>Команда крафта: "Снаряжение"</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🔧</span> Чинка снаряжения</h3>
-                    <p>Используйте изоленту для восстановления</p>
-                    <ul>
-                        <li>Команда: "Починить НАЗВАНИЕ"</li>
-                        <li>Нельзя чинить полностью сломанное</li>
-                        <li>Изолента выпадает из жабёнка (раз в 12 часов)</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🎁</span> Подарки от супруга</h3>
-                    <p>Улучшают характеристики на 72 часа</p>
-                    <div class="compare-grid">
-                        <div class="compare-item">
-                            <h4>Перьевая шапочка</h4>
-                            <p>+7 броня</p>
-                            <div class="price">200 букашек</div>
-                        </div>
-                        <div class="compare-item">
-                            <h4>Утяжелительные бусы</h4>
-                            <p>+7 атака</p>
-                            <div class="price">300 букашек</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- МОДИФИКАТОРЫ -->
-            <div style="margin-top: 40px;">
-                <h2 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8em;">🔨 Модификаторы для броні</h2>
-                <p style="color: var(--text-light); margin-bottom: 20px;">Команда: "Выбрать модификатор"</p>
-
-                <div class="section">
-                    <div class="card full-width">
-                        <h3><span class="emoji">⚙️</span> Как работают модификаторы</h3>
-                        <ul>
-                            <li>Надеваются на броню</li>
-                            <li>Привязаны к броне, не имеют собственной прочности</li>
-                            <li>Ломаются вместе с броней</li>
-                            <li>Эффект зависит от количества одинаковых модификаторов</li>
-                        </ul>
-                        <div class="info-box" style="margin-top: 15px;">
-                            <strong>Пример:</strong> Модификатор "+урон" на наголовнике = +5. На наголовнике и нагруднике = +8. На всех трёх = +10.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- БАНДЫ -->
-            <div style="margin-top: 40px;">
-                <h2 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8em;">🏋️ Банды</h2>
-                
-                <div class="section">
-                    <div class="card">
-                        <h3><span class="emoji">🐸</span> Лягушачья братва</h3>
-                        <p><strong>+100% к урону</strong></p>
-                        <p><strong>Как получить:</strong> Соберите 10 жабулей (неигровых), команда "Собрать банду"</p>
-                        <div class="price" style="margin-top: 10px;">Бесплатно</div>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🦅</span> Банда цапель</h3>
-                        <p><strong>+200% к урону</strong></p>
-                        <p><strong>Как получить:</strong> Работой грабителя (редкий дроп)</p>
-                        <div class="price" style="margin-top: 10px;">Редкость: 🔴 Очень редко</div>
-                    </div>
-
-                    <div class="card full-width">
-                        <h3><span class="emoji">💚</span> Верность банды</h3>
-                        <p><strong>Влияет на вероятность использования банды в бою</strong></p>
-                        
-                        <p style="margin-top: 15px;"><strong>Понижается на:</strong></p>
-                        <ul>
-                            <li>-2 за каждое сражение</li>
-                            <li>-5 или -10 в день (зависит от настроения жабы)</li>
-                            <li>-10 если банда получит крит урон</li>
-                        </ul>
-
-                        <p style="margin-top: 15px;"><strong>Повышается на:</strong></p>
-                        <ul>
-                            <li>+10 за тусу (100 букашек доп)</li>
-                            <li>+10 за леденец</li>
-                            <li>+5 за кормление/откорм</li>
-                        </ul>
-
-                        <div style="margin-top: 15px; padding: 15px; background: var(--light-bg); border-radius: 8px;">
-                            <strong>Шансы срабатывания:</strong>
-                            <p style="margin: 8px 0;">Верность &lt; 30: 5% | 30-80: 6% | &gt; 80: 7%</p>
-                            <p style="margin: 8px 0;"><strong>Авантюристы 3-го уровня:</strong> До 9%</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">📿</span> Кулон братвы</h3>
-                        <p>+50 макс верность, +10% урон</p>
-                        <p><strong>Время:</strong> 5 дней</p>
-                        <p><strong>Где:</strong> Крафт в снаряжении</p>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">📿</span> Кулон цапель</h3>
-                        <p>+100 макс верность, +15% урон</p>
-                        <p><strong>Время:</strong> 7 дней</p>
-                        <p><strong>Где:</strong> Арена (редкий дроп при победе)</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA БЛОК -->
-            <div class="content-footer">
-                <p>Ещё нет жабы? Заведи скорее и начни своё приключение в мире болота! 🐸</p>
-                <a href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener" class="cta-btn">
-                    Завести жабу <span>↗</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- БОЕВАЯ СИСТЕМА -->
-        <div id="battles" class="content">
-            <div class="section">
-                <div class="card full-width">
-                    <h3><span class="emoji">⚔️</span> Как происходит сражение</h3>
-                    <p>Жабы атакуют друг друга по ходам. Каждый ход - атака обеих сторон.</p>
-                    <div style="margin-top: 15px; padding: 15px; background: var(--light-bg); border-radius: 8px;">
-                        <p><strong>Расчёт урона:</strong> Рандомно в диапазоне [атака/2; атака]</p>
-                        <p><strong>Поглощение броней:</strong> Рандомно в диапазоне [0; броня]</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">❓</span> Исходы сражения</h3>
-                    <ul>
-                        <li><strong>Победа:</strong> противник нужен реанимировать</li>
-                        <li><strong>Поражение:</strong> ваша жаба нужна аптечка</li>
-                        <li><strong>Ничья:</strong> можете переиграть без потерь</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">💊</span> Реанимация</h3>
-                    <p>Нужна после поражения</p>
-                    <ul>
-                        <li>Аптечка: 300 букашек</li>
-                        <li>Кормление жабы</li>
-                        <li>Работа в столовой (шанс)</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🎯</span> Важные параметры</h3>
-                    <ul>
-                        <li><strong>Здоровье (❤️):</strong> запас прочности</li>
-                        <li><strong>Атака (🗡️):</strong> урон за ход</li>
-                        <li><strong>Защита (🛡️):</strong> поглощение урона</li>
-                    </ul>
-                    <p style="margin-top: 10px;">
-                        <strong>Бонусы:</strong> Личные усилители, клановые усилители, снаряжение, модификаторы
-                    </p>
-                </div>
-            </div>
-
-            <!-- АРЕНА -->
-            <div style="margin-top: 40px;">
-                <h2 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8em;">🏟️ Арена</h2>
-                
-                <div class="info-box">
-                    <strong>Межчатовая арена!</strong> Сражайтесь с жабами из других чатов и зарабатывайте награды.
-                </div>
-
-                <div class="section">
-                    <div class="card full-width">
-                        <h3><span class="emoji">📅</span> Как работает Арена</h3>
-                        <p><strong>Время работы:</strong> 8:00 - 22:00 МСК</p>
-                        <p><strong>Регистрация:</strong> Первые 50 минут каждого часа</p>
-                        <p><strong>Команда регистрации:</strong> "На арену" (100 букашек)</p>
-                        <p><strong>Команда атаки:</strong> "На арену" (в следующий час)</p>
-                        <p><strong>Результаты:</strong> Приходят в последние 10 минут часа атаки</p>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🥇</span> Система лиг</h3>
-                        <p><strong>Telegram:</strong></p>
-                        <ul>
-                            <li>Золотая (100 мест)</li>
-                            <li>Серебряная (250 мест)</li>
-                            <li>Бронзовая (700 мест)</li>
-                            <li>Деревянная (без лимита)</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🏆</span> Награды Арены</h3>
-                        <ul>
-                            <li>Букашки</li>
-                            <li>Сытость</li>
-                            <li>Кулон Цапель (редко)</li>
-                        </ul>
-                    </div>
-
-                    <div class="card full-width">
-                        <h3><span class="emoji">🤔</span> Как определяется победитель</h3>
-                        <p>Вам выдаётся реальный противник. Суммарно 2 сражения (ваше + его из его чата).</p>
-                        <ul style="margin-top: 10px;">
-                            <li>Вы выиграли + он проиграл = <strong>Ваша победа</strong></li>
-                            <li>Вы выиграли + он выиграл = <strong>Ничья</strong></li>
-                            <li>Вы проиграли + он проиграл = <strong>Ничья</strong></li>
-                            <li>Вы проиграли + он выиграл = <strong>Ваше поражение</strong></li>
-                            <li>Вы проиграли + он пропустил = <strong>Ваша победа (техническое)</strong></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ПОДЗЕМЕЛЬЯ -->
-            <div style="margin-top: 40px;">
-                <h2 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8em;">🏚️ Подземелья</h2>
-                <p style="color: var(--text-light); margin-bottom: 20px;">Команда: "Отправиться в подземелье"</p>
-
-                <div class="section">
-                    <div class="card">
-                        <h3><span class="emoji">🥉</span> Бронзовое подземелье</h3>
-                        <p><strong>Монстр:</strong> Насекомозавр</p>
-                        <div class="price">400 букашек</div>
-                        <p style="margin: 10px 0;"><strong>Выпадает:</strong></p>
-                        <ul>
-                            <li>Водоросли 80%</li>
-                            <li>Кувшинки 20%</li>
-                            <li>Оружейные кусочки</li>
-                            <li>+2 сытости</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🥈</span> Серебряное подземелье</h3>
-                        <p><strong>Монстр:</strong> Пепе</p>
-                        <div class="price">600 букашек</div>
-                        <p style="margin: 10px 0;"><strong>Выпадает:</strong></p>
-                        <ul>
-                            <li>Водоросли 30%</li>
-                            <li>Кувшинки 50%</li>
-                            <li>Цапли 20%</li>
-                            <li>+3 сытости</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🥇</span> Золотое подземелье</h3>
-                        <p><strong>Монстр:</strong> Шрек</p>
-                        <div class="price">800 букашек</div>
-                        <p style="margin: 10px 0;"><strong>Выпадает:</strong></p>
-                        <ul>
-                            <li>Кувшинки 50%</li>
-                            <li>Цапли 50%</li>
-                            <li>Оружейные кусочки</li>
-                            <li>+5 сытости</li>
-                        </ul>
-                    </div>
-
-                    <div class="card full-width">
-                        <h3><span class="emoji">👥</span> Групповой рейд</h3>
-                        <p>Можно ходить группой от 1 до 5 жаб</p>
-                        <ul>
-                            <li>Жаба ждёт у входа остальных</li>
-                            <li>Команда выхода: "Выйти из подземелья" (возврат букашек)</li>
-                            <li>Команда старта: "Рейд старт"</li>
-                            <li>При 5 участниках рейд начинается автоматически</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA БЛОК -->
-            <div class="content-footer">
-                <p>Ещё нет жабы? Заведи скорее и начни своё приключение в мире болота! 🐸</p>
-                <a href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener" class="cta-btn">
-                    Завести жабу <span>↗</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- СОЦИУМ -->
-        <div id="social" class="content">
-            <div class="section">
-                <div class="card full-width">
-                    <h3><span class="emoji">💃</span> Тусы (вечеринки)</h3>
-                    <p>Поднимите настроение своей жабе на весёлой тусе!</p>
-                    <p style="margin: 10px 0;"><strong>Команда отправки:</strong> "Жабу на тусу" (150 букашек или 250 с бандой)</p>
-                    <p><strong>Команда запуска:</strong> "Начать тусу"</p>
-                    <p><strong>Просмотр:</strong> "Туса инфо"</p>
-                    <p><strong>Выход:</strong> "Покинуть тусу" или "Выйти с тусы"</p>
-                    
-                    <div style="margin-top: 15px; padding: 15px; background: var(--light-bg); border-radius: 8px;">
-                        <strong>Награды за тусу:</strong>
-                        <p style="margin: 8px 0;">Настроение: +5 за каждую жабу (макс +50 за 10 жаб)</p>
-                        <p style="margin: 8px 0;">Сытость: +3 каждой жабе</p>
-                        <p style="margin: 8px 0;">Банде: +10 верности</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">💍</span> Предложение брака</h3>
-                    <p>Сделайте предложение руки и сердца!</p>
-                    <p><strong>Как:</strong> Ответьте на сообщение человека командой "Брак предложение"</p>
-                    <div class="price" style="margin-top: 10px;">500 букашек</div>
-                    <p style="margin: 10px 0;"><strong>⏳ Время ответа:</strong> 3 часа</p>
-                    <p><strong>Отозвать:</strong> "Брак отозвать" (вернёт 250 букашек)</p>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">💝</span> Брак - преимущества</h3>
-                    <ul>
-                        <li>Каждые 5 дней получайте награду: +3 леденца и +5 сытости обоим</li>
-                        <li>Команда: "Брак вознаграждение"</li>
-                        <li>Проверка верности: "Брак проверка"</li>
-                        <li>Возможность завести жабёнка!</li>
-                    </ul>
-                </div>
-
-                <div class="card full-width">
-                    <h3><span class="emoji">👨‍👩‍👧</span> Семья и жабёнок</h3>
-                    <p><strong>Команда:</strong> "Моя семья"</p>
-                    <p style="margin: 10px 0;"><strong>Требования для жабёнка:</strong></p>
-                    <ul>
-                        <li>Брак больше 11 дней ИЛИ дейлик на взятие</li>
-                        <li>Команда: "Взять жабенка" (при рассылке жаб)</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🍼</span> Кормление жабёнка</h3>
-                    <p><strong>Раз в 12 часов</strong></p>
-                    <ul>
-                        <li>Команда: "Покормить жабенка" (75 букашек)</li>
-                        <li>Может выплюнуть изоленту (для чинки)</li>
-                        <li>С шансом выплюнет конфетку</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">📝</span> Имя жабёнка</h3>
-                    <p>Команда: "Дать жабенку имя ИМЯ"</p>
-                    <div class="price">250 букашек</div>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🎓</span> Детский сад</h3>
-                    <p><strong>Команда:</strong> "Отправить жабенка в детсад"</p>
-                    <p style="margin: 10px 0;"><strong>Время:</strong> 6:00-12:00 МСК, на 6 часов (максимум 8)</p>
-                    <p><strong>Забрать:</strong> Не позже 8 часов (иначе штраф)</p>
-                    <p style="margin: 10px 0;"><strong>Выпадает:</strong> Плюшки, может меняться авторитет</p>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🥊</span> Махач жабёнка</h3>
-                    <p>Драка с другим жабёнком в садике</p>
-                    <ul>
-                        <li>Команда: "Отправить жабенка на махач" (через 2 часа после сада)</li>
-                        <li>Влияет авторитет и настроение</li>
-                        <li>Может принести макарошки (сытость)</li>
-                        <li>Может дать бафф "Плевок жабенка"</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">📸</span> Смена фото жабёнка</h3>
-                    <p>Команда: "Сменить фото жабенка"</p>
-                    <p style="margin: 10px 0;"><strong>Требования:</strong></p>
-                    <ul>
-                        <li>Жабёнок 2-го уровня</li>
-                        <li>Хотя бы один родитель с Prime-статусом</li>
-                        <li>Только родитель с Prime может менять</li>
-                    </ul>
-                </div>
-
-                <div class="card full-width">
-                    <h3><span class="emoji">🎁</span> Подарки партнёру</h3>
-                    <p><strong>Команда:</strong> "Сделать подарок"</p>
-                    <div class="compare-grid">
-                        <div class="compare-item">
-                            <h4>🍧 Рахат-лукум</h4>
-                            <p>Настроение + сытость</p>
-                            <div class="price">150 букашек</div>
-                        </div>
-                        <div class="compare-item">
-                            <h4>💍 Золотое кольцо</h4>
-                            <p>Настроение +++</p>
-                            <div class="price">350 букашек</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card full-width">
-                    <h3><span class="emoji">🎁</span> Подарки жабёнку</h3>
-                    <p><strong>Команда:</strong> "Сделать подарок"</p>
-                    <p>Дарить можно раз в сутки (любой из родителей)</p>
-                    <p style="margin: 10px 0;"><strong>Виды подарков:</strong> Конфетки или водоросли</p>
-                    <p><strong>Эффект:</strong> Меняют настроение жабёнка (может съесть, но маловероятно)</p>
-                </div>
-            </div>
-
-            <!-- СОСТОЯНИЯ ЖАБЁНКА -->
-            <div style="margin-top: 40px;">
-                <h2 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8em;">😐 Настроения жабёнка</h2>
-                <p style="color: var(--text-light); margin-bottom: 20px;">Каждое настроение длится макс 48 часов, потом сбрасывается на спокойное</p>
-
-                <div class="section">
-                    <div class="card">
-                        <h3><span class="emoji">😐</span> Спокойное</h3>
-                        <p>Нейтральное состояние</p>
-                        <ul>
-                            <li>Нет эффектов</li>
-                            <li>Состояние по умолчанию</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🤢</span> Отвращение</h3>
-                        <p>После неудачного кормления</p>
-                        <ul>
-                            <li>Шанс успешно покормить: 25%</li>
-                            <li>Шанс отказа: 25%</li>
-                            <li>Шанс выблевать: 50%</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">😡</span> Разгневанный</h3>
-                        <p>После 3+ поражений в махаче подряд</p>
-                        <ul>
-                            <li>Повышен шанс отказа от еды</li>
-                            <li>+% к победам в махачах</li>
-                            <li>Повышен шанс отнять игрушку</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">😢</span> Грустный</h3>
-                        <p>После поражения родителя или отнятия игрушки</p>
-                        <ul>
-                            <li>Шанс проигрыша +10%</li>
-                            <li>Шанс отказа от еды +</li>
-                            <li>-5 авторитета в день</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">😋</span> Радостный</h3>
-                        <p>После подарка от родителя</p>
-                        <ul>
-                            <li>+% к поделкам в саду</li>
-                            <li>+% к шансу покушать</li>
-                            <li>+5 авторитета в день</li>
-                            <li>+5 настроения родителю в день</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🤩</span> Счастливый</h3>
-                        <p>Подарок когда уже радостный</p>
-                        <ul>
-                            <li>Максимальные бонусы</li>
-                            <li>+10% к победам в махаче</li>
-                            <li>+10 настроения родителям в день</li>
-                            <li>+5 авторитета в день</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA БЛОК -->
-            <div class="content-footer">
-                <p>Ещё нет жабы? Заведи скорее и начни своё приключение в мире болота! 🐸</p>
-                <a href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener" class="cta-btn">
-                    Завести жабу <span>↗</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- КЛАНЫ -->
-        <div id="clans" class="content">
-            <div class="section">
-                <div class="card full-width">
-                    <h3><span class="emoji">🏰</span> Что такое клан</h3>
-                    <p>Самая важная часть Жабабота! Кланы - основа заработка и развития.</p>
-                    <ul>
-                        <li>Создание: "Создать клан НАЗВАНИЕ" (1500 букашек)</li>
-                        <li>Вступление: 4+ человека по 750 букашек каждый</li>
-                        <li>Всего должно быть 5+ человек в клане</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">⏳</span> Опыт клана</h3>
-                    <p>Зарабатывается за победы в клановых войнах</p>
-                    <p style="margin: 10px 0;"><strong>Уровень клана:</strong> Поднимается при максимуме опыта</p>
-                    <p><strong>Вознаграждение:</strong> "Клан вознаграждение" (нужно 5 сражений) - до 1250 букашек</p>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">⚔️</span> Лига клана</h3>
-                    <p><strong>Всего 4 лиги:</strong> Деревянная → Бронзовая → Серебряная → Золотая</p>
-                    <p style="margin: 10px 0;"><strong>Обновление:</strong> Раз в 10 дней (сезон)</p>
-                    <p><strong>Повышение:</strong> Набирайте победы в клановых войнах</p>
-                    <p><strong>Команда:</strong> "Клан сезон"</p>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🥇</span> Клановые ачивки</h3>
-                    <p>Достижения клана с грейдами (бронза, серебро, золото)</p>
-                    <ul>
-                        <li>Награда: Несгораемые карты болота</li>
-                        <li>За каждый уровень ачивки отдельная награда</li>
-                        <li>Команда: "Клановые ачивки"</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🏆</span> Клановые очки</h3>
-                    <p>Валюта для покупки усилителей</p>
-                    <ul>
-                        <li>+3 за победу в войне</li>
-                        <li>+1 за ничью</li>
-                        <li>Покупка: "Выбрать усилитель клана"</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🚀</span> Клановый усилитель</h3>
-                    <p>Покупается за клановые очки</p>
-                    <ul>
-                        <li>Время действия: 120 часов (5 дней)</li>
-                        <li>Крафт только ремесленником</li>
-                        <li>Лидер подтверждает заявку</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🎨</span> Герб клана</h3>
-                    <p>Команда: "Сменить фото клана"</p>
-                    <ul>
-                        <li>Бесплатно (не нужен Prime)</li>
-                        <li>Смена раз в 7 дней</li>
-                        <li>Нужен 3-й уровень клана</li>
-                        <li>GIF требует GIF-привилегию</li>
-                    </ul>
-                </div>
-
-                <div class="card full-width">
-                    <h3><span class="emoji">🗺️</span> Клановый поход за картой</h3>
-                    <p>Раз в 8 часов по команде "Отправиться за картой"</p>
-                    <ul>
-                        <li>Участники выбирают путь похода</li>
-                        <li>Могут встречаться преграды</li>
-                        <li>Награда: Карта болота для клановой войны</li>
-                    </ul>
-                    <p style="margin-top: 10px;"><strong>⚠️ Важно:</strong> Карты сгорают в конце сезона (остаётся 1)</p>
-                </div>
-            </div>
-
-            <!-- КЛАНОВЫЕ ВОЙНЫ -->
-            <div style="margin-top: 40px;">
-                <h2 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8em;">⚔️ Клановые войны</h2>
-
-                <div class="section">
-                    <div class="card full-width">
-                        <h3><span class="emoji">📅</span> Расписание войн</h3>
-                        <p><strong>Часовой пояс: GMT+3</strong></p>
-                        <p style="margin: 10px 0;"><strong>Процесс:</strong></p>
-                        <ul>
-                            <li>Регистрация: "Начать клановую войну"</li>
-                            <li>Система подбирает врага через 2 часа</li>
-                            <li>Результаты через 3 часа после регистрации</li>
-                        </ul>
-                        <p style="margin: 10px 0;"><strong>Пример:</strong> Регистрация в 07:34 → враг в 09:00 → результаты в 12:00</p>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🗺️</span> Типы карт</h3>
-                        <div class="compare-grid">
-                            <div class="compare-item">
-                                <h4>Обычная карта</h4>
-                                <p>Сгорает в конце сезона</p>
-                                <p>Приоритет: выше</p>
-                            </div>
-                            <div class="compare-item">
-                                <h4>Донатная карта 💎</h4>
-                                <p>Не сгорает</p>
-                                <p>Приоритет: ниже</p>
-                            </div>
-                        </div>
-                        <p style="margin-top: 10px; font-size: 0.9em;">Пример инвентаря: карта болота: 1 + (💎 3) = 1 обычная + 3 донатных</p>
-                    </div>
-
-                    <div class="card full-width">
-                        <h3><span class="emoji">⚔️</span> Механика клановой войны</h3>
-                        <ul>
-                            <li>Каждый из клана совершает атаку: "Напасть на клан"</li>
-                            <li>Сражаются со случайным противником из вражеского клана</li>
-                            <li>За победу: +1 очко клану</li>
-                            <li>Используются те же параметры: здоровье, атака, броня</li>
-                        </ul>
-                        <div class="warning" style="margin-top: 15px;">
-                            <strong>⚠️ Важно:</strong> Если жаба не атаковала сама, но выиграла в чате врага, очко не засчитывается!
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🎁</span> Награды войны</h3>
-                        <ul>
-                            <li>+3 клановых очка за победу</li>
-                            <li>+1 очко за ничью</li>
-                            <li>Переигровок нет</li>
-                            <li>Бонусы за 15+/20+/30+ сражений</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">📊</span> Структура лиг</h3>
-                        <p><strong>Золотая:</strong> 50 мест, вниз 25</p>
-                        <p><strong>Серебряная:</strong> 100 мест, вверх 25, вниз 30</p>
-                        <p><strong>Бронзовая:</strong> 200 мест, вверх 30, вниз 50</p>
-                        <p><strong>Деревянная:</strong> без лимита, вверх 50</p>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">💰</span> Стабильность лиги</h3>
-                        <p>Если клан 2+ сезона в одной лиге, получает больше букашек!</p>
-                        <p style="margin: 10px 0;">Дополнительные бонусы букашек за:</p>
-                        <ul>
-                            <li>15+ сражений за сезон</li>
-                            <li>20+ сражений</li>
-                            <li>30+ сражений</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA БЛОК -->
-            <div class="content-footer">
-                <p>Ещё нет жабы? Заведи скорее и начни своё приключение в мире болота! 🐸</p>
-                <a href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener" class="cta-btn">
-                    Завести жабу <span>↗</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- ПРОДВИНУТОЕ -->
-        <div id="advanced" class="content">
-            <div class="section">
-                <div class="card full-width">
-                    <h3><span class="emoji">💼</span> Работа и заработок</h3>
-                    <p>Раз в 8 часов можно отправить жабу на работу. Команда: "Отправить жабу на работу"</p>
-                    <p style="margin: 10px 0;"><strong>Длительность:</strong> 2 часа (лучше не оставлять дольше)</p>
-                    <p><strong>Отдых:</strong> 6 часов</p>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🍽️</span> Столовая</h3>
-                    <p>Базовая работа (можно идти побитой)</p>
-                    <ul>
-                        <li>Букашки</li>
-                        <li>Сытость</li>
-                        <li>Шанс реанимироваться</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🎰</span> Крупье</h3>
-                    <p>Азартная работа</p>
-                    <ul>
-                        <li>Карта болота</li>
-                        <li>Букашки</li>
-                        <li>Аптечки</li>
-                        <li>Сытость</li>
-                        <li>Шанс ничего не получить</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🎭</span> Грабитель</h3>
-                    <p>Опасная работа</p>
-                    <ul>
-                        <li>Букашки +++</li>
-                        <li>Аптечки</li>
-                        <li>Сытость</li>
-                        <li>Банда цапель (редко)</li>
-                        <li>Риск: тумаки от цапель</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">☕</span> Кафетерий</h3>
-                    <p><strong>Прогрессивная работа на карте болота</strong></p>
-                    <p style="margin: 10px 0;"><strong>6 должностей:</strong> Стажер → Шеф-повар (50 опыта макс)</p>
-                    <p><strong>Путь туда:</strong> "Отправиться в кафетерий" (10 минут) → "Начать работу"</p>
-                    <p style="margin: 10px 0;"><strong>Механика:</strong> Выполняйте заказы по "Открыть книгу рецептов"</p>
-                    <p><strong>Бонус:</strong> +1% шанса доп сытости за кормление за каждый опыт (макс 50%)</p>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🎰</span> Казино</h3>
-                    <p><strong>Самая прибыльная работа</strong></p>
-                    <p style="margin: 10px 0;"><strong>6 должностей:</strong> Прохожий → Всемирный чемпион (100 опыта макс)</p>
-                    <p><strong>Путь туда:</strong> "Отправиться в казино" (15 минут) → "Начать работу"</p>
-                    <p><strong>Механика:</strong> Каждые 15 минут рулетка - выигрыш увеличивает заработок!</p>
-                    <p style="margin: 10px 0;"><strong>Бонус:</strong> +% шанса доп карты болота в клановом походе (макс 25% при макс должности)</p>
-                </div>
-
-                <div class="card">
-                    <h3><span class="emoji">🏦</span> Охранник банка</h3>
-                    <p><strong>Работа защиты</strong></p>
-                    <p style="margin: 10px 0;"><strong>6 должностей:</strong> (100 опыта макс)</p>
-                    <p><strong>Путь туда:</strong> "Отправиться в банк" (20 минут) → "Начать работу"</p>
-                    <p><strong>Механика:</strong> Проверяйте чемоданы посетителей (15 минут на чемодан)</p>
-                    <p style="margin: 10px 0;"><strong>Бонус:</strong> Стаж +1 к макс прочности броні за каждые 10 опыта</p>
-                    <p><strong>Награда:</strong> Букашки, сытость, аптечки, возможность банды цапель</p>
-                </div>
-
-                <div class="card full-width">
-                    <h3><span class="emoji">📊</span> Карта болотной местности</h3>
-                    <p>Каждая жаба имеет карту. Команда: "Отправиться в поход"</p>
-                    <ul>
-                        <li>Путешествие по локациям болота</li>
-                        <li>Разблокировка новых мест работы</li>
-                        <li>Команда: "Где жаба" - проверить локацию</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- ОГРАБЛЕНИЯ -->
-            <div style="margin-top: 40px;">
-                <h2 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8em;">🏪 Ограбления</h2>
-
-                <div class="section">
-                    <div class="card full-width">
-                        <h3><span class="emoji">🚨</span> Как работает ограбление</h3>
-                        <ol style="padding-left: 20px; color: var(--text-light);">
-                            <li>Создать комнату: "Начать ограбление"</li>
-                            <li>Пригласить людей: "Пригласить на ограбление" (2-5 человек)</li>
-                            <li>Собрать снаряжение</li>
-                            <li>Запустить и уложиться за 15 минут</li>
-                        </ol>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">📝</span> Нужное снаряжение</h3>
-                        <p><strong>🔖 Пропуск:</strong> Для каждого участника</p>
-                        <p><strong>🔋 Батарейка:</strong> 2-4 на группу</p>
-                        <p><strong>🪛 Отмычки:</strong> 6+ (если вскрывать сейфы)</p>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">⚒️</span> Где взять материалы</h3>
-                        <p>Кусочки для крафта выпадают:</p>
-                        <ul>
-                            <li>При кормлении жабы</li>
-                            <li>На работе</li>
-                            <li>На арене</li>
-                            <li>В садике</li>
-                        </ul>
-                        <p style="margin-top: 10px;"><strong>⚠️ Только в комнате ограбления!</strong></p>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🔨</span> Крафт снаряжения</h3>
-                        <p>Команда: "Скрафтить снаряжение"</p>
-                        <ul>
-                            <li>Бот отправит рецепт</li>
-                            <li>Положите кусочки в верстак</li>
-                            <li>⚠️ Вернуть нельзя!</li>
-                            <li>Сбросить = потеря всех кусочков</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">💱</span> Конвертация кусочков</h3>
-                        <p>Команда: "Конвертировать"</p>
-                        <ul>
-                            <li>Обменивайте ненужное на нужное</li>
-                            <li>Невыгодный курс</li>
-                            <li>НПС Сидорович помогает</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- СОРЕВНОВАНИЯ -->
-            <div style="margin-top: 40px;">
-                <h2 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8em;">🏆 Соревнования</h2>
-                <p style="color: var(--text-light); margin-bottom: 20px;">Сезоны длятся 5 дней. Даты: 1, 11, 21 каждого месяца</p>
-
-                <div class="section">
-                    <div class="card">
-                        <h3><span class="emoji">🌟</span> Самые сытые жабы</h3>
-                        <p>Топ по сытости за сезон</p>
-                        <ul>
-                            <li>⚠️ Не учитывается: сундуки, капсулы, клановый сезон</li>
-                            <li>Команда: "Соревнование сытость"</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🌟</span> Самые активные кланы</h3>
-                        <p>Топ по кол-во атак в клановых войнах</p>
-                        <ul>
-                            <li>Исход не важен!</li>
-                            <li>Команда: "Соревнование кланы"</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">👑</span> Короли арены</h3>
-                        <p>Топ по победам на арене</p>
-                        <ul>
-                            <li>Важна комбинация брони, модификаторов, усилителей, класса</li>
-                            <li>Команда: "Соревнование арена"</li>
-                        </ul>
-                    </div>
-
-                    <div class="card full-width">
-                        <h3><span class="emoji">💠</span> Награды топов</h3>
-                        <ul>
-                            <li>ЖабоГемы (до 30)</li>
-                            <li>Карты болота (до 10)</li>
-                            <li>Капсула опыта</li>
-                            <li>Ачивка "Чемпион" (топ-10)</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">💪</span> Ачивка "Чемпион"</h3>
-                        <p>За попадание в топ-10 любого соревнования</p>
-                        <ul>
-                            <li>Золотая ачивка</li>
-                            <li>Накопительный эффект (Чемпион I, II, III...)</li>
-                            <li>Не более 1 степени за сезон</li>
-                            <li>Обладатели могут давать имена бандам!</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-box">
-                        <strong>⏱️ Важно:</strong> Смотреть один топ можно раз в 60 минут!
-                    </div>
-                </div>
-            </div>
-
-            <!-- ЕЖЕДНЕВНЫЕ ЗАДАНИЯ -->
-            <div style="margin-top: 40px;">
-                <h2 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8em;">📋 Ежедневные задания</h2>
-
-                <div class="section">
-                    <div class="card full-width">
-                        <h3><span class="emoji">🎓</span> Система заданий</h3>
-                        <p>Выполняйте задачи каждый день и получайте награды!</p>
-                        <ul>
-                            <li>Команда: "Ежедневные задания"</li>
-                            <li>Получить награду: "Получить награду"</li>
-                            <li>Автоматический зачет в конце дня</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">💚</span> Зелёный (Автоматический)</h3>
-                        <p>Награды:</p>
-                        <ul>
-                            <li>Букашки 🐞</li>
-                            <li>Аптечки 💊</li>
-                            <li>Леденцы 🍭</li>
-                            <li>Сытость 🍰</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🧡</span> Бронзовый (3+ дня)</h3>
-                        <p>Добавляется:</p>
-                        <ul>
-                            <li>ЖабоГемы 💠</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🤍</span> Серебряный (7+ дней)</h3>
-                        <p>Добавляется:</p>
-                        <ul>
-                            <li>Карта болота 🗺️</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">💛</span> Золотой (14+ дней)</h3>
-                        <p>Добавляется:</p>
-                        <ul>
-                            <li>Изолента 🧿</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">⏳</span> Пропуски</h3>
-                        <p><strong>Обычная жаба:</strong> 3 пропуска в месяц</p>
-                        <p><strong>Prime-жаба:</strong> 5 пропусков в месяц</p>
-                        <p style="margin: 10px 0;">При превышении лимита - сброс на 10 дней!</p>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🐣</span> Специальное задание</h3>
-                        <p>Если задание на жабёнка, а брак &lt;11 дней:</p>
-                        <ul>
-                            <li>Таймер не действует</li>
-                            <li>Можно взять жабёнка сразу</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ИНВЕНТАРЬ -->
-            <div style="margin-top: 40px;">
-                <h2 style="color: var(--primary); margin-bottom: 20px; font-size: 1.8em;">🎒 Инвентарь</h2>
-                <p style="color: var(--text-light); margin-bottom: 20px;">Команда: "Мой инвентарь"</p>
-
-                <div class="section">
-                    <div class="card">
-                        <h3><span class="emoji">🍭</span> Леденцы</h3>
-                        <p>+25 настроения</p>
-                        <div class="price">300 букашек</div>
-                        <p style="margin: 10px 0;"><strong>Использование:</strong> "Использовать леденец 1"</p>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">💊</span> Аптечки</h3>
-                        <p>Реанимируют жабку</p>
-                        <div class="price">300 букашек</div>
-                        <p style="margin: 10px 0;"><strong>Использование:</strong> "Реанимировать жабу"</p>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🍺</span> Пивас</h3>
-                        <p>+шанс победы в гонке</p>
-                        <div class="price">750 букашек</div>
-                        <p style="margin: 10px 0;"><strong>Один раз на жабу!</strong></p>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🦟</span> Стрекозуля удачи</h3>
-                        <p>+10% букашек</p>
-                        <div class="price">2000 букашек</div>
-                        <p style="margin: 10px 0;"><strong>Один раз на жабу!</strong></p>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🪲</span> Драгоценный жучок</h3>
-                        <p>+10% букашек</p>
-                        <ul>
-                            <li>Добавьте тег @toadbot в описание профиля</li>
-                            <li>Жучок появится в инвентаре</li>
-                            <li>Работает пока тег в профиле</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🗺️</span> Карта болота</h3>
-                        <p>Для запуска клановых войн</p>
-                        <ul>
-                            <li>Добывается в клановом походе</li>
-                            <li>Шанс с работы крупье</li>
-                            <li>Сгорает в конце сезона</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🧿</span> Изолента</h3>
-                        <p>Чинит снаряжение</p>
-                        <ul>
-                            <li>Выплюёт жабёнок (раз в 12 часов)</li>
-                            <li>Из сундуков</li>
-                            <li>Команда чинки: "Починить НАЗВАНИЕ"</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🐸</span> Жабули</h3>
-                        <p>Неигровые жабы для банды</p>
-                        <ul>
-                            <li>Собирайте по 10 штук</li>
-                            <li>Команда сборки: "Собрать банду"</li>
-                            <li>Получите Лягушачью братву</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">🔋</span> Капсула опыта</h3>
-                        <p>За золотую ачивку</p>
-                        <ul>
-                            <li>+35 сытости независимо от уровня</li>
-                            <li>Можно получить сразу несколько уровней</li>
-                            <li>Команда: "Использовать капсулу опыта"</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3><span class="emoji">💠</span> ЖабоГемы</h3>
-                        <p>Валюта для модификаторов</p>
-                        <ul>
-                            <li>Выпадают в конце клановых сезонов</li>
-                            <li>В ежедневных заданиях (с бронзового уровня)</li>
-                            <li>Лимит: максимум 50!</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA БЛОК -->
-            <div class="content-footer">
-                <p>Ещё нет жабы? Заведи скорее и начни своё приключение в мире болота! 🐸</p>
-                <a href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener" class="cta-btn">
-                    Завести жабу <span>↗</span>
-                </a>
-            </div>
-        </div>
-
-        <footer>
-            <p>Жабабот Гайд • Полная информация по игре • Обновлено 2025</p>
-            <p style="margin-top: 10px; opacity: 0.7;">Для актуальной информации посетите канал @toadbotnews</p>
-        </footer>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="index.html" aria-label="На главную">
+        <span class="brand__logo">🐸</span>
+        <span>жабабот.рф</span>
+      </a>
+
+      <nav class="nav" aria-label="Навигация">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link is-active" href="guides.html">Гайды</a>
+        <a class="nav__link" href="wiki.html">Wiki</a>
+      </nav>
+
+      <a class="cta cta--gold" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
+        Играть в Жабабота ↗
+      </a>
     </div>
+  </header>
 
-    <script>
-        function switchTab(tabName) {
-            // Hide all content
-            const contents = document.querySelectorAll('.content');
-            contents.forEach(content => content.classList.remove('active'));
-            
-            // Show selected content
-            document.getElementById(tabName).classList.add('active');
-            
-            // Update button styles
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-    </script>
+  <main class="container">
+    <section class="hero">
+      <h1>Гайды по Жабаботу</h1>
+      <p>
+        Тут не энциклопедия “для галочки”, а нормальные гайды: что нажать, что купить, куда идти — и зачем.
+        В первую очередь — материалы из серии <strong>#Жаба_Всезнамус</strong>.
+      </p>
+      <div class="hint">🧠 <strong>Совет:</strong> начни с Prime, Арены и Кланов — это быстрее всего разгоняет прогресс.</div>
+    </section>
+
+    <!-- ВАЖНОЕ: #Жаба_Всезнамус -->
+    <section class="section">
+      <div class="section-title">
+        <h2>#Жаба_Всезнамус — база</h2>
+        <div class="sub">коротко, по делу, без “воды из болота”</div>
+      </div>
+
+      <div class="grid">
+        <a class="tile" href="guide/prime.html">
+          <div class="icon">👑</div>
+          <div>
+            <h3>Prime-статус</h3>
+            <p>Что даёт Prime и кому реально надо.</p>
+            <div class="tags">
+              <span class="tag">#Жаба_Всезнамус</span><span class="tag">прокачка</span><span class="tag">удобство</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="tile" href="guide/bands.html">
+          <div class="icon">🏋️</div>
+          <div>
+            <h3>Банды и верность</h3>
+            <p>Как работают банды, верность и кулоны.</p>
+            <div class="tags">
+              <span class="tag">бой</span><span class="tag">урон</span><span class="tag">меню</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="tile" href="guide/notifications.html">
+          <div class="icon">🔔</div>
+          <div>
+            <h3>Уведомления</h3>
+            <p>Голод, дейлики, поломки — что включить.</p>
+            <div class="tags">
+              <span class="tag">настройки</span><span class="tag">удобство</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="tile" href="guide/chat-settings.html">
+          <div class="icon">⚙️</div>
+          <div>
+            <h3>Настройки чата</h3>
+            <p>Удаление сообщений, безопасные ники, активности.</p>
+            <div class="tags">
+              <span class="tag">админам</span><span class="tag">чат</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- БОИ И ПРОГРЕСС -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Бои и прогресс</h2>
+        <div class="sub">арена, подземелья, снаряжение</div>
+      </div>
+
+      <div class="grid">
+        <a class="tile" href="guide/arena.html">
+          <div class="icon">🏟️</div>
+          <div>
+            <h3>Арена</h3>
+            <p>Как регаться, как считается исход, какие награды.</p>
+            <div class="tags"><span class="tag">PVP</span><span class="tag">лига</span></div>
+          </div>
+        </a>
+
+        <a class="tile" href="guide/dungeons.html">
+          <div class="icon">🏚️</div>
+          <div>
+            <h3>Подземелья</h3>
+            <p>Что падает, сколько стоит вход, как ходить группой.</p>
+            <div class="tags"><span class="tag">лут</span><span class="tag">рейд</span></div>
+          </div>
+        </a>
+
+        <a class="tile" href="guide/equipment.html">
+          <div class="icon">🛡️</div>
+          <div>
+            <h3>Снаряжение</h3>
+            <p>Броня/оружие, прочность, починка и изолента.</p>
+            <div class="tags"><span class="tag">броня</span><span class="tag">крафт</span></div>
+          </div>
+        </a>
+
+        <a class="tile" href="guide/modifiers.html">
+          <div class="icon">🔧</div>
+          <div>
+            <h3>Модификаторы</h3>
+            <p>Как они привязаны к броне и чем полезны.</p>
+            <div class="tags"><span class="tag">усиления</span><span class="tag">валюта</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- СОЦИАЛКА И КЛАНЫ -->
+    <section class="section">
+      <div class="section-title">
+        <h2>Кланы и командная игра</h2>
+        <div class="sub">самый жирный прогресс — тут</div>
+      </div>
+
+      <div class="grid">
+        <a class="tile" href="guide/clans.html">
+          <div class="icon">🏰</div>
+          <div>
+            <h3>Кланы</h3>
+            <p>Создание, лиги, награды и клановые приколы.</p>
+            <div class="tags"><span class="tag">лига</span><span class="tag">война</span></div>
+          </div>
+        </a>
+
+        <a class="tile" href="guide/heists.html">
+          <div class="icon">🚨</div>
+          <div>
+            <h3>Ограбления</h3>
+            <p>Комнаты, приглашения, снаряга и таймер 15 минут.</p>
+            <div class="tags"><span class="tag">кооп</span><span class="tag">испытания</span></div>
+          </div>
+        </a>
+
+        <a class="tile" href="guide/work.html">
+          <div class="icon">💼</div>
+          <div>
+            <h3>Работа и заработок</h3>
+            <p>Работы, стаж, бонусы — куда идти новичку.</p>
+            <div class="tags"><span class="tag">фарм</span><span class="tag">прогресс</span></div>
+          </div>
+        </a>
+
+        <a class="tile" href="guide/resurrection.html">
+          <div class="icon">🕯️</div>
+          <div>
+            <h3>Воскрешение</h3>
+            <p>Как воскресить жабу по UID и вернуть в нужный чат.</p>
+            <div class="tags"><span class="tag">потери</span><span class="tag">спасение</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <div>Жабабот • Гайды • Обновляем по новостям @toadbotnews</div>
+      <div style="opacity:.7;margin-top:6px;">Если болото меняется — гайды тоже меняются 🐸</div>
+    </footer>
+  </main>
 </body>
 </html>
