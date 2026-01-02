@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Работа и заработок — Гайды Жабабота</title>
+  <style>
+    :root{--primary:#2d1e0c;--accent:#5fb878;--bg:#faf8f3;--card:#fff;--text:#2c2c2c;--muted:#666;--border:#e8e3d8;--top:#0b0f14;--topText:#f5f5f5;--gold:#d4af37}
+    *{box-sizing:border-box} body{margin:0;font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    .topbar{position:sticky;top:0;z-index:100;background:var(--top);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+    .topbar__inner{max-width:1100px;margin:0 auto;padding:12px 16px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .brand{display:flex;gap:10px;align-items:center;color:var(--topText);text-decoration:none;font-weight:700}
+    .nav{display:flex;gap:14px;align-items:center}
+    .nav a{color:rgba(245,245,245,.7);text-decoration:none;font-size:.92em}
+    .nav a:hover,.nav a.is-active{color:var(--accent)}
+    .cta{display:inline-flex;gap:8px;align-items:center;background:var(--gold);color:var(--top);text-decoration:none;padding:8px 14px;border-radius:10px;font-weight:700;font-size:.9em;white-space:nowrap}
+    .container{max-width:1100px;margin:0 auto;padding:18px 16px}
+    .crumbs{font-size:.92em;color:var(--muted);margin:10px 0 14px}
+    .crumbs a{color:var(--muted);text-decoration:none;border-bottom:1px dashed rgba(0,0,0,.25)}
+    .hero{background:linear-gradient(135deg,var(--primary),#3d2b1b);color:#fff;border-radius:16px;padding:22px 18px;box-shadow:0 8px 22px rgba(0,0,0,.10)}
+    .hero h1{margin:0 0 6px;font-size:1.6em}
+    .hero p{margin:0;opacity:.92}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:16px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    .card h2{margin:0 0 10px;font-size:1.05em;display:flex;gap:10px;align-items:center;color:var(--primary)}
+    ul{margin:10px 0 0;padding:0;list-style:none}
+    li{padding:6px 0 6px 22px;position:relative;color:var(--muted)}
+    li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#fff;border:1px solid var(--border);padding:2px 6px;border-radius:8px;color:#333}
+    .note{background:linear-gradient(135deg,#fef3e6,#fef8f0);border-left:4px solid var(--accent);padding:12px;border-radius:12px;color:var(--muted)}
+    .pager{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:18px;flex-wrap:wrap}
+    .btn{display:inline-flex;gap:8px;align-items:center;text-decoration:none;border-radius:12px;padding:10px 12px;border:1px solid var(--border);background:#fff;color:var(--text);font-weight:700}
+    .btn:hover{border-color:rgba(95,184,120,.6)}
+    footer{margin:22px 0 6px;color:var(--muted);font-size:.9em;text-align:center}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="/index.html"><span>🐸</span><span>жабабот.рф</span></a>
+    <nav class="nav">
+      <a href="/index.html">Главная</a>
+      <a class="is-active" href="/guides.html">Гайды</a>
+      <a href="/wiki.html">Wiki</a>
+    </nav>
+    <a class="cta" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">Играть в Жабабота ↗</a>
+  </div>
+</header>
+
+<main class="container">
+  <div class="crumbs"><a href="/guides.html">Гайды</a> → Работа и заработок</div>
+
+  <section class="hero">
+    <h1>💼 Работа и заработок</h1>
+    <p>Куда идти новичку и где фарм “пожирнее”.</p>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <h2>⏳ Общие правила</h2>
+      <ul>
+        <li>Раз в <strong>8 часов</strong> можно отправить жабу на работу: <span class="kbd">Отправить жабу на работу</span>.</li>
+        <li>Длительность: <strong>2 часа</strong> (лучше не оставлять дольше).</li>
+        <li>Отдых: <strong>6 часов</strong>.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>🍽️ Столовая</h2>
+      <ul>
+        <li>Базовая работа (можно идти побитой).</li>
+        <li>Награды: букашки, сытость, шанс реанимироваться.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>🎰 Крупье</h2>
+      <ul>
+        <li>Азартная работа.</li>
+        <li>Награды: карта болота, букашки, аптечки, сытость.</li>
+        <li>Есть шанс ничего не получить.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>🎭 Грабитель</h2>
+      <ul>
+        <li>Опасная работа.</li>
+        <li>Награды: букашки +++, аптечки, сытость.</li>
+        <li>Может выпасть банда цапель (редко).</li>
+        <li>Риск: тумаки от цапель.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>☕ Кафетерий</h2>
+      <ul>
+        <li>6 должностей: стажёр → шеф-повар (50 опыта макс).</li>
+        <li>Путь: <span class="kbd">Отправиться в кафетерий</span> (10 минут) → <span class="kbd">Начать работу</span>.</li>
+        <li>Механика: выполнять заказы по <span class="kbd">Открыть книгу рецептов</span>.</li>
+        <li>Бонус: +1% шанса доп. сытости за кормление за каждый опыт (макс 50%).</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>🎰 Казино</h2>
+      <ul>
+        <li>Самая прибыльная работа.</li>
+        <li>6 должностей: прохожий → всемирный чемпион (100 опыта макс).</li>
+        <li>Путь: <span class="kbd">Отправиться в казино</span> (15 минут) → <span class="kbd">Начать работу</span>.</li>
+        <li>Каждые 15 минут рулетка — выигрыш увеличивает заработок.</li>
+        <li>Бонус: +% шанса доп. карты болота в клановом походе (макс 25% при макс должности).</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>🏦 Охранник банка</h2>
+      <ul>
+        <li>Работа защиты, 6 должностей (100 опыта макс).</li>
+        <li>Путь: <span class="kbd">Отправиться в банк</span> (20 минут) → <span class="kbd">Начать работу</span>.</li>
+        <li>Механика: проверка чемоданов (15 минут на чемодан).</li>
+        <li>Бонус: стаж +1 к макс прочности брони за каждые 10 опыта.</li>
+        <li>Награды: букашки, сытость, аптечки, возможность банды цапель.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>🗺️ Карта болотной местности</h2>
+      <ul>
+        <li>Каждая жаба имеет карту. Команда: <span class="kbd">Отправиться в поход</span>.</li>
+        <li>Путешествие по локациям болота и разблокировка новых мест работы.</li>
+        <li>Проверить локацию: <span class="kbd">Где жаба</span>.</li>
+      </ul>
+      <div class="note" style="margin-top:10px;">
+        В уведомлениях есть напоминание “можно начать работу на карте, когда жабка дошла” — см. гайд “Уведомления”.
+      </div>
+    </article>
+  </section>
+
+  <nav class="pager">
+    <a class="btn" href="/guides/robberies.html">← Предыдущий: Ограбления</a>
+    <a class="btn" href="/guides/resurrection.html">Следующий: Воскрешение →</a>
+  </nav>
+
+  <footer>Жабабот • Гайды</footer>
+</main>
+</body>
+</html>
