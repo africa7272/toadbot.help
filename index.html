@@ -1,285 +1,402 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Жабабот — игра-бот в Telegram про жаб, бои, кланы и арену</title>
 
-  <title>Жабабот — игра-бот в Telegram с жабами, боями и кланами</title>
-  <meta name="description" content="Жабабот — игра-бот в Telegram. Добавь бота, возьми жабу, прокачивай, сражайся на арене и вступай в кланы. При старте по кнопке — Prime-статус на 7 дней в подарок.">
+  <!-- SEO -->
+  <meta name="description" content="Жабабот — игра-бот в Telegram: берёшь жабу, прокачиваешь, дерёшься на арене с лигами, вступаешь в кланы, собираешь снаряжение. Старт за минуту. При старте — Prime на 7 дней в подарок." />
+  <meta name="robots" content="index,follow" />
+  <meta name="keywords" content="Жабабот, игра бот в Telegram, бот игра в телеграм, жаба в телеграм, арена лиги, кланы, снаряжение, гайды жабабот" />
+  <link rel="canonical" href="https://жабабот.рф/" />
 
-  <link rel="canonical" href="https://жабабот.рф/">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Жабабот — игра в Telegram: жабы, арена, кланы" />
+  <meta property="og:description" content="Играй прямо в Telegram: прокачка жабы, бои на арене, кланы и снаряжение. При старте — Prime на 7 дней в подарок." />
+  <meta property="og:url" content="https://жабабот.рф/" />
 
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="жабабот.рф">
-  <meta property="og:title" content="Жабабот — игра в Telegram">
-  <meta property="og:description" content="Жабы, арена, кланы, награды — всё прямо в Telegram. При старте по кнопке — Prime на 7 дней в подарок.">
-  <meta property="og:url" content="https://жабабот.рф/">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Жабабот — игра-бот в Telegram" />
+  <meta name="twitter:description" content="Жабы, арена, кланы и снаряжение — всё прямо в Telegram. Prime на 7 дней в подарок за старт." />
+
+  <!-- Structured data (FAQ + WebSite) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Жабабот",
+    "url":"https://жабабот.рф/",
+    "inLanguage":"ru",
+    "description":"Жабабот — игра-бот в Telegram: жабы, бои, кланы, арена и снаряжение.",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://жабабот.рф/guides/{search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Что такое Жабабот?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Жабабот — игра-бот в Telegram: вы берёте жабу, прокачиваете её, сражаетесь на арене с лигами, вступаете в кланы и улучшаете снаряжение — всё прямо в чате."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Где играть в Жабабота?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Игра работает в Telegram. Нажмите кнопку «Играть в Жабабота», откроется бот, и вы сможете начать."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Как быстро начать?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Нажмите «Начать игру», откройте Telegram и следуйте подсказкам бота. Старт обычно занимает около минуты."
+        }
+      }
+    ]
+  }
+  </script>
 
   <style>
     :root{
       --primary:#2d1e0c;
       --accent:#5fb878;
       --bg:#faf8f3;
-      --card:#ffffff;
+      --card:#fff;
       --text:#2c2c2c;
       --muted:#666;
       --border:#e8e3d8;
       --top:#0b0f14;
       --topText:#f5f5f5;
       --gold:#d4af37;
+      --hero1:#2d1e0c;
+      --hero2:#3d2b1b;
     }
+
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-family:Segoe UI,system-ui,-apple-system,Arial,sans-serif;
       background:var(--bg);
       color:var(--text);
-      line-height:1.6;
+      line-height:1.55;
     }
-    a{text-decoration:none;color:inherit}
+    a{color:inherit}
 
-    /* TOPBAR (как в проекте) */
+    /* TOPBAR */
     .topbar{
       background:var(--top);
-      padding:12px 20px;
-      position:sticky;
-      top:0;
-      z-index:100;
-      box-shadow:0 2px 8px rgba(0,0,0,.15);
+      position:sticky;top:0;z-index:100;
+      box-shadow:0 2px 10px rgba(0,0,0,.18);
     }
     .topbar__inner{
-      max-width:1200px;
-      margin:0 auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
+      max-width:1200px;margin:0 auto;
+      padding:12px 16px;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
       flex-wrap:wrap;
     }
     .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      color:var(--topText);
-      font-weight:700;
+      display:flex;align-items:center;gap:10px;
+      text-decoration:none;color:var(--topText);font-weight:800;
+      letter-spacing:-.2px;
     }
-    .brand__logo{font-size:22px;line-height:1}
-    .nav{
-      display:flex;
-      gap:18px;
-      align-items:center;
-    }
+    .brand__logo{width:28px;height:28px;display:block}
+    .nav{display:flex;gap:18px;align-items:center}
     .nav__link{
-      color:rgba(245,245,245,.7);
-      font-size:.92em;
+      color:rgba(245,245,245,.72);
+      text-decoration:none;font-size:.92em;
+      transition:.15s;
+    }
+    .nav__link:hover,.nav__link.is-active{color:var(--accent)}
+    .cta{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:9px 14px;border-radius:10px;
+      text-decoration:none;font-weight:900;font-size:.9em;
+      background:var(--gold);color:var(--top);
+      white-space:nowrap;
       transition:.2s;
     }
-    .nav__link:hover,
-    .nav__link.is-active{color:var(--accent)}
-    .cta{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 16px;
-      border-radius:10px;
-      font-weight:800;
-      font-size:.9em;
-      white-space:nowrap;
-      border:none;
-      cursor:pointer;
-    }
-    .cta--gold{
-      background:var(--gold);
-      color:var(--top);
-    }
-    .cta--gold:hover{filter:brightness(1.05);transform:translateY(-1px)}
-    .cta__arr{opacity:.85}
+    .cta:hover{transform:translateY(-2px);background:#e5c158}
 
     /* LAYOUT */
-    .container{max-width:1200px;margin:0 auto;padding:20px}
+    .container{max-width:1200px;margin:0 auto;padding:18px 16px 40px}
+
+    /* HERO */
     .hero{
-      background:linear-gradient(135deg,var(--primary) 0%, #3d2b1b 100%);
+      position:relative;overflow:hidden;
+      border-radius:18px;
+      background:linear-gradient(135deg,var(--hero1),var(--hero2));
       color:#fff;
-      border-radius:16px;
-      padding:28px 22px;
-      box-shadow:0 8px 22px rgba(0,0,0,.10);
-      overflow:hidden;
-      position:relative;
+      padding:22px 18px;
+      box-shadow:0 10px 26px rgba(0,0,0,.12);
+      margin:14px 0 20px;
     }
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:18px;
-      align-items:center;
-    }
-    .hero h1{margin:0 0 10px;font-size:2.1em;line-height:1.15}
-    .hero p{margin:0 0 14px;opacity:.92;max-width:760px}
-    .hero .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.14);
-      padding:10px 12px;
-      border-radius:12px;
-      font-weight:700;
-      margin:6px 0 14px;
-    }
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:10px;
-    }
-    .btn-main{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      background:var(--accent);
-      color:#fff;
-      padding:14px 18px;
-      border-radius:12px;
-      font-weight:900;
-      min-height:48px;
-    }
-    .btn-main:hover{filter:brightness(1.05);transform:translateY(-1px)}
-    .btn-ghost{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.20);
-      color:#fff;
-      padding:14px 18px;
-      border-radius:12px;
-      font-weight:800;
-      min-height:48px;
-    }
-    .hero-note{
-      margin-top:10px;
-      font-size:.92em;
+    .hero::before{
+      content:"";
+      position:absolute;inset:-20px;
+      background-image:
+        radial-gradient(2px 2px at 15% 30%, rgba(255,255,255,.35), transparent),
+        radial-gradient(1.5px 1.5px at 40% 60%, rgba(255,255,255,.22), transparent),
+        radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,.18), transparent),
+        radial-gradient(2px 2px at 85% 65%, rgba(255,255,255,.20), transparent);
+      animation:float 18s linear infinite;
+      pointer-events:none;
       opacity:.9;
     }
+    @keyframes float{
+      from{transform:translateY(0)}
+      to{transform:translateY(-40px)}
+    }
 
-    .hero-card{
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:16px;
-      padding:16px;
-    }
-    .hero-card h2{
-      margin:0 0 10px;
-      font-size:1.05em;
-      letter-spacing:.2px;
-    }
-    .hero-card ul{list-style:none;padding:0;margin:0}
-    .hero-card li{
+    .hero__inner{
       position:relative;
-      padding:8px 0 8px 22px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:14px;
+      align-items:start;
+    }
+
+    h1{
+      margin:0 0 8px;
+      font-size:1.9em;
+      letter-spacing:-.6px;
+      line-height:1.1;
+    }
+    .lead{
+      margin:0 0 10px;
+      opacity:.92;
+      font-size:1.02em;
+      max-width:52ch;
+    }
+
+    .prime-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      margin:10px 0 14px;
+      padding:8px 14px;border-radius:999px;
+      background:linear-gradient(135deg,#ffd86a,#d4af37);
+      color:#2d1e0c;
+      font-weight:900;
+      font-size:.9em;
+      box-shadow:0 8px 20px rgba(212,175,55,.35);
+    }
+
+    .hero__actions{
+      display:flex;flex-wrap:wrap;gap:10px;
+      margin-top:2px;
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:12px 14px;border-radius:12px;
+      text-decoration:none;font-weight:900;
+      border:1px solid rgba(255,255,255,.16);
+      transition:.2s;
+      white-space:nowrap;
+    }
+    .btn-main{
+      background:linear-gradient(135deg, rgba(95,184,120,1), rgba(95,184,120,.82));
+      color:#07110a;
+      border:none;
+      min-width:220px;
+      animation:pulse 2.6s ease-in-out infinite;
+    }
+    @keyframes pulse{
+      0%,100%{box-shadow:0 0 0 rgba(95,184,120,0)}
+      50%{box-shadow:0 0 34px rgba(95,184,120,.45)}
+    }
+    .btn-main:hover{transform:translateY(-2px);filter:brightness(1.03)}
+    .btn-ghost{
+      background:rgba(255,255,255,.08);
+      color:#fff;
+    }
+    .btn-ghost:hover{transform:translateY(-2px);background:rgba(255,255,255,.12)}
+
+    .hero__aside{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      padding:14px;
+      backdrop-filter: blur(6px);
+    }
+    .aside-title{
+      margin:0 0 10px;
+      font-size:1em;
+      font-weight:900;
       opacity:.95;
     }
-    .hero-card li:before{
-      content:"✓";
-      position:absolute;
-      left:0;
-      color:#a8ffbf;
-      font-weight:900;
+    .features{
+      display:flex;gap:8px;flex-wrap:wrap;
+      opacity:.92;
+    }
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 10px;border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.10);
+      font-size:.92em;
+      white-space:nowrap;
+    }
+    .micro{
+      margin-top:10px;
+      opacity:.78;
+      font-size:.9em;
+      line-height:1.35;
     }
 
-    /* Blocks */
-    .section{margin:22px 0}
+    /* SECTION HEADERS */
+    .section{margin:20px 0}
     .section-title{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      align-items:flex-end;
-      margin:0 0 12px;
+      display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+      margin:0 0 10px;
     }
-    .section-title h2{margin:0;color:var(--primary);font-size:1.35em}
+    .section-title h2{
+      margin:0;color:var(--primary);font-size:1.2em;letter-spacing:-.3px
+    }
     .section-title .sub{color:var(--muted);font-size:.95em}
 
+    /* CARDS */
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
       gap:14px;
     }
     .card{
       background:var(--card);
       border:1px solid var(--border);
-      border-radius:14px;
-      padding:16px;
+      border-radius:16px;
+      padding:14px;
       box-shadow:0 2px 10px rgba(0,0,0,.04);
     }
-    .card strong{display:block;margin-bottom:6px;color:var(--primary)}
-    .card p{margin:0;color:var(--muted)}
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:.9em;
-      color:var(--muted);
-      background:#fff;
-      border:1px solid var(--border);
-      padding:10px 12px;
-      border-radius:12px;
+    .step{
+      display:flex;gap:10px;align-items:flex-start;
     }
+    .step .num{
+      width:36px;height:36px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg, rgba(95,184,120,.18), rgba(212,175,55,.12));
+      border:1px solid rgba(95,184,120,.25);
+      font-weight:900;color:var(--primary);
+      flex:0 0 auto;
+    }
+    .step h3{margin:0 0 4px;font-size:1.02em;color:var(--primary)}
+    .step p{margin:0;color:var(--muted);font-size:.95em}
 
-    .cta-strip{
-      margin-top:18px;
-      background:linear-gradient(135deg, rgba(212,175,55,.12), rgba(95,184,120,.10));
-      border:1px solid var(--border);
+    /* CTA STRIP */
+    .strip{
+      margin-top:14px;
+      padding:14px;
       border-radius:16px;
-      padding:18px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
+      border:1px solid var(--border);
+      background:linear-gradient(135deg, rgba(212,175,55,.12), rgba(95,184,120,.10));
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
       flex-wrap:wrap;
     }
-    .cta-strip .text{
-      max-width:780px;
-      color:var(--text);
-    }
-    .cta-strip .text b{color:var(--primary)}
-    .cta-strip .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      background:var(--gold);
-      color:var(--top);
-      padding:12px 16px;
-      border-radius:12px;
+    .strip p{margin:0;color:var(--text);font-weight:700}
+    .strip small{display:block;color:var(--muted);font-weight:600;margin-top:4px}
+    .strip a{
+      display:inline-flex;align-items:center;gap:8px;
+      text-decoration:none;
+      padding:10px 14px;border-radius:12px;
+      background:var(--gold);color:var(--top);
       font-weight:900;
-      min-height:44px;
       white-space:nowrap;
+      transition:.2s;
     }
+    .strip a:hover{transform:translateY(-2px);background:#e5c158}
 
+    /* GUIDE LINKS */
+    .tiles{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:14px;
+      margin-top:10px;
+    }
+    .tile{
+      text-decoration:none;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px;
+      box-shadow:0 2px 10px rgba(0,0,0,.04);
+      display:flex;gap:12px;align-items:flex-start;
+      transition:.18s;
+      color:inherit;
+    }
+    .tile:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.08)}
+    .icon{
+      width:52px;height:52px;border-radius:14px;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg, rgba(95,184,120,.18), rgba(212,175,55,.14));
+      border:1px solid rgba(95,184,120,.25);
+      font-size:26px;
+      flex:0 0 auto;
+    }
+    .tile h3{margin:0 0 4px;font-size:1.02em;color:var(--primary)}
+    .tile p{margin:0;color:var(--muted);font-size:.94em}
+
+    /* FAQ */
+    details{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px 14px;
+      box-shadow:0 2px 10px rgba(0,0,0,.04);
+    }
+    details + details{margin-top:10px}
+    summary{
+      cursor:pointer;
+      font-weight:900;
+      color:var(--primary);
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    .faq-text{margin:8px 0 0;color:var(--muted)}
+
+    /* FOOTER */
     footer{
       margin-top:26px;
+      padding-top:16px;
       border-top:1px solid var(--border);
-      padding:18px 0 10px;
-      text-align:center;
       color:var(--muted);
-      font-size:.9em;
+      font-size:.92em;
+      text-align:center;
     }
+    footer a{color:var(--muted);text-decoration:none;border-bottom:1px dashed rgba(0,0,0,.25)}
+    footer a:hover{color:var(--text)}
 
+    /* RESPONSIVE */
+    @media (max-width:920px){
+      .hero__inner{grid-template-columns:1fr;gap:12px}
+      .btn-main{min-width:unset;flex:1}
+      .btn-ghost{flex:1}
+    }
     @media (max-width:768px){
-      .hero-grid{grid-template-columns:1fr}
-      .hero h1{font-size:1.6em}
+      h1{font-size:1.55em}
+      .lead{font-size:1em}
       .topbar__inner{flex-direction:column;align-items:stretch}
       .nav{justify-content:center}
       .cta{width:100%;justify-content:center}
-      .btn-main,.btn-ghost{width:100%}
-      .cta-strip{justify-content:center}
-      .cta-strip .btn{width:100%}
+      .hero{padding:18px 14px}
     }
   </style>
 </head>
 
 <body>
+  <!-- TOPBAR -->
   <header class="topbar">
     <div class="topbar__inner">
       <a class="brand" href="/" aria-label="На главную">
@@ -293,103 +410,203 @@
         <a class="nav__link" href="/wiki/">Wiki</a>
       </nav>
 
-      <a class="cta cta--gold" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
-        Играть в Жабабота <span class="cta__arr">↗</span>
+      <!-- НЕ МЕНЯТЬ партнерскую ссылку -->
+      <a class="cta" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
+        Играть в Жабабота ↗
       </a>
     </div>
   </header>
 
   <main class="container">
-    <section class="hero">
-      <div class="hero-grid">
+    <!-- HERO (без перегруза) -->
+    <section class="hero" aria-label="Жабабот — игра-бот в Telegram">
+      <div class="hero__inner">
         <div>
-          <h1>Жабабот — игра-бот в Telegram</h1>
-          <p>
-            Берёшь жабу, развиваешь её, собираешь снаряжение, дерёшься на арене и вступаешь в кланы —
-            всё <strong>прямо в Telegram</strong>, без установки и лишних движений.
+          <h1>Жабабот — игра в Telegram</h1>
+          <p class="lead">
+            Берёшь жабу, прокачиваешь, дерёшься на арене с лигами, вступаешь в кланы и собираешь снаряжение — всё прямо в чате.
           </p>
 
-          <div class="badge">🎁 Бонус за старт: <strong>Prime-статус на 7 дней</strong> для твоей жабы</div>
+          <div class="prime-badge">🎁 Prime на 7 дней — в подарок за старт</div>
 
-          <div class="hero-actions">
-            <a class="btn-main" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
+          <div class="hero__actions">
+            <!-- НЕ МЕНЯТЬ партнерскую ссылку -->
+            <a class="btn btn-main" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
               🚀 Начать игру и забрать Prime
             </a>
-            <a class="btn-ghost" href="/guides/">
+            <a class="btn btn-ghost" href="/guides/">
               📘 Открыть гайды
             </a>
           </div>
-
-          <div class="hero-note">
-            Работает в Telegram • Можно играть с друзьями в чате • Быстрый старт за минуту
-          </div>
         </div>
 
-        <aside class="hero-card" aria-label="Что внутри игры">
-          <h2>Что тебя ждёт в игре</h2>
-          <ul>
-            <li>⚔️ Бои и арена с лигами</li>
-            <li>🏰 Кланы, войны и сезонные награды</li>
-            <li>🛡️ Снаряжение, модификаторы и починка</li>
-            <li>💼 Работа, фарм и прогресс</li>
-          </ul>
+        <aside class="hero__aside" aria-label="Что есть в игре">
+          <p class="aside-title">Что тебя ждёт в игре</p>
+          <div class="features">
+            <span class="pill">⚔️ Бои</span>
+            <span class="pill">🏟️ Арена и лиги</span>
+            <span class="pill">🏰 Кланы</span>
+            <span class="pill">🛡️ Снаряжение</span>
+            <span class="pill">🔧 Модификаторы</span>
+            <span class="pill">💼 Работа и фарм</span>
+          </div>
+          <div class="micro">
+            Работает в Telegram — без установок.<br>
+            Можно играть соло или с друзьями в беседе.
+          </div>
         </aside>
       </div>
     </section>
 
-    <section class="section" aria-label="Как начать">
+    <!-- HOW TO START (коротко, без стены текста) -->
+    <section class="section" aria-label="Как начать играть в Жабабота">
       <div class="section-title">
         <h2>Как начать играть</h2>
-        <div class="sub">просто, как “взять жабу”</div>
+        <div class="sub">быстро, без «воды из болота»</div>
       </div>
 
       <div class="grid">
         <div class="card">
-          <strong>1) Нажми “Начать игру”</strong>
-          <p>Откроется Telegram и бот запустится сразу.</p>
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <h3>Нажми «Начать игру»</h3>
+              <p>Откроется Telegram и бот. Дальше — по подсказкам.</p>
+            </div>
+          </div>
         </div>
+
         <div class="card">
-          <strong>2) Получи жабу</strong>
-          <p>Первый шаг в мире болота — и ты уже в игре.</p>
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <h3>Возьми жабу</h3>
+              <p>Первый шаг — и ты уже в болоте (в хорошем смысле).</p>
+            </div>
+          </div>
         </div>
+
         <div class="card">
-          <strong>3) Забери бонус</strong>
-          <p>При старте по кнопке ты получишь <b>Prime на 7 дней</b> для своей жабы.</p>
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <h3>Забери подарок</h3>
+              <p>При старте по кнопке получишь Prime на 7 дней для своей жабы.</p>
+            </div>
+          </div>
         </div>
+
         <div class="card">
-          <strong>4) Играй соло или с друзьями</strong>
-          <p>Можно в личке, можно в беседе — как удобнее.</p>
+          <div class="step">
+            <div class="num">4</div>
+            <div>
+              <h3>Играй как удобно</h3>
+              <p>В личке или в чате с друзьями — Жабабот это любит.</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="cta-strip">
-        <div class="text">
-          <b>Хочешь быстро разогнаться?</b> Начни с гайдов: Prime, арена и кланы — это самый быстрый путь к прогрессу.
+      <div class="strip" role="note" aria-label="Призыв к действию">
+        <div>
+          <p>Хочешь быстрее разогнаться?</p>
+          <small>Начни с гайдов: Prime, Арена и Кланы — это самый быстрый путь к прогрессу.</small>
         </div>
-        <a class="btn" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
-          Забрать Prime и начать ↗
+        <!-- НЕ МЕНЯТЬ партнерскую ссылку -->
+        <a href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">Забрать Prime и начать ↗</a>
+      </div>
+    </section>
+
+    <!-- INTERNAL LINKING (SEO + удобство) -->
+    <section class="section" aria-label="Гайды по Жабаботу">
+      <div class="section-title">
+        <h2>Популярные гайды</h2>
+        <div class="sub">чтобы быстро понять механику</div>
+      </div>
+
+      <div class="tiles">
+        <a class="tile" href="/guides/prime-status/">
+          <div class="icon">👑</div>
+          <div>
+            <h3>Prime-статус</h3>
+            <p>Что даёт Prime и кому реально надо.</p>
+          </div>
+        </a>
+
+        <a class="tile" href="/guides/arena/">
+          <div class="icon">🏟️</div>
+          <div>
+            <h3>Арена</h3>
+            <p>Лиги, подбор противника и сезонные переходы.</p>
+          </div>
+        </a>
+
+        <a class="tile" href="/guides/clans/">
+          <div class="icon">🏰</div>
+          <div>
+            <h3>Кланы</h3>
+            <p>Командная игра, войны, награды и прогресс.</p>
+          </div>
+        </a>
+
+        <a class="tile" href="/wiki/">
+          <div class="icon">📚</div>
+          <div>
+            <h3>Wiki</h3>
+            <p>Справочник по терминам и командам игры.</p>
+          </div>
         </a>
       </div>
     </section>
 
-    <section class="section" aria-label="Для поисковика и людей">
+    <!-- WHAT IS IT (SEO-friendly, но коротко) -->
+    <section class="section" aria-label="Что такое Жабабот">
       <div class="section-title">
         <h2>Что такое Жабабот</h2>
-        <div class="sub">коротко и по делу</div>
+        <div class="sub">для людей и для поисковика</div>
       </div>
 
       <div class="card">
-        <p>
-          <strong>Жабабот</strong> — это <strong>игра-бот в Telegram</strong>.
-          Игровые действия выполняются командами и кнопками прямо в чате:
-          развитие жабы, бои, арена с лигами, кланы и клановые войны, работа и награды по сезонам.
+        <p style="margin:0;color:var(--muted);">
+          <strong>Жабабот</strong> — это <strong>игра-бот в Telegram</strong>, где вы развиваете жабу, участвуете в боях, ходите на арену с лигами,
+          вступаете в кланы и улучшаете снаряжение. Игра запускается прямо в Telegram и подходит как для одиночной игры, так и для игры с друзьями в беседе.
         </p>
       </div>
     </section>
 
+    <!-- FAQ (для SEO + снятие возражений) -->
+    <section class="section" aria-label="Вопросы и ответы">
+      <div class="section-title">
+        <h2>Вопросы и ответы</h2>
+        <div class="sub">коротко, без занудства</div>
+      </div>
+
+      <details>
+        <summary>Нужно что-то устанавливать?</summary>
+        <p class="faq-text">Нет. Жабабот работает в Telegram — открываешь бота и играешь.</p>
+      </details>
+
+      <details>
+        <summary>Можно играть с друзьями в группе?</summary>
+        <p class="faq-text">Да. Бота можно добавить в чат и играть компанией.</p>
+      </details>
+
+      <details>
+        <summary>Prime на 7 дней реально даётся за старт?</summary>
+        <p class="faq-text">Да — при переходе в бота по кнопке «Начать игру и забрать Prime».</p>
+      </details>
+
+      <details>
+        <summary>Где смотреть правила механик?</summary>
+        <p class="faq-text">В разделе <a href="/guides/">«Гайды»</a> и в <a href="/wiki/">Wiki</a> — там собрана структура по темам.</p>
+      </details>
+    </section>
+
     <footer>
-      <div>Жабабот • Главная • Игра в Telegram</div>
-      <div style="opacity:.75;margin-top:6px;">Гайды и Wiki — в меню сверху 🐸</div>
+      <div>Жабабот • игра-бот в Telegram • гайды и wiki на одном сайте</div>
+      <div style="opacity:.75;margin-top:6px;">
+        Подсказка: начни с <a href="/guides/prime-status/">Prime</a>, потом <a href="/guides/arena/">Арена</a> и <a href="/guides/clans/">Кланы</a>.
+      </div>
     </footer>
   </main>
 </body>
