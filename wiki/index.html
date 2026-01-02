@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wiki Жабабота — механики, команды, арена, кланы</title>
+<meta content="📚 Wiki Жабабота — Быстро. Удобно. По делу: команды, механики, арена, подземелья, кланы." name="description"/>
+<meta content="index,follow" name="robots"/>
+<link href="https://жабабот.рф/wiki/" rel="canonical"/>
+<meta content="Wiki Жабабота — механики, команды, арена, кланы" property="og:title"/>
+<meta content="📚 Wiki Жабабота — Быстро. Удобно. По делу: команды, механики, арена, подземелья, кланы." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://жабабот.рф/wiki/" property="og:url"/>
+<style>
+    :root {
+      --primary: #2d1e0c;
+      --accent: #5fb878;
+      --light-bg: #faf8f3;
+      --card-bg: #fff;
+      --text-dark: #2c2c2c;
+      --text-light: #666;
+      --border: #e8e3d8;
+      --topbar-bg: #0b0f14;
+      --topbar-text: #f5f5f5;
+      --cta-gold: #d4af37;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* TOPBAR STYLES */
+    .topbar {
+      background: var(--topbar-bg);
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .topbar__inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--topbar-text);
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+    .brand__logo { width: 28px; height: 28px; display: block; }
+    .brand__text { letter-spacing: -0.5px; }
+    .nav { display: flex; gap: 25px; align-items: center; }
+    .nav__link {
+      color: rgba(245, 245, 245, 0.7);
+      text-decoration: none;
+      font-size: 0.9em;
+      transition: color 0.3s;
+    }
+    .nav__link:hover, .nav__link.is-active { color: var(--accent); }
+
+    .search {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      padding: 6px 12px;
+      flex: 0 1 240px;
+    }
+    .search__input {
+      background: none;
+      border: none;
+      color: var(--topbar-text);
+      font-size: 0.85em;
+      flex: 1;
+      outline: none;
+    }
+    .search__input::placeholder { color: rgba(245, 245, 245, 0.5); }
+    .search__btn {
+      background: none;
+      border: none;
+      color: rgba(245, 245, 245, 0.6);
+      cursor: pointer;
+      padding: 0 6px;
+      font-size: 1em;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85em;
+      font-weight: 500;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .cta--gold { background: var(--cta-gold); color: var(--topbar-bg); }
+    .cta--gold:hover { background: #e5c158; transform: translateY(-2px); }
+    .cta__arr { font-size: 0.8em; opacity: 0.8; }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
+    }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+
+    .hero {
+      padding: 34px 20px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary) 0%, #3d2b1b 100%);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 18px 0 22px 0;
+    }
+    .hero h1 { font-size: 2.2em; margin-bottom: 8px; }
+    .hero p { opacity: 0.92; max-width: 900px; }
+    .chip-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      font-size: 0.9em;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .panel__head {
+      padding: 16px 16px 12px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .panel__title {
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .panel__body { padding: 14px 16px 16px 16px; }
+
+    .toc { position: sticky; top: 86px; }
+    .toc a {
+      display: block;
+      padding: 10px 10px;
+      margin: 6px 0;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text-dark);
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      background: var(--light-bg);
+      font-size: 0.95em;
+    }
+    .toc a:hover { border-color: var(--border); transform: translateX(2px); }
+    .toc a.is-active { background: rgba(95,184,120,0.14); border-color: rgba(95,184,120,0.3); color: var(--primary); }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--light-bg);
+      cursor: pointer;
+      transition: 0.2s ease;
+      font-size: 0.9em;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,0,0,0.08); }
+
+    .section { margin-bottom: 18px; scroll-margin-top: 110px; }
+    .section__title {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .section__title h2 {
+      font-size: 1.25em;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section__meta { font-size: 0.85em; color: var(--text-light); white-space: nowrap; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 14px;
+      padding: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: 0.2s ease;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,0.08); }
+    .card h3 {
+      color: var(--primary);
+      font-size: 1.05em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card p { color: var(--text-light); font-size: 0.95em; margin-bottom: 8px; }
+    .card ul { list-style: none; padding-left: 0; }
+    .card li {
+      padding: 8px 0 8px 24px;
+      position: relative;
+      color: var(--text-light);
+      font-size: 0.95em;
+    }
+    .card li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .kbd {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--light-bg);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.9em;
+      color: var(--primary);
+    }
+
+    .info {
+      background: linear-gradient(135deg, #fef3e6 0%, #fef8f0 100%);
+      border-left: 4px solid var(--accent);
+      padding: 14px 14px;
+      border-radius: 10px;
+      margin-top: 10px;
+      color: var(--text-dark);
+      font-size: 0.95em;
+    }
+
+    details {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      overflow: hidden;
+    }
+    details summary {
+      cursor: pointer;
+      padding: 14px 16px;
+      font-weight: 700;
+      color: var(--primary);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details .details-body { padding: 0 16px 16px 16px; color: var(--text-light); }
+
+    .muted { color: var(--text-light); }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--text-light);
+      font-size: 0.9em;
+      margin-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    .highlight { outline: 3px solid rgba(95,184,120,0.25); border-radius: 12px; }
+
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { position: static; top: auto; }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.6em; }
+      .topbar__inner { flex-direction: column; gap: 12px; }
+      .nav { gap: 15px; }
+      .search { flex: 1 1 100%; }
+    }
+  </style>
+<meta content="ru_RU" property="og:locale"/><meta content="summary" name="twitter:card"/><meta content="Wiki Жабабота — механики, команды, арена, кланы" name="twitter:title"/><meta content="📚 Wiki Жабабота — Быстро. Удобно. По делу: команды, механики, арена, подземелья, кланы." name="twitter:description"/></head>
+<body>
+<!-- TOPBAR -->
+<header class="topbar">
+<div class="topbar__inner">
+<a aria-label="На главную" class="brand" href="/">
+<span class="brand__logo">🐸</span>
+<span class="brand__text">жабабот.рф</span>
+</a>
+<nav aria-label="Навигация" class="nav">
+<a class="nav__link" href="/">Главная</a>
+<a class="nav__link" href="/guides/">Гайды</a>
+<a class="nav__link is-active" href="/wiki/">Wiki</a>
+</nav>
+<form class="search" id="siteSearchForm" role="search">
+<label class="sr-only" for="q">Поиск по wiki…</label>
+<input autocomplete="off" class="search__input" id="q" placeholder="Поиск по wiki…"/>
+<button aria-label="Найти" class="search__btn" type="submit">🔍</button>
+</form>
+<a class="cta cta--gold" href="https://t.me/toadbot?start=228691787" rel="noopener" target="_blank">
+        Играть в Жабабота <span class="cta__arr">↗</span>
+</a>
+</div>
+</header>
+<main class="container">
+<section class="hero">
+<h1>📚 Wiki Жабабота</h1>
+<p>Быстро. Удобно. По делу: команды, механики, арена, подземелья, кланы.</p>
+<div class="chip-row">
+<span class="chip">🗓️ Обновлено по выгрузке: <strong>30.12.2025</strong></span>
+<span class="chip">🔎 Поиск сверху — ищет по всем блокам</span>
+<span class="chip">🧭 Слева — навигация по разделам</span>
+</div>
+</section>
+<section class="layout">
+<!-- LEFT: TOC -->
+<aside aria-label="Содержание" class="panel toc">
+<div class="panel__head">
+<div class="panel__title">🧭 Содержание</div>
+<button class="btn" id="btnCollapseToc" title="Свернуть/развернуть" type="button">↕️</button>
+</div>
+<div class="panel__body" id="tocBody">
+<nav class="toc" id="tocNav"></nav>
+<div class="info">
+<strong>Подсказка:</strong> выбери раздел — и страница прыгнет к нужной механике.
+          </div>
+</div>
+</aside>
+<!-- RIGHT: CONTENT -->
+<div class="panel">
+<!-- SECTION: QUICK START -->
+<section class="section" id="sec-quick">
+<div class="section__title">
+<h2>🧩 Быстрые команды и ориентиры</h2>
+<div class="section__meta">основа</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>🪪 Премиум-статус (Prime)</h3>
+<p>Покупается навсегда за <strong>89 рублей</strong>, команда: <span class="kbd">Купить жабу</span>.</p>
+<ul>
+<li>Полный список бонусов — ниже</li>
+</ul>
+</div>
+<div class="card">
+<h3>💪 Усилители</h3>
+<ul>
+<li>Личный усилитель: <span class="kbd">Выбрать усилитель</span></li>
+<li>Клановый усилитель: <span class="kbd">Выбрать усилитель клана</span></li>
+</ul>
+</div>
+<div class="card">
+<h3>📸 Фото жабёнка</h3>
+<ul>
+<li>Менять фото может только родитель с <strong>Prime</strong></li>
+<li>У жабёнка должен быть <strong>2 уровень</strong></li>
+<li>Команда: <span class="kbd">Сменить фото жабенка</span></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECTION: PRIME -->
+<section class="section" id="sec-prime">
+<div class="section__title">
+<h2>👑 Prime-статус</h2>
+<div class="section__meta">премиум</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>🔥 Что даёт Prime</h3>
+<ul>
+<li>Кормление жабы: сытость каждые <strong>6 часов</strong></li>
+<li>Срок жизни без кормёжки: <strong>60 дней</strong> (обычные — 30)</li>
+<li>Смена фото жабы и фото жабёнка</li>
+<li>Верхний порог удара <strong>+10%</strong></li>
+<li>Бесплатная смена имени (обычные платят 250 букашек)</li>
+<li>В дейликах: <strong>5 безопасных дней</strong> в месяц</li>
+<li>Уведомление, чтобы не пропустить атаку на арене</li>
+<li>Уведомление о скорой поломке снаряжения (когда остаётся 1 прочность)</li>
+</ul>
+<div class="info">
+<strong>Цена:</strong> <strong>89 рублей</strong> (навсегда), команда: <span class="kbd">Купить жабу</span>.
+              </div>
+</div>
+<div class="card">
+<h3>📸 Фото жабёнка — условия</h3>
+<ul>
+<li>Менять может только родитель с <strong>Prime</strong></li>
+<li>У жабёнка должен быть <strong>2 уровень</strong></li>
+<li>Команда: <span class="kbd">Сменить фото жабенка</span> + фото</li>
+</ul>
+<p class="muted">GIF — отдельная привилегия из сундука.</p>
+</div>
+<div class="card">
+<h3>🎁 Акции</h3>
+<p>В новостях публикуются временные скидки на донат (в рамках конкретных дат).</p>
+</div>
+</div>
+</section>
+<!-- SECTION: BOOSTERS -->
+<section class="section" id="sec-boosters">
+<div class="section__title">
+<h2>💪 Усилители: личные и клановые</h2>
+<div class="section__meta">бафы</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>🧍 Личный усилитель</h3>
+<ul>
+<li>Команда покупки: <span class="kbd">Выбрать усилитель</span></li>
+<li>Активный усилитель: <span class="kbd">Мое снаряжение</span></li>
+<li>Длительность: <strong>48 часов</strong></li>
+</ul>
+</div>
+<div class="card">
+<h3>🏰 Клановый усилитель</h3>
+<ul>
+<li>Команда: <span class="kbd">Выбрать усилитель клана</span></li>
+<li>Покупается за <strong>клановые очки</strong></li>
+<li>Длительность: <strong>120 часов</strong> (5 суток)</li>
+<li>Заявку создаёт ремесленник, лидер подтверждает кнопкой</li>
+</ul>
+</div>
+<div class="card">
+<h3>🏆 Клановые очки</h3>
+<ul>
+<li>Победа в клановой войне: <strong>+3</strong></li>
+<li>Ничья: <strong>+1</strong></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECTION: ARENA -->
+<section class="section" id="sec-arena">
+<div class="section__title">
+<h2>🏟️ Арена</h2>
+<div class="section__meta">межчат</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>✅ Доступ и старт</h3>
+<ul>
+<li>Регистрация доступна с <strong>3 уровня</strong></li>
+<li>Первая регистрация может дать стартовый комплект (если экипировка не лучше)</li>
+</ul>
+</div>
+<div class="card">
+<h3>🎯 Награды за победы</h3>
+<ul>
+<li>Победа над более сильной жабой может дать доп. сытость</li>
+<li>+1 (если разница уровней &gt; 30)</li>
+<li>+2 (если разница уровней &gt; 50)</li>
+</ul>
+</div>
+<div class="card">
+<h3>🔔 Prime и арена</h3>
+<ul>
+<li>С Prime доступно уведомление, чтобы не пропустить атаку на арене</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECTION: DUNGEONS -->
+<section class="section" id="sec-dungeons">
+<div class="section__title">
+<h2>🏚️ Подземелья и рейды</h2>
+<div class="section__meta">PVE</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>🧭 Вход и группа</h3>
+<ul>
+<li>Команда входа: <span class="kbd">Отправиться в подземелье</span></li>
+<li>Группа: от 1 до 5 жаб</li>
+<li>Старт: <span class="kbd">Рейд старт</span></li>
+<li>Выход: <span class="kbd">Выйти из подземелья</span> (возврат букашек)</li>
+</ul>
+</div>
+<div class="card">
+<h3>🥉 Бронзовое</h3>
+<ul>
+<li>Цена: <strong>400 букашек</strong></li>
+<li>Монстр: <strong>Насекомозавр</strong></li>
+<li>Дроп: водоросли 80%, кувшинки 20%, оружейные кусочки, <strong>+2 сытости</strong></li>
+</ul>
+</div>
+<div class="card">
+<h3>🥈 Серебряное</h3>
+<ul>
+<li>Цена: <strong>600 букашек</strong></li>
+<li>Монстр: <strong>Пепе</strong></li>
+<li>Дроп: водоросли 30%, кувшинки 50%, цапли 20%, <strong>+3 сытости</strong></li>
+</ul>
+</div>
+<div class="card">
+<h3>🥇 Золотое</h3>
+<ul>
+<li>Цена: <strong>800 букашек</strong></li>
+<li>Монстр: <strong>Шрек</strong></li>
+<li>Дроп: кувшинки 50%, цапли 50%, оружейные кусочки, <strong>+5 сытости</strong></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECTION: CLANS -->
+<section class="section" id="sec-clans">
+<div class="section__title">
+<h2>🏰 Кланы и клановые войны</h2>
+<div class="section__meta">социум</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>⚔️ Клановые войны</h3>
+<ul>
+<li>Клановая битва идёт <strong>4 часа</strong></li>
+<li>Если ничья — война заканчивается, оба клана получают по <strong>1</strong> клановому очку</li>
+</ul>
+</div>
+<div class="card">
+<h3>🏆 Клановые очки</h3>
+<ul>
+<li>За победу: <strong>+3</strong></li>
+<li>За ничью: <strong>+1</strong></li>
+</ul>
+</div>
+<div class="card">
+<h3>🎁 Вознаграждение клана</h3>
+<ul>
+<li>При уровне клана &gt; 1: раз в 7 дней доступна команда <span class="kbd">Клан вознаграждение</span></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECTION: CHILD -->
+<section class="section" id="sec-child">
+<div class="section__title">
+<h2>👶 Жабёнок: садик и махач</h2>
+<div class="section__meta">семья</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>🏫 Детский сад</h3>
+<ul>
+<li>Команда: <span class="kbd">Отправить жабенка в детсад</span></li>
+<li>Окно отправки: <strong>с 6:00 до 12:00</strong> по МСК</li>
+<li>Забрать: через <strong>6 часов</strong>, но не позже <strong>8 часов</strong></li>
+<li>Каждый уровень жабёнка сокращает время работы в садике на 5 минут (до 1ч 15м)</li>
+</ul>
+</div>
+<div class="card">
+<h3>🥊 Махач</h3>
+<ul>
+<li>Можно отправить через <strong>2 часа</strong> после отправки в сад</li>
+<li>Команда: <span class="kbd">Отправить жабенка на махач</span></li>
+<li>На победу влияет авторитет</li>
+<li>Можно получить бафф <strong>«Плевок жабенка»</strong></li>
+<li>Бафф действует и исчезает <strong>через сутки</strong></li>
+</ul>
+</div>
+<div class="card">
+<h3>😐 Настроения</h3>
+<ul>
+<li>Любое настроение держится не дольше <strong>48 часов</strong> (кроме спокойного)</li>
+<li>После этого сбрасывается на спокойное</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECTION: OFFICIAL CHATS -->
+<section class="section" id="sec-official">
+<div class="section__title">
+<h2>✅ Официальные чаты</h2>
+<div class="section__meta">правила</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>📰 Где следить за обновлениями</h3>
+<ul>
+<li>Новости и изменения публикуются в канале <span class="kbd">@toadbotnews</span></li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECTION: FAQ -->
+<section class="section" id="sec-faq">
+<div class="section__title">
+<h2>❓ FAQ</h2>
+<div class="section__meta">быстро</div>
+</div>
+<div class="grid">
+<div class="card">
+<details>
+<summary>Сколько стоит Prime и как купить?</summary>
+<div class="details-body">
+                  Prime покупается навсегда за <strong>89 рублей</strong>. Команда: <span class="kbd">Купить жабу</span>.
+                </div>
+</details>
+</div>
+<div class="card">
+<details>
+<summary>Сколько действует личный усилитель?</summary>
+<div class="details-body">
+<strong>48 часов</strong>. Покупка: <span class="kbd">Выбрать усилитель</span>. Активный: <span class="kbd">Мое снаряжение</span>.
+                </div>
+</details>
+</div>
+<div class="card">
+<details>
+<summary>Сколько действует клановый усилитель?</summary>
+<div class="details-body">
+<strong>120 часов</strong> (5 суток). Команда: <span class="kbd">Выбрать усилитель клана</span>.
+                </div>
+</details>
+</div>
+<div class="card">
+<details>
+<summary>Когда можно отправить жабёнка в сад и на махач?</summary>
+<div class="details-body">
+                  В сад: <strong>6:00–12:00</strong> МСК. Махач — через <strong>2 часа</strong> после отправки в сад: <span class="kbd">Отправить жабенка на махач</span>.
+                </div>
+</details>
+</div>
+</div>
+</section>
+<footer>
+<p><strong>Жабабот Wiki</strong> • Собрано из новостного канала • Обновлено по выгрузке: 30.12.2025</p>
+<p style="margin-top: 10px; opacity: 0.75;">Источник: @toadbotnews (по выгруженной истории)</p>
+</footer>
+</div>
+</section>
+</main>
+<script>
+    // 1) TOC auto-build
+    const tocNav = document.getElementById('tocNav');
+    const sections = Array.from(document.querySelectorAll('.section[id]'));
+
+    function buildToc() {
+      tocNav.innerHTML = '';
+      sections.forEach(sec => {
+        const h2 = sec.querySelector('h2');
+        if (!h2) return;
+        const a = document.createElement('a');
+        a.href = '#' + sec.id;
+        a.textContent = h2.textContent.trim();
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.getElementById(sec.id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', '#' + sec.id);
+        });
+        tocNav.appendChild(a);
+      });
+    }
+    buildToc();
+
+    // 2) Active section highlight in TOC
+    const tocLinks = () => Array.from(tocNav.querySelectorAll('a'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        tocLinks().forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === '#' + id));
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0.01 });
+
+    sections.forEach(s => observer.observe(s));
+
+    // 3) Collapse TOC
+    const btnCollapse = document.getElementById('btnCollapseToc');
+    const tocBody = document.getElementById('tocBody');
+    let tocCollapsed = false;
+    btnCollapse.addEventListener('click', () => {
+      tocCollapsed = !tocCollapsed;
+      tocBody.style.display = tocCollapsed ? 'none' : 'block';
+    });
+
+    // 4) Search across wiki (top input)
+    const form = document.getElementById('siteSearchForm');
+    const input = document.getElementById('q');
+
+    function clearHighlights() {
+      document.querySelectorAll('.highlight').forEach(el => el.classList.remove('highlight'));
+      sections.forEach(sec => sec.style.display = '');
+      tocLinks().forEach(l => l.style.display = '');
+    }
+
+    function applySearch(query) {
+      const q = query.trim().toLowerCase();
+      clearHighlights();
+      if (!q) return;
+
+      const matchedSectionIds = new Set();
+
+      sections.forEach(sec => {
+        const text = sec.innerText.toLowerCase();
+        if (text.includes(q)) {
+          matchedSectionIds.add(sec.id);
+          sec.classList.add('highlight');
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+
+      tocLinks().forEach(l => {
+        const id = l.getAttribute('href').slice(1);
+        l.style.display = matchedSectionIds.has(id) ? '' : 'none';
+      });
+
+      const first = sections.find(s => matchedSectionIds.has(s.id));
+      if (first) first.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      applySearch(input.value);
+    });
+
+    input.addEventListener('input', () => {
+      if (!input.value.trim()) clearHighlights();
+    });
+  </script>
+</body>
+</html>
