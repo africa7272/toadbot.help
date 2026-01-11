@@ -1,0 +1,810 @@
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Игры для детей в браузере - 700+ развивающих игр без скачивания</title>
+<meta name="description" content="700+ развивающих игр для детей в браузере без скачивания. Обучение, головоломки, рисование, раскраски - играй онлайн бесплатно для детей всех возрастов."/>
+<meta name="keywords" content="игры для детей, развивающие игры, детские игры, обучающие игры, раскраски, головоломки для детей, игры без скачивания"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<meta name="revisit-after" content="7 days"/>
+<link rel="canonical" href="https://жабабот.рф/igry/dlya-detei/"/>
+<meta property="og:title" content="Игры для детей - 700+ развивающих игр в браузере"/>
+<meta property="og:description" content="Лучшие развивающие игры для детей без скачивания. Обучение буквам, цифрам, рисование. Играй бесплатно в браузере."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://жабабот.рф/igry/dlya-detei/"/>
+<meta property="og:site_name" content="жабабот.рф"/>
+<meta property="og:locale" content="ru_RU"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Игры для детей - 700+ игр"/>
+<meta name="twitter:description" content="Развивающие игры для детей без скачивания. Играй бесплатно в браузере."/>
+<meta name="author" content="жабабот.рф"/>
+<meta name="copyright" content="жабабот.рф"/>
+<link rel="alternate" hreflang="ru" href="https://жабабот.рф/igry/dlya-detei/"/>
+<style>
+    :root {
+      --primary: #2d1e0c;
+      --accent: #5fb878;
+      --light-bg: #faf8f3;
+      --card-bg: #fff;
+      --text-dark: #2c2c2c;
+      --text-light: #666;
+      --border: #e8e3d8;
+      --topbar-bg: #0b0f14;
+      --topbar-text: #f5f5f5;
+      --cta-gold: #d4af37;
+      --kids-primary: #ff6b9d;
+      --kids-accent: #ffa751;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    .topbar {
+      background: var(--topbar-bg);
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .topbar__inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--topbar-text);
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+    .brand__logo { width: 28px; height: 28px; display: block; }
+    .brand__text { letter-spacing: -0.5px; }
+    .nav { display: flex; gap: 25px; align-items: center; }
+    .nav__link {
+      color: rgba(245, 245, 245, 0.7);
+      text-decoration: none;
+      font-size: 0.9em;
+      transition: color 0.3s;
+    }
+    .nav__link:hover, .nav__link.is-active { color: var(--accent); }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85em;
+      font-weight: 500;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .cta--gold { background: var(--cta-gold); color: var(--topbar-bg); }
+    .cta--gold:hover { background: #e5c158; transform: translateY(-2px); }
+    .cta__arr { font-size: 0.8em; opacity: 0.8; }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+
+    .breadcrumb {
+      font-size: 0.9em;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      padding: 10px 0;
+    }
+    .breadcrumb a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    .hero {
+      padding: 34px 20px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ff6b9d 0%, #ffa751 100%);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 18px 0 22px 0;
+    }
+    .hero h1 { font-size: 2.2em; margin-bottom: 8px; font-weight: 700; }
+    .hero p { opacity: 0.95; max-width: 900px; font-size: 1.05em; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .panel__head {
+      padding: 16px 16px 12px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .panel__title {
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .panel__body { padding: 14px 16px 16px 16px; }
+
+    .toc { position: sticky; top: 86px; }
+    .toc a {
+      display: block;
+      padding: 10px 10px;
+      margin: 6px 0;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text-dark);
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      background: var(--light-bg);
+      font-size: 0.95em;
+    }
+    .toc a:hover { border-color: var(--border); transform: translateX(2px); }
+    .toc a.is-active { background: rgba(255, 107, 157, 0.14); border-color: rgba(255, 107, 157, 0.3); color: var(--primary); }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--light-bg);
+      cursor: pointer;
+      transition: 0.2s ease;
+      font-size: 0.9em;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 14px rgba(0,0,0,0.08); }
+
+    .section { margin-bottom: 18px; scroll-margin-top: 110px; }
+    .section__title {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .section__title h2 {
+      font-size: 1.25em;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section__meta { font-size: 0.85em; color: var(--text-light); white-space: nowrap; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 14px;
+      padding: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: 0.2s ease;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,0.08); }
+    .card h3 {
+      color: var(--primary);
+      font-size: 1.05em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card p { color: var(--text-light); font-size: 0.95em; margin-bottom: 8px; line-height: 1.5; }
+    .card ul { list-style: none; padding-left: 0; }
+    .card li {
+      padding: 8px 0 8px 24px;
+      position: relative;
+      color: var(--text-light);
+      font-size: 0.95em;
+    }
+    .card li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #ff6b9d;
+      font-weight: 700;
+    }
+
+    .info {
+      background: linear-gradient(135deg, #ffe4f0 0%, #ffd9e8 100%);
+      border-left: 4px solid #ff6b9d;
+      padding: 14px 14px;
+      border-radius: 10px;
+      margin-top: 10px;
+      color: var(--text-dark);
+      font-size: 0.95em;
+    }
+
+    details {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    details summary {
+      cursor: pointer;
+      padding: 14px 16px;
+      font-weight: 700;
+      color: var(--primary);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details .details-body { padding: 0 16px 16px 16px; color: var(--text-light); }
+
+    .cta-section {
+      text-align: center;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, rgba(255,107,157,0.08) 0%, rgba(255,167,81,0.08) 100%);
+      border-radius: 12px;
+      margin: 30px 0;
+    }
+
+    .cta-section h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+      font-size: 1.3em;
+    }
+
+    .cta-section p {
+      color: var(--text-light);
+      margin-bottom: 16px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--cta-gold);
+      color: var(--topbar-bg);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1em;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-btn:hover {
+      background: #e5c158;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(212, 175, 55, 0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--text-light);
+      font-size: 0.9em;
+      margin-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { position: static; top: auto; }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.6em; }
+      .topbar__inner { flex-direction: column; gap: 12px; }
+      .nav { gap: 15px; }
+    }
+  </style>
+</head>
+<body>
+<header class="topbar">
+<div class="topbar__inner">
+<a aria-label="На главную" class="brand" href="https://жабабот.рф/">
+<span class="brand__logo">🐸</span>
+<span class="brand__text">жабабот.рф</span>
+</a>
+<nav aria-label="Навигация" class="nav">
+<a class="nav__link" href="https://жабабот.рф/igry/">Все игры</a>
+<a class="nav__link" href="https://жабабот.рф/igry/shutery/">Шутеры</a>
+<a class="nav__link" href="https://жабабот.рф/igry/rpg/">РПГ</a>
+<a class="nav__link is-active" href="https://жабабот.рф/igry/dlya-detei/">Для детей</a>
+
+<a class="nav__link" href="/blog/">Блог</a>
+<a class="nav__link" href="/teams/">Команды</a>
+</nav>
+<a class="cta cta--gold" href="https://t.me/toadbot?start=228691787" rel="noopener" target="_blank">
+Играть в Жабабота <span class="cta__arr">↗</span>
+</a>
+</div>
+</header>
+<main class="container">
+<div class="breadcrumb">
+<a href="https://жабабот.рф/">Главная</a> / 
+<a href="https://жабабот.рф/igry/">Все игры</a> / 
+<strong>Игры для детей</strong>
+</div>
+<section class="hero">
+<h1>🎨 Развивающие игры для детей: 700+ игр без скачивания</h1>
+<p>Безопасные, развивающие, забавные игры для детей всех возрастов. Обучение буквам и цифрам, раскраски, головоломки, рисование. Развивай логику, творчество и координацию. Никакого вредного контента, только полезное и интересное.</p>
+</section>
+<section class="layout">
+<aside aria-label="Содержание" class="panel toc">
+<div class="panel__head">
+<div class="panel__title">🧭 Быстрый переход</div>
+<button class="btn" id="btnCollapseToc" title="Свернуть/развернуть" type="button">↕️</button>
+</div>
+<div class="panel__body" id="tocBody">
+<nav class="toc" id="tocNav"></nav>
+<div class="info">
+<strong>Совет родителям:</strong> Все игры безопасны, без рекламы и микротранзакций!
+</div>
+</div>
+</aside>
+<div class="panel">
+<section class="section" id="sec-popular">
+<div class="section__title">
+<h2>🔥 Самые популярные развивающие игры</h2>
+<div class="section__meta">любимые игры детей и одобренные родителями</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>🔤 Обучение буквам и словам</h3>
+<p>Учи русский алфавит, пиши первые слова, разгадывай ребусы. Веселая грамматика.</p>
+<ul>
+<li>Интерактивные буквы</li>
+<li>Слова с рисунками</li>
+<li>Весёлые песни алфавита</li>
+<li>Безопасное обучение</li>
+</ul>
+</div>
+<div class="card">
+<h3>🔢 Цифры и математика</h3>
+<p>Учи счёт, сложение, вычитание. От простого к сложному.</p>
+<ul>
+<li>Счёт до 100</li>
+<li>Примеры и задачи</li>
+<li>Весёлая математика</li>
+<li>Прогрессивная сложность</li>
+</ul>
+</div>
+<div class="card">
+<h3>🎨 Раскраски и рисование</h3>
+<p>Раскрашивай картинки, рисуй с друзьями, изучай цвета.</p>
+<ul>
+<li>Сотни раскрасок</li>
+<li>Свободное рисование</li>
+<li>Волшебные краски</li>
+<li>Сохранение рисунков</li>
+</ul>
+</div>
+<div class="card">
+<h3>🧩 Головоломки для мозга</h3>
+<p>Пазлы, лабиринты, поиск отличий. Развивай логику и внимание.</p>
+<ul>
+<li>Паззлы разных размеров</li>
+<li>Лабиринты и головоломки</li>
+<li>Поиск скрытых объектов</li>
+<li>Развитие памяти</li>
+</ul>
+</div>
+<div class="card">
+<h3>🎵 Музыкальные игры</h3>
+<p>Учи ноты, играй на пианино, пой любимые песни.</p>
+<ul>
+<li>Виртуальное пианино</li>
+<li>Музыкальные ноты</li>
+<li>Популярные мелодии</li>
+<li>Музыкальные игры</li>
+</ul>
+</div>
+<div class="card">
+<h3>🐾 Животные и природа</h3>
+<p>Изучай животных, растения, природные явления. Экологическое образование.</p>
+<ul>
+<li>Факты о животных</li>
+<li>Голоса животных</li>
+<li>Жизненные циклы</li>
+<li>Экология и природа</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section" id="sec-age">
+<div class="section__title">
+<h2>👶 Игры по возрастам</h2>
+<div class="section__meta">выбери подходящий уровень сложности</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>👶 Для малышей (2-4 года)</h3>
+<p>Яркие, простые игры с большими кнопками. Развивают моторику.</p>
+<ul>
+<li>Большие цветные кнопки</li>
+<li>Животные и звуки</li>
+<li>Веселые звуки и музыка</li>
+<li>Без таймеров и стресса</li>
+</ul>
+</div>
+<div class="card">
+<h3>🧒 Для дошкольников (4-6 лет)</h3>
+<p>Обучение буквам, цифрам, логика. Подготовка к школе.</p>
+<ul>
+<li>Алфавит и счёт</li>
+<li>Простые пазлы</li>
+<li>Раскраски с контурами</li>
+<li>Первые слова</li>
+</ul>
+</div>
+<div class="card">
+<h3>👦 Для младших школьников (6-9 лет)</h3>
+<p>Сложные головоломки, квесты, логические задачи. Развитие мышления.</p>
+<ul>
+<li>Сложные пазлы</li>
+<li>Ребусы и кроссворды</li>
+<li>Логические квесты</li>
+<li>Увлекательные сюжеты</li>
+</ul>
+</div>
+<div class="card">
+<h3>👧 Для старших детей (9-12 лет)</h3>
+<p>Стратегические игры, творческие проекты, социальное взаимодействие.</p>
+<ul>
+<li>Стратегические головоломки</li>
+<li>Творческие проекты</li>
+<li>Многоуровневые квесты</li>
+<li>Социальные элементы</li>
+</ul>
+</div>
+<div class="card">
+<h3>🎮 Для подростков (12+ лет)</h3>
+<p>Сложные игры, командные проекты, творческое выражение.</p>
+<ul>
+<li>Сложные стратегии</li>
+<li>Кооп-игры с друзьями</li>
+<li>Творческие программы</li>
+<li>Образовательный контент</li>
+</ul>
+</div>
+<div class="card">
+<h3>💡 Образовательные для всех</h3>
+<p>Игры, которые учат: науку, историю, географию, английский язык.</p>
+<ul>
+<li>История и география</li>
+<li>Английский язык</li>
+<li>Естественные науки</li>
+<li>Критическое мышление</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section" id="sec-benefits">
+<div class="section__title">
+<h2>✨ Развивающие навыки</h2>
+<div class="section__meta">какие умения развивают наши игры</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>🧠 Логика и мышление</h3>
+<p>Решение головоломок развивает критическое мышление и логику.</p>
+<ul>
+<li>Анализ и синтез</li>
+<li>Пространственное мышление</li>
+<li>Стратегическое планирование</li>
+<li>Решение проблем</li>
+</ul>
+</div>
+<div class="card">
+<h3>🎨 Творчество и воображение</h3>
+<p>Рисование и творческие игры развивают фантазию и самовыражение.</p>
+<ul>
+<li>Художественные навыки</li>
+<li>Креативное мышление</li>
+<li>Самовыражение</li>
+<li>Эстетический вкус</li>
+</ul>
+</div>
+<div class="card">
+<h3>🎯 Внимание и память</h3>
+<p>Игры на запоминание и концентрацию улучшают когнитивные функции.</p>
+<ul>
+<li>Зрительная память</li>
+<li>Концентрация внимания</li>
+<li>Скорость восприятия</li>
+<li>Детали и нюансы</li>
+</ul>
+</div>
+<div class="card">
+<h3>🤝 Социальные навыки</h3>
+<p>Кооп-игры учат работать в команде и общаться.</p>
+<ul>
+<li>Командная работа</li>
+<li>Общение с друзьями</li>
+<li>Лидерство</li>
+<li>Сотрудничество</li>
+</ul>
+</div>
+<div class="card">
+<h3>📚 Образовательные знания</h3>
+<p>Обучение буквам, цифрам, историям, географии в игровой форме.</p>
+<ul>
+<li>Грамотность</li>
+<li>Счет и математика</li>
+<li>Общие знания</li>
+<li>Языковые навыки</li>
+</ul>
+</div>
+<div class="card">
+<h3>🏃 Моторика и координация</h3>
+<p>Игры развивают мелкую и крупную моторику, координацию.</p>
+<ul>
+<li>Мелкая моторика</li>
+<li>Зрительно-моторная координация</li>
+<li>Правша и левша</li>
+<li>Точность движений</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section" id="sec-tips">
+<div class="section__title">
+<h2>💡 Рекомендации для родителей</h2>
+<div class="section__meta">как сделать игры полезными и безопасными</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>1️⃣ Контролируй время игры</h3>
+<p>30-60 минут в день — оптимально. Поощри перерывы, занятия спортом.</p>
+<ul>
+<li>Для малышей: 15-30 минут</li>
+<li>Для школьников: 30-60 минут</li>
+<li>Перерывы каждые 20 минут</li>
+<li>Баланс с офлайн активностями</li>
+</ul>
+</div>
+<div class="card">
+<h3>2️⃣ Выбирай развивающие игры</h3>
+<p>Смотри описание и возрастной рейтинг. Выбирай с обучающим потенциалом.</p>
+<ul>
+<li>Проверь содержание</li>
+<li>Прочитай отзывы родителей</li>
+<li>Убедись в образовательной ценности</li>
+<li>Избегай насилия и рекламы</li>
+</ul>
+</div>
+<div class="card">
+<h3>3️⃣ Играй вместе</h3>
+<p>Когда возможно, присоединяйся к игре. Обсудите, что происходит.</p>
+<ul>
+<li>Участвуй в игре</li>
+<li>Обсуждай сюжеты и решения</li>
+<li>Помогай при затруднениях</li>
+<li>Хвали достижения</li>
+</ul>
+</div>
+<div class="card">
+<h3>4️⃣ Защищай глаза и здоровье</h3>
+<p>Экран светит. Смотри вдаль каждые 20 минут, предотврати проблемы зрения.</p>
+<ul>
+<li>Расстояние от экрана: 30-40 см</li>
+<li>Каждые 20 минут: перерыв</li>
+<li>Смотри вдаль (3+ метра)</li>
+<li>Правильное освещение комнаты</li>
+</ul>
+</div>
+<div class="card">
+<h3>5️⃣ Используй родительский контроль</h3>
+<p>Установи фильтры, ограничения по времени, отслеживание активности.</p>
+<ul>
+<li>Родительский контроль браузера</li>
+<li>Таймеры и уведомления</li>
+<li>Отключение рекламы</li>
+<li>Приватность и безопасность</li>
+</ul>
+</div>
+<div class="card">
+<h3>6️⃣ Одобрай и поощряй прогресс</h3>
+<p>Отмечай успехи, хвали усилия, мотивируй развитие.</p>
+<ul>
+<li>Радуйся достижениям</li>
+<li>Хвали за старание</li>
+<li>Отмечай прогресс</li>
+<li>Учи учиться на ошибках</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section" id="sec-faq">
+<div class="section__title">
+<h2>❓ Вопросы родителей</h2>
+<div class="section__meta">ответы на частые беспокойства</div>
+</div>
+<div class="grid">
+<div class="card">
+<details>
+<summary>Безопасны ли эти игры для детей?</summary>
+<div class="details-body">
+Да! Все игры здесь проверены на безопасность. Нет насилия, взрослого контента, рекламы или попыток сбора данных. Полностью безопасны и образованы для детей.
+</div>
+</details>
+</div>
+<div class="card">
+<details>
+<summary>Сколько времени ребёнок должен проводить в играх?</summary>
+<div class="details-body">
+Рекомендуемо: 30-60 минут в день для школьников, 15-30 минут для малышей. Важны перерывы каждые 20 минут и баланс с физической активностью, чтением, социализацией.
+</div>
+</details>
+</div>
+<div class="card">
+<details>
+<summary>Могу ли я отслеживать прогресс моего ребенка?</summary>
+<div class="details-body">
+Да, многие игры сохраняют прогресс в облаке. Вы можете видеть, какие уровни пройдены, какие навыки развивают. Советуем периодически проверять вместе.
+</div>
+</details>
+</div>
+<div class="card">
+<details>
+<summary>Есть ли в играх встроенные покупки или скрытые платежи?</summary>
+<div class="details-body">
+Нет! Все игры полностью бесплатны. Нет встроенных платежей, подписок или премиум-контента. Грех платить за игры для детей.
+</div>
+</details>
+</div>
+<div class="card">
+<details>
+<summary>Как я могу включить родительский контроль?</summary>
+<div class="details-body">
+В браузере: настройки → родительский контроль. На смартфоне: iOS — Family Sharing, Android — Family Link. Также можно установить таймеры и фильтры веб-сайтов.
+</div>
+</details>
+</div>
+<div class="card">
+<details>
+<summary>Какие игры лучше для возраста моего ребёнка?</summary>
+<div class="details-body">
+Для 2-4 лет: животные, звуки, раскраски. Для 4-6 лет: буквы, цифры, простые пазлы. Для 6-9 лет: головоломки, ребусы, квесты. Для 9+ лет: сложные стратегии и образовательный контент.
+</div>
+</details>
+</div>
+</div>
+</section>
+
+<section class="cta-section">
+<h3>🐸 Присоединяйтесь к безопасному игровому сообществу!</h3>
+<p>Жабабота — это безопасное место для детей, где они могут учиться, играть и развиваться. Никаких опасностей, только веселье и образование.</p>
+<a href="https://t.me/toadbot?start=228691787" class="cta-btn" rel="noopener" target="_blank">
+🐸 Узнать больше <span class="cta__arr">↗</span>
+</a>
+</section>
+
+<footer>
+<p><strong>Развивающие игры для детей на жабабот.рф</strong> • 700+ игр в браузере • Безопасно, без скачивания, без рекламы • Бесплатно для всей семьи</p>
+<p style="margin-top: 10px; font-size: 0.85em;">
+<a href="https://жабабот.рф/">На главную</a> • 
+<a href="https://жабабот.рф/igry/">Все игры</a> • 
+<a href="https://жабабот.рф/igry/shutery/">Шутеры и экшн</a> • 
+<a href="https://жабабот.рф/igry/rpg/">РПГ и приключения</a> • 
+<a href="https://жабабот.рф/igry/kazualnye/">Казуальные игры</a> • 
+<a href="https://жабабот.рф/igry/na-telefon/">Игры на телефон</a> • 
+<a href="https://t.me/toadbot">Телеграм бот</a>
+</p>
+<p style="margin-top: 15px; font-size: 0.8em; opacity: 0.7;">
+Категория: Развивающие игры для детей в браузере. Все игры бесплатные, безопасные, без скачивания. Работают на ПК, планшетах и мобильных. Полная приватность и безопасность детей. Последнее обновление: 02.01.2026.
+</p>
+</footer>
+</div>
+</section>
+</main>
+<script>
+    const tocNav = document.getElementById('tocNav');
+    const sections = Array.from(document.querySelectorAll('.section[id]'));
+
+    function buildToc() {
+      tocNav.innerHTML = '';
+      sections.forEach(sec => {
+        const h2 = sec.querySelector('h2');
+        if (!h2) return;
+        const a = document.createElement('a');
+        a.href = '#' + sec.id;
+        a.textContent = h2.textContent.trim();
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          document.getElementById(sec.id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', '#' + sec.id);
+        });
+        tocNav.appendChild(a);
+      });
+    }
+    buildToc();
+
+    const tocLinks = () => Array.from(tocNav.querySelectorAll('a'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.id;
+        tocLinks().forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === '#' + id));
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0.01 });
+
+    sections.forEach(s => observer.observe(s));
+
+    const btnCollapse = document.getElementById('btnCollapseToc');
+    const tocBody = document.getElementById('tocBody');
+    let tocCollapsed = false;
+    btnCollapse.addEventListener('click', () => {
+      tocCollapsed = !tocCollapsed;
+      tocBody.style.display = tocCollapsed ? 'none' : 'block';
+    });
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106028838', 'ym');
+
+    ym(106028838, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/106028838" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Блог</title>
+  <meta name="description" content="Лента материалов жабабот.рф: статьи, подборки и страницы из разделов boardgames, igry и pages." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://жабабот.рф/blog/" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Блог" />
+  <meta property="og:description" content="Лента материалов жабабот.рф: статьи, подборки и страницы из разделов boardgames, igry и pages." />
+  <meta property="og:url" content="https://жабабот.рф/blog/" />
+  <meta property="og:site_name" content="жабабот.рф" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+
+<style>
+/* Blog tiles */
+.blog-list{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap:16px;
+  margin-top:18px;
+}
+.blog-item{
+  background: rgba(15,22,28,.72);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 18px;
+  padding: 16px 16px 14px;
+  box-shadow: 0 12px 26px rgba(0,0,0,.22);
+  backdrop-filter: blur(10px);
+  display:flex;
+  flex-direction:column;
+  min-height: 210px;
+}
+.blog-item:hover{
+  border-color: rgba(255,255,255,.18);
+  transform: translateY(-1px);
+  transition: transform .12s ease, border-color .12s ease, filter .12s ease;
+}
+.blog-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.blog-title{
+  margin:0;
+  font-size: 18px;
+  line-height:1.25;
+}
+.blog-title a{color: rgba(234,241,255,.96); text-decoration:none}
+.blog-title a:hover{text-decoration:underline}
+.blog-desc{
+  margin:10px 0 0;
+  color: rgba(234,241,255,.78);
+  line-height:1.55;
+  font-size: 14px;
+  flex:1;
+}
+.blog-actions{
+  margin-top: 14px;
+  display:flex;
+  justify-content:flex-start;
+}
+.blog-actions .btn{
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 900;
+}
+</style>
+
+</head>
+<body>
+<header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="/" aria-label="На главную">
+        <span class="brand__logo">🐸</span>
+        <span>жабабот.рф</span>
+      </a>
+
+      <nav class="nav" aria-label="Навигация">
+        <a class="nav__link " href="/">Главная</a>
+        <a class="nav__link" href="/guides/">Гайды</a>
+        <a class="nav__link" href="/wiki/">Wiki</a>
+      
+<a class="nav__link is-active" href="/blog/">Блог</a>
+<a class="nav__link" href="/teams/">Команды</a>
+</nav>
+
+      <!-- НЕ МЕНЯТЬ партнерскую ссылку -->
+      <a class="cta cta--gold" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
+        Играть в Жабабота ↗
+      </a>
+    </div>
+  </header>
+  <div class="wrap">
+    <main>
+      <nav class="crumbs" aria-label="Хлебные крошки">
+        <a href="/">Главная</a> <span class="dot">→</span> <span>Блог</span>
+      </nav>
+      <section class="hero">
+        <h1>Блог жабабот.рф</h1>
+        
+<p>Собрали здесь все материалы сайта: гайды по Жабаботу, заметки про Telegram‑ботов, игры и полезные страницы. Заходи, выбирай тему и читай — без лишней воды.</p>
+<div class="blog-list">
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">pages</span>
+  </div>
+  <h2 class="blog-title"><a href="/pages/bot-dlya-chata-v-tg-besplatno/">Бот для чата в ТГ бесплатно — как выбрать и запустить в Telegram</a></h2>
+  <p class="blog-desc">Тут про один конкретный интент: нужен бесплатный бот для чата в Telegram. Разберёмся, что должно быть в бесплатной версии, как подключить, и как не принести…</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/pages/bot-dlya-chata-v-tg-besplatno/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">pages</span>
+  </div>
+  <h2 class="blog-title"><a href="/pages/bots-v-tg-dlya-chatov/">Боты в ТГ для чатов — игровые, развлекательные, для общения и групп</a></h2>
+  <p class="blog-desc">Если ты ищешь бота для чата в ТГ, чтобы оживить переписку, добавить игры или просто сделать чат веселее — ниже собраны самые популярные форматы: игровые боты…</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/pages/bots-v-tg-dlya-chatov/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">pages</span>
+  </div>
+  <h2 class="blog-title"><a href="/pages/ii-igrovoi-bot/">ИИ игровой бот — что это такое и как работают игровые боты с интеллектом</a></h2>
+  <p class="blog-desc">ИИ игровой бот — это игровой бот, в котором используются элементы искусственного интеллекта: адаптация, обучение на действиях игрока и динамическое поведение…</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/pages/ii-igrovoi-bot/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">pages</span>
+  </div>
+  <h2 class="blog-title"><a href="/pages/igrovoi-bot-besplatno/">Игровой бот бесплатно — как играть без оплаты и без подвохов</a></h2>
+  <p class="blog-desc">Запрос «игровой бот бесплатно» ищут чаще всего. Но бесплатность в играх бывает разной. В этой статье разберём, можно ли реально играть без оплаты, где скрыты…</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/pages/igrovoi-bot-besplatno/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">pages</span>
+  </div>
+  <h2 class="blog-title"><a href="/pages/igrovoy-bot/">Игровой бот — что это такое и как играть в чате | Жабабот в Telegram</a></h2>
+  <p class="blog-desc">Игровой бот — что это такое и почему в него играют прямо в чате</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/pages/igrovoy-bot/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">pages</span>
+  </div>
+  <h2 class="blog-title"><a href="/pages/igrovye-boty-v-telegram/">Игровые боты в Telegram — игры прямо в чате без установок</a></h2>
+  <p class="blog-desc">Игровые боты в Telegram • игры в телеграме • чат-игра в телеграм</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/pages/igrovye-boty-v-telegram/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">pages</span>
+  </div>
+  <h2 class="blog-title"><a href="/pages/igrovye-boty-dlya-chatov-v-tg/">Игровые боты в ТГ для чатов — игры в Telegram-чате для компании</a></h2>
+  <p class="blog-desc">Эта страница — под интент “игровые боты в ТГ для чатов” и “боты в ТГ для чатов игры”. Здесь про то, как устроены игры в чате, что лучше зайдёт компании, и ка…</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/pages/igrovye-boty-dlya-chatov-v-tg/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">pages</span>
+  </div>
+  <h2 class="blog-title"><a href="/pages/igrovye-boty-dlya-chatov-i-grupp/">Игровые боты для чатов и групп — как оживить беседу и сообщество</a></h2>
+  <p class="blog-desc">Игровые боты для чатов и групп — это способ оживить беседу, добавить активности и удержать участников. Такие боты превращают обычный чат в место, куда хочетс…</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/pages/igrovye-boty-dlya-chatov-i-grupp/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">pages</span>
+  </div>
+  <h2 class="blog-title"><a href="/pages/kak-sozdat-igrovoi-bot/">Как создать игровой бот: пошагово, примеры и частые ошибки</a></h2>
+  <p class="blog-desc">Запросы вроде «как создать игровой бот» и «как сделать игровой бот» чаще всего задают те, кто хочет понять логику, а не сразу писать код. В этой статье — пон…</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/pages/kak-sozdat-igrovoi-bot/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">pages</span>
+  </div>
+  <h2 class="blog-title"><a href="/pages/luchshie-igrovye-boty/">Лучшие игровые боты — как выбрать интересный игровой бот и не бросить игру</a></h2>
+  <p class="blog-desc">Запрос «лучший игровой бот» звучит просто, но именно он чаще всего приводит к разочарованию. Игровых ботов много, но по-настоящему интересные игровые боты —…</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/pages/luchshie-igrovye-boty/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">pages</span>
+  </div>
+  <h2 class="blog-title"><a href="/pages/top-telegram-games/">🎮 Лучшие игры в Telegram 2025: ТОП-10 рейтинг + обзоры | жабабот.рф</a></h2>
+  <p class="blog-desc">Полный рейтинг и подробные обзоры 10 лучших Telegram игр на декабрь 2025</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/pages/top-telegram-games/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">igry</span>
+  </div>
+  <h2 class="blog-title"><a href="/igry/">Бесплатные онлайн игры в браузере - 20000+ игр на Яндексе без скачивания</a></h2>
+  <p class="blog-desc">Каталог 20000+ бесплатных онлайн игр на Яндексе. Играй без скачивания и регистрации прямо в браузере на ПК и мобильном. Шутеры, РПГ, казуальные и другие жанры на русском языке.</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/igry/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">igry</span>
+  </div>
+  <h2 class="blog-title"><a href="/igry/dlya-detei/">Игры для детей в браузере - 700+ развивающих игр без скачивания</a></h2>
+  <p class="blog-desc">700+ развивающих игр для детей в браузере без скачивания. Обучение, головоломки, рисование, раскраски - играй онлайн бесплатно для детей всех возрастов.</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/igry/dlya-detei/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">igry</span>
+  </div>
+  <h2 class="blog-title"><a href="/igry/na-telefon/">Игры на телефон в браузере - 1000+ игр для мобильного</a></h2>
+  <p class="blog-desc">1000+ игр на телефон в браузере без скачивания. Мобильные шутеры, головоломки, гонки - играй онлайн бесплатно на iOS и Android в мобильном браузере.</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/igry/na-telefon/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">igry</span>
+  </div>
+  <h2 class="blog-title"><a href="/igry/kazualnye/">Казуальные игры и пасьянсы в браузере - 600+ игр без скачивания</a></h2>
+  <p class="blog-desc">600+ казуальных игр и пасьянсов в браузере без скачивания. Судоку, кроссворды, три в ряд, головоломки - играй онлайн бесплатно на ПК и мобильном.</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/igry/kazualnye/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">igry</span>
+  </div>
+  <h2 class="blog-title"><a href="/igry/rpg/">РПГ и приключения в браузере - 800+ лучших игр без скачивания</a></h2>
+  <p class="blog-desc">800+ РПГ и приключений в браузере без скачивания. Роблокс, Майнкрафт, Паркур, фэнтези - играй онлайн бесплатно на ПК и мобильном.</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/igry/rpg/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">igry</span>
+  </div>
+  <h2 class="blog-title"><a href="/igry/top-100-igr/">Топ 100 игр на жабабот.рф - лучшие браузерные игры 2026</a></h2>
+  <p class="blog-desc">Топ 100 лучших игр на жабабот.рф 2026. Шутеры, РПГ, казуальные игры, стратегии - рейтинг и рекомендации от игроков.</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/igry/top-100-igr/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">igry</span>
+  </div>
+  <h2 class="blog-title"><a href="/igry/shutery/">Шутеры и экшн-игры в браузере - 500+ лучших игр без скачивания</a></h2>
+  <p class="blog-desc">500+ шутеров и экшн-игр в браузере без скачивания. КС 2, батл-рояли, снайперы, симуляторы - играй онлайн бесплатно на ПК и мобильном.</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/igry/shutery/">Читать ↗</a></div>
+</article>
+<article class="blog-item">
+  <div class="blog-meta">
+    <span class="chip">boardgames</span>
+  </div>
+  <h2 class="blog-title"><a href="/boardgames/">Настольные игры — как выбрать, во что играть и с чего начать</a></h2>
+  <p class="blog-desc">Настольные игры для семьи, компании и двоих: подборки по возрасту и настроению, простые правила, советы новичкам и идеи для вечера за столом.</p>
+  <div class="blog-actions"><a class="btn btn--gold" href="/boardgames/">Читать ↗</a></div>
+</article>
+</div>
+<div class="seo__hint" style="margin-top:18px;">📝 <strong>Как пополняется лента:</strong> добавляешь страницу в <code>/boardgames</code>, <code>/igry</code> или <code>/pages</code> — и она появляется здесь при следующей сборке.</div>
+
+      </section>
+    </main>
+    <footer>
+      <div>Жабабот • игра-бот в Telegram • гайды и wiki на одном сайте</div>
+      <div style="opacity:.75;margin-top:6px;">
+        Подсказка: начни с <a href="/guides/prime-status/">Prime</a>, потом <a href="/guides/arena/">Арена</a> и <a href="/guides/clans/">Кланы</a>.
+      </div>
+    </footer>
+  </div>
+  <script src="/assets/app.js" defer></script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106028838', 'ym');
+
+    ym(106028838, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/106028838" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
