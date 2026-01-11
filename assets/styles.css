@@ -403,3 +403,22 @@ a{color:inherit}
 a[href*="metrika.yandex.ru"] img[src*="informer.yandex.ru"]{
   display:none !important;
 }
+/* Глушим все визуальные элементы Яндекс.Метрики, оставляя сам счётчик */
+.ym-measurement,
+.ym-measurement__wrap,
+.ym-measurement__button,
+[class*="ym-measurement"],
+[id*="ym-measurement"],
+[class*="ym-visor"],
+[id*="ym-visor"],
+[class*="ym-widget"],
+[id*="ym-widget"],
+iframe[src*="metrika"],
+iframe[src*="mc.yandex"],
+iframe[src*="metrika.yandex"],
+iframe[src*="yandex.ru/metrika"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
