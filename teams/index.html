@@ -3,20 +3,168 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Команды</title>
-  <meta name="description" content="Команды и кланы жабабота: раздел в разработке." />
+
+  <title>Команды Жабабота в Telegram — полный список (арена, кланы, донат, подземелья)</title>
+  <meta name="description" content="Все команды Жабабота для Telegram: как взять жабу, кормить, смотреть баланс и инвентарь, крафтить снаряжение, играть на арене, вступать в кланы, выбирать усилители, отправляться в подземелья, ограбления, гонки и тусовки. Плюс ответы на частые вопросы про донат, усилители, пиво и стрекозюлю." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://жабабот.рф/teams/" />
+
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Команды" />
-  <meta property="og:description" content="Команды и кланы жабабота: раздел в разработке." />
+  <meta property="og:title" content="Команды Жабабота в Telegram — полный список" />
+  <meta property="og:description" content="Список команд Жабабота: жаба, инвентарь, снаряжение, арена, кланы, работа, подземелья, ограбления, гонки, тусовки и платные команды." />
   <meta property="og:url" content="https://жабабот.рф/teams/" />
   <meta property="og:site_name" content="жабабот.рф" />
+
   <link rel="stylesheet" href="/assets/styles.css" />
+
+  <style>
+    /* Page layout helpers (не ломают общий стиль — только добавляют блоки) */
+    .lead {
+      max-width: 980px;
+      opacity: .92;
+    }
+
+    .toolsbar{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      margin: 14px 0 18px;
+    }
+    .search{
+      flex: 1 1 420px;
+      min-width: 260px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      background: rgba(15,22,28,.72);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      padding: 12px 12px;
+      box-shadow: 0 12px 26px rgba(0,0,0,.18);
+    }
+    .search input{
+      width:100%;
+      border:0;
+      outline:0;
+      background:transparent;
+      color: inherit;
+      font-size: 15px;
+    }
+    .search .hint{
+      font-size: 12px;
+      opacity: .7;
+      white-space: nowrap;
+    }
+
+    .chips{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(15,22,28,.52);
+      font-size: 13px;
+      text-decoration:none;
+      opacity: .92;
+    }
+    .chip:hover{ opacity: 1; }
+
+    .cmd-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .cmd-card{
+      background: rgba(15,22,28,.72);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: 0 12px 26px rgba(0,0,0,.20);
+    }
+    .cmd-card h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: .2px;
+    }
+    .cmd-card p{
+      margin: 0 0 10px;
+      opacity: .88;
+    }
+    .cmd-list{
+      margin: 0;
+      padding-left: 18px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .cmd{
+      line-height: 1.35;
+    }
+    .cmd b{
+      font-weight: 700;
+    }
+    .muted{ opacity:.75; }
+
+    .faq{
+      margin-top: 22px;
+    }
+    .faq-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+    details.faq-item{
+      background: rgba(15,22,28,.72);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 18px;
+      padding: 12px 14px;
+      box-shadow: 0 12px 26px rgba(0,0,0,.16);
+    }
+    details.faq-item summary{
+      cursor:pointer;
+      font-weight: 700;
+      list-style:none;
+      outline:none;
+    }
+    details.faq-item summary::-webkit-details-marker{ display:none; }
+    details.faq-item summary::after{
+      content:"＋";
+      float:right;
+      opacity:.8;
+    }
+    details.faq-item[open] summary::after{ content:"—"; }
+    details.faq-item .ans{
+      margin-top:10px;
+      opacity:.9;
+    }
+
+    /* На всякий случай — если глобальный CSS не поймал: */
+    .ym-measurement,
+    .ym-measurement__button,
+    .ym-measurement__wrap,
+    [class*="ym-measurement"],
+    [id*="ym-measurement"]{
+      display:none !important;
+      visibility:hidden !important;
+      pointer-events:none !important;
+    }
+  </style>
 </head>
+
 <body>
-<header class="topbar">
+  <header class="topbar">
     <div class="topbar__inner">
       <a class="brand" href="/" aria-label="На главную">
         <span class="brand__logo">🐸</span>
@@ -24,13 +172,12 @@
       </a>
 
       <nav class="nav" aria-label="Навигация">
-        <a class="nav__link " href="/">Главная</a>
+        <a class="nav__link" href="/">Главная</a>
         <a class="nav__link" href="/guides/">Гайды</a>
         <a class="nav__link" href="/wiki/">Wiki</a>
-      
-<a class="nav__link" href="/blog/">Блог</a>
-<a class="nav__link is-active" href="/teams/">Команды</a>
-</nav>
+        <a class="nav__link" href="/blog/">Блог</a>
+        <a class="nav__link is-active" href="/teams/">Команды</a>
+      </nav>
 
       <!-- НЕ МЕНЯТЬ партнерскую ссылку -->
       <a class="cta cta--gold" href="https://t.me/toadbot?start=228691787" target="_blank" rel="noopener">
@@ -38,36 +185,456 @@
       </a>
     </div>
   </header>
+
   <div class="wrap">
     <main>
       <nav class="crumbs" aria-label="Хлебные крошки">
         <a href="/">Главная</a> <span class="dot">→</span> <span>Команды</span>
       </nav>
+
       <section class="hero">
-        <h1>Команды</h1>
-        <p>Здесь скоро будет список команд, кланов и движ вокруг жабьих баталий. Пока пусто — но это временно.</p>
+        <h1>Команды Жабабота</h1>
+        <p class="lead">
+          Здесь — полный список команд для игры в Telegram: от «взять жабу» и «мой баланс» до клановых усилителей,
+          подземелий, ограблений, гонок и тусовок. Если ты новичок — начни с блока «Жаба и базовые команды».
+        </p>
+
+        <div class="toolsbar" role="region" aria-label="Поиск и быстрые ссылки">
+          <div class="search" aria-label="Поиск по командам">
+            <span aria-hidden="true">🔎</span>
+            <input id="cmdSearch" type="search" placeholder="Поиск: баланс, пиво, стрекозюля, арена, клан…" autocomplete="off" />
+            <span class="hint">ищет по тексту</span>
+          </div>
+          <div class="chips" aria-label="Быстрая навигация">
+            <a class="chip" href="#base">🐸 База</a>
+            <a class="chip" href="#inventory">🎒 Инвентарь</a>
+            <a class="chip" href="#family">💍 Семья</a>
+            <a class="chip" href="#battles">⚔️ Бои</a>
+            <a class="chip" href="#clans">🏰 Кланы</a>
+            <a class="chip" href="#work">🧰 Работа</a>
+            <a class="chip" href="#dungeons">🕳️ Подземелья</a>
+            <a class="chip" href="#robbery">🧨 Ограбления</a>
+            <a class="chip" href="#races">🏁 Гонки</a>
+            <a class="chip" href="#stats">📊 Статистика</a>
+            <a class="chip" href="#party">🪩 Тусовки</a>
+            <a class="chip" href="#paid">💳 Платные</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="cmd-grid" aria-label="Список команд">
+        <!-- BASE -->
+        <article class="cmd-card cmd-block" id="base" data-title="База жаба баланс ачивки дейлики рассылка общение">
+          <h2>🐸 Жаба и базовые команды</h2>
+          <p class="muted">Самое нужное: профиль, баланс, кормёжка, задания, взаимодействия в чате.</p>
+          <ul class="cmd-list">
+            <li class="cmd"><b>«Моя жаба»</b> — посмотреть свою жабу.</li>
+            <li class="cmd"><b>«Жаба инфо»</b> — информация о жабе (например, когда следующая кормёжка).</li>
+            <li class="cmd"><b>«Мой инвентарь»</b> — открыть инвентарь.</li>
+            <li class="cmd"><b>«Моя семья»</b> — информация о семье.</li>
+            <li class="cmd"><b>«Мои ачивки»</b> — прогресс полученных ачивок.</li>
+            <li class="cmd"><b>«Мой баланс»</b> — сколько букашек на счету.</li>
+            <li class="cmd"><b>«Дать жабе имя ПЕТЯ»</b> — сменить имя (первая смена бесплатная, потом 250 букашек).</li>
+            <li class="cmd"><b>«Покормить жабу»</b> — +1 сытость и немного букашек.</li>
+            <li class="cmd"><b>«Откормить жабу»</b> — раз в 4 часа +5 сытость, стоимость 500 букашек.</li>
+            <li class="cmd"><b>«Ачивки»</b> — список доступных ачивок.</li>
+            <li class="cmd"><b>«Показ ачивок»</b> — включить/выключить показ ачивок в профиле.</li>
+            <li class="cmd"><b>«Дейлики / Ежедневные задания»</b> — посмотреть задания.</li>
+            <li class="cmd"><b>«Дейли помощь»</b> — как выполнять ежедневные задания.</li>
+
+            <li class="cmd"><b>«Подписаться на рассылку»</b> — картинки с жабами каждые 2 часа (нужны разрешения).</li>
+            <li class="cmd"><b>«Отписаться от рассылки»</b> — отключить рассылку.</li>
+            <li class="cmd"><b>«Взять жабу»</b> — завести личную жабу.</li>
+
+            <li class="cmd"><b>«Жабабот кто ПАРАМЕТР»</b> — спросить мнение бота (пример: «Жабабот кто самая крутая жаба…»).</li>
+            <li class="cmd"><b>«Погладить ТЕКСТ»</b> — погладить кого-то.</li>
+            <li class="cmd"><b>«Укусить TЕКСТ»</b> — укусить кого-то.</li>
+            <li class="cmd"><b>«Отмудохать TЕКСТ»</b> — ну… да.</li>
+            <li class="cmd"><b>«Поцеловать TЕКСТ»</b> — поцеловать.</li>
+            <li class="cmd"><b>«Обнять TЕКСТ»</b> — обнять.</li>
+
+            <li class="cmd"><b>«Жаба дня»</b> — случайная жаба получает 150 букашек.</li>
+            <li class="cmd"><b>«Кмн СУММА»</b> — камень-ножницы-бумага (пример: «кмн 50 камень»).</li>
+            <li class="cmd"><b>«Рулетка 100 черный»</b> — рулетка-казино.</li>
+
+            <li class="cmd"><b>«На Арену»</b> — зарегистрироваться/атаковать на арене.</li>
+            <li class="cmd"><b>«Выкинуть жабу»</b> — если прям совсем край.</li>
+            <li class="cmd"><b>«Мертвые жабы»</b> — список мёртвых жаб.</li>
+            <li class="cmd"><b>«Узнать ид»</b> — узнать свой id.</li>
+          </ul>
+        </article>
+
+        <!-- INVENTORY -->
+        <article class="cmd-card cmd-block" id="inventory" data-title="Инвентарь аптечка леденец пиво стрекозюля отправить продать снаряжение банда">
+          <h2>🎒 Инвентарь и предметы</h2>
+          <p class="muted">Покупки за букашки, отправка предметов друзьям, продажа, конвертация, банда.</p>
+          <ul class="cmd-list">
+            <li class="cmd"><b>«Приобрести леденец N»</b> — 300 букашек за 1 леденец.</li>
+            <li class="cmd"><b>«Использовать леденцы N»</b> — повышает настроение жабы.</li>
+            <li class="cmd"><b>«Приобрести аптечку N»</b> — 300 букашек за 1 аптечку.</li>
+            <li class="cmd"><b>«Реанимировать жабу»</b> — использовать аптечку.</li>
+            <li class="cmd"><b>«Приобрести пиво»</b> — 750 букашек, повышает шанс победы в гонке (покупается 1 раз).</li>
+            <li class="cmd"><b>«Приобрести стрекозюлю»</b> — 2000 букашек, +10% букашек (покупается 1 раз).</li>
+            <li class="cmd"><b>«Отправить аптечки / леденцы / букашки N»</b> — ответом на сообщение человека.</li>
+            <li class="cmd"><b>«Отправить карту»</b> — отправить карту лидеру (если в клане больше одного сезона).</li>
+            <li class="cmd"><b>«Продать»</b> — продать выбранные части снаряжения/инвентаря.</li>
+            <li class="cmd"><b>«Использовать капсулу опыта»</b> — использовать капсулу опыта.</li>
+
+            <li class="cmd"><b>«Снаряжение»</b> — возможный шмот, характеристики и стоимость.</li>
+            <li class="cmd"><b>«Скрафтить [Название снаряжения]»</b> — покупка/крафт снаряжения.</li>
+            <li class="cmd"><b>«Починить наголовник / нагрудник / налапники / ближний бой / дальний бой»</b> — полная починка.</li>
+            <li class="cmd"><b>«Снаряжение наголовники / нагрудники / налапники / оружие»</b> — список выбранного вида.</li>
+            <li class="cmd"><b>«Мое снаряжение»</b> — экипировка вашей жабы.</li>
+            <li class="cmd"><b>«Конвертировать»</b> — меню конвертации кусочков.</li>
+            <li class="cmd"><b>«Конвертировать водоросли / кувшинки»</b> — 10 к 1, улучшение качества.</li>
+
+            <li class="cmd"><b>«Моя банда»</b> — меню управления бандой.</li>
+            <li class="cmd"><b>«Собрать банду»</b> — собрать братву (нужно 10 жабулек в инвентаре).</li>
+            <li class="cmd"><b>«Дать банде имя ИМЯ»</b> — дать имя (для смены нужен ачивка «Чемпион»).</li>
+            <li class="cmd"><b>«Брать на тусу»</b> — брать банду на тусу (доплата 100 букашек; повтор — отключит).</li>
+          </ul>
+        </article>
+
+        <!-- FAMILY -->
+        <article class="cmd-card cmd-block" id="family" data-title="брак семья жабенок детсад подарок партнер развод">
+          <h2>💍 Семья, браки и жабята</h2>
+          <p class="muted">Свадьбы, дети, детсад, подарки. Болото — дело семейное.</p>
+          <ul class="cmd-list">
+            <li class="cmd"><b>«Брак предложение»</b> — ответом на сообщение (стоимость 500 букашек).</li>
+            <li class="cmd"><b>«Брак принять / отклонить»</b> — ответ на предложение (бесплатно).</li>
+            <li class="cmd"><b>«Брак отозвать»</b> — вернётся 250 букашек из 500.</li>
+            <li class="cmd"><b>«Брак развод»</b> — развод (стоит 500 букашек).</li>
+            <li class="cmd"><b>«Брак вознаграждение»</b> — награды за брак каждые 5 дней.</li>
+            <li class="cmd"><b>«Брак проверка»</b> — проверить партнёра.</li>
+            <li class="cmd"><b>«Брак показать»</b> — показать браки в беседе.</li>
+            <li class="cmd"><b>«Переместить брак»</b> — перенос брака в новую беседу (в течение 3 дней).</li>
+            <li class="cmd"><b>«Сменить партнёра»</b> — ответом на сообщение (платная команда).</li>
+
+            <li class="cmd"><b>«Взять жабеныша / жабенка»</b> — взять ребёнка из рассылки.</li>
+            <li class="cmd"><b>«Дать жабенку имя ИМЯ»</b> — дать имя (следующая смена 250 букашек).</li>
+            <li class="cmd"><b>«Покормить жабеныша / жабенка»</b> — 75 букашек, +1 сытость, влияет на настроение жабы.</li>
+            <li class="cmd"><b>«Выкинуть жабенка»</b> — да-да, можно и так.</li>
+            <li class="cmd"><b>«Сменить фото жабенка»</b> — с приложением фотографии.</li>
+            <li class="cmd"><b>«Отправить жабенка в детсад»</b> — с 6:00 до 12:00 (МСК).</li>
+            <li class="cmd"><b>«Забрать жабенка»</b> — через 6–8 часов после отправки.</li>
+            <li class="cmd"><b>«Отправить жабенка на махач»</b> — битва жабят (через 2 часа после детсада и до возврата).</li>
+            <li class="cmd"><b>«Топ жабят»</b> — топ жабят по силе.</li>
+            <li class="cmd"><b>«Топ жабят авторитет»</b> — топ по авторитету.</li>
+            <li class="cmd"><b>«Сделать подарок»</b> — подарок партнёру или жабенку.</li>
+          </ul>
+        </article>
+
+        <!-- BATTLES -->
+        <article class="cmd-card cmd-block" id="battles" data-title="дуэль арена подземелье рейд клановая война нападение">
+          <h2>⚔️ Битвы и сражения</h2>
+          <p class="muted">Дуэли, арена, рейды, клановые разборки.</p>
+          <ul class="cmd-list">
+            <li class="cmd"><b>«Дуэль»</b> — ответом на сообщение человека (вызвать).</li>
+            <li class="cmd"><b>«Дуэль принять/отклонить»</b> — ответить на вызов.</li>
+            <li class="cmd"><b>«Дуэль отозвать»</b> — отменить вызов.</li>
+            <li class="cmd"><b>«Дуэль старт»</b> — начать дуэль (приз: 50 букашек и 15 настроения).</li>
+
+            <li class="cmd"><b>«На Арену»</b> — зарегистрироваться на арене / совершить нападение.</li>
+
+            <li class="cmd"><b>«Отправиться в подземелье»</b> — отправить жабу в подземелье.</li>
+            <li class="cmd"><b>«Рейд старт»</b> — запустить битву в подземелье.</li>
+
+            <li class="cmd"><b>«Начать клановую войну»</b> — запустить поиск клановой войны.</li>
+            <li class="cmd"><b>«Выйти из клановой войны»</b> — выход (если КВ не началось).</li>
+            <li class="cmd"><b>«Напасть на клан»</b> — атаковать клан.</li>
+          </ul>
+        </article>
+
+        <!-- CLANS -->
+        <article class="cmd-card cmd-block" id="clans" data-title="кланы мой клан создать вступить сезон лига усилитель заместитель карта герб">
+          <h2>🏰 Кланы</h2>
+          <p class="muted">Создание клана, сезоны, войны, усилители, роли.</p>
+          <ul class="cmd-list">
+            <li class="cmd"><b>Максимум в клане — 5 человек</b> (и для старта клановой войны тоже нужно 5).</li>
+            <li class="cmd"><b>«Мой клан»</b> — посмотреть свой клан.</li>
+            <li class="cmd"><b>«Кланы»</b> — все кланы в беседе.</li>
+            <li class="cmd"><b>«Создать клан НАЗВАНИЕ»</b> — стоимость 1500 букашек.</li>
+            <li class="cmd"><b>«Вступить в клан НАЗВАНИЕ»</b> — стоимость 750 букашек.</li>
+            <li class="cmd"><b>«Выйти из клана»</b> — выйти.</li>
+            <li class="cmd"><b>«Выгнать из клана»</b> — ответом на сообщение (для главы).</li>
+
+            <li class="cmd"><b>«Клан сезон» / «Сезон кланов»</b> — место клана в текущей лиге.</li>
+            <li class="cmd"><b>«Клан сезон золото / серебро / бронза / дерево»</b> — сезон по лиге.</li>
+
+            <li class="cmd"><b>«Начать клановую войну»</b> — добавить клан в поиск.</li>
+            <li class="cmd"><b>«Напасть на клан»</b> — нападение на жабу из вражеского клана.</li>
+            <li class="cmd"><b>«Клан вознаграждение»</b> — награда раз в неделю (нужно отыграть 5 сражений).</li>
+
+            <li class="cmd"><b>«Сменить фото клана»</b> — приложить фото (сменить герб).</li>
+            <li class="cmd"><b>«Отправиться за картой»</b> — мини-игра для поиска карты болота.</li>
+            <li class="cmd"><b>«Передать клан»</b> — ответом на сообщение (передать лидерство).</li>
+
+            <li class="cmd"><b>«Выбрать усилитель»</b> — личный усилитель (2 дня).</li>
+            <li class="cmd"><b>«Выбрать усилитель клана»</b> — усилитель для клана (5 дней; нужен ремесленник).</li>
+
+            <li class="cmd"><b>«Назначить заместителя клана»</b> — ответом на сообщение.</li>
+            <li class="cmd"><b>«Убрать заместителя клана»</b> — снять статус.</li>
+          </ul>
+        </article>
+
+        <!-- WORK -->
+        <article class="cmd-card cmd-block" id="work" data-title="работа столовая крупье грабитель кафетерий казино банк где жаба начать работу завершить">
+          <h2>🧰 Работа</h2>
+          <p class="muted">Фарм букашек и не только. Команды перемещений и старта/завершения работы.</p>
+          <ul class="cmd-list">
+            <li class="cmd"><b>«Отправить жабу на работу»</b> — список работ (между отправками ≥ 8 часов).</li>
+            <li class="cmd"><b>«Поход в столовую»</b> — отправить жабу в столовую.</li>
+            <li class="cmd"><b>«Работа крупье»</b> — работа в казино.</li>
+            <li class="cmd"><b>«Работа грабитель»</b> — шанс удачи на складе.</li>
+            <li class="cmd"><b>«Завершить работу»</b> — не раньше чем через 2 часа.</li>
+            <li class="cmd"><b>«Где жаба»</b> — местоположение жабы.</li>
+            <li class="cmd"><b>«Отправиться в кафетерий»</b> — путь на работу в кафетерий.</li>
+            <li class="cmd"><b>«Отправиться в казино»</b> — путь в казино.</li>
+            <li class="cmd"><b>«Отправиться в банк»</b> — путь в банк.</li>
+            <li class="cmd"><b>«Начать работу»</b> — начать работу, когда жаба дошла до локации.</li>
+          </ul>
+        </article>
+
+        <!-- CLASSES -->
+        <article class="cmd-card cmd-block" data-title="классы выбрать класс сменить класс повысить уровень класса">
+          <h2>🧬 Классы</h2>
+          <p class="muted">Выбор и прокачка класса жабы.</p>
+          <ul class="cmd-list">
+            <li class="cmd"><b>«Выбрать класс»</b> — доступно с 5 уровня, стоимость 1000 букашек.</li>
+            <li class="cmd"><b>«Сменить класс»</b> — 5000 букашек (с потерей уровня) / 20000 (без потери уровня).</li>
+            <li class="cmd"><b>«Повысить уровень класса»</b> — 7 500 (2 уровень) / 10 000 (3 уровень).</li>
+          </ul>
+        </article>
+
+        <!-- DUNGEONS -->
+        <article class="cmd-card cmd-block" id="dungeons" data-title="подземелье бронзовое серебряное золотое рейд инфо рейд старт выйти">
+          <h2>🕳️ Подземелья</h2>
+          <p class="muted">Рейды, запуск босса, выход до старта.</p>
+          <ul class="cmd-list">
+            <li class="cmd"><b>«Отправить жабу в подземелье» / «Отправиться в подземелье»</b> — список подземелий и стоимость.</li>
+            <li class="cmd"><b>«Отправить жабу в бронзовое / серебряное / золотое подземелье»</b> — за 400 / 600 / 800 букашек.</li>
+            <li class="cmd"><b>«Рейд инфо»</b> — участники похода.</li>
+            <li class="cmd"><b>«Рейд старт»</b> — ручной запуск атаки на босса.</li>
+            <li class="cmd"><b>«Выйти из подземелья»</b> — вернуться до начала рейда.</li>
+          </ul>
+        </article>
+
+        <!-- ROBBERY -->
+        <article class="cmd-card cmd-block" id="robbery" data-title="ограбление комната пригласить принять отклонить отозвать выйти скрафтить снаряжение моя комната выгнать">
+          <h2>🧨 Ограбления</h2>
+          <p class="muted">Комнаты, приглашения, снаряжение и управление командой.</p>
+          <ul class="cmd-list">
+            <li class="cmd"><b>«Начать ограбление»</b> — создать комнату / запустить ограбление.</li>
+            <li class="cmd"><b>«Пригласить на ограбление»</b> — пригласить человека (через реплай).</li>
+            <li class="cmd"><b>«Принять приглашение в комнату»</b> / <b>«Отклонить приглашение в комнату»</b> / <b>«Отозвать приглашение в комнату»</b> — «Отозвать» отзывает все непринятые приглашения.</li>
+            <li class="cmd"><b>«Выйти из ограбления»</b> — выйти из комнаты / досрочно завершить (если лидер).</li>
+            <li class="cmd"><b>«Скрафтить снаряжение»</b> — создать снаряжение для ограбления.</li>
+            <li class="cmd"><b>«Моя комната»</b> — ваша комната и снаряжение команды.</li>
+            <li class="cmd"><b>«Выгнать из комнаты»</b> — выгнать человека.</li>
+          </ul>
+        </article>
+
+        <!-- RACES -->
+        <article class="cmd-card cmd-block" id="races" data-title="гонка забег начать гонку забег инфо выйти из гонки пиво">
+          <h2>🏁 Гоночные состязания</h2>
+          <p class="muted">Забеги на букашки. И да, пиво тут не просто для красоты.</p>
+          <ul class="cmd-list">
+            <li class="cmd"><b>«Гонка СУММА»</b> — создать состязание или вступить в существующее.</li>
+            <li class="cmd"><b>«Начать гонку»</b> — старт забега.</li>
+            <li class="cmd"><b>«Забег инфо»</b> — участники текущего забега.</li>
+            <li class="cmd"><b>«Выйти из гонки»</b> — забрать жабу и вернуть поставленные деньги.</li>
+          </ul>
+        </article>
+
+        <!-- STATS -->
+        <article class="cmd-card cmd-block" id="stats" data-title="топ жаб настроение победы букашки топ кланов соревнование сытость арена кланы">
+          <h2>📊 Статистика и топы</h2>
+          <p class="muted">Кто тут главный жаб? Сейчас узнаем.</p>
+          <ul class="cmd-list">
+            <li class="cmd"><b>«Топ жаб»</b> — по уровню.</li>
+            <li class="cmd"><b>«Топ жаб настроение»</b> — по настроению.</li>
+            <li class="cmd"><b>«Топ жаб победы»</b> — по победам.</li>
+            <li class="cmd"><b>«Топ жаб букашки»</b> — по букашкам.</li>
+            <li class="cmd"><b>«Топ кланов»</b> — первые 15 кланов по победам.</li>
+            <li class="cmd"><b>«Соревнование сытость»</b> — самые сытые жабы.</li>
+            <li class="cmd"><b>«Соревнование арена»</b> — короли арены.</li>
+            <li class="cmd"><b>«Соревнование кланы»</b> — самые активные кланы.</li>
+          </ul>
+        </article>
+
+        <!-- PARTY -->
+        <article class="cmd-card cmd-block" id="party" data-title="туса жабу на тусу туса инфо начать тусу покинуть тусу брать на тусу банда">
+          <h2>🪩 Тусовки</h2>
+          <p class="muted">Жабья вечеринка: вход, инфо, старт и выход.</p>
+          <ul class="cmd-list">
+            <li class="cmd"><b>«Жабу на тусу»</b> — отправить жабу на тусовку (вход 150 букашек).</li>
+            <li class="cmd"><b>«Брать на тусу»</b> — брать с собой банду (доплата 100 букашек; повтор — отключит).</li>
+            <li class="cmd"><b>«Туса инфо»</b> — информация о тусовщиках.</li>
+            <li class="cmd"><b>«Начать тусу»</b> — старт вечеринки.</li>
+            <li class="cmd"><b>«Покинуть тусу»</b> — выйти с тусы.</li>
+          </ul>
+        </article>
+
+        <!-- CHAT SETTINGS -->
+        <article class="cmd-card cmd-block" data-title="настройки чата deletemessage удалить сообщения безопасные ники">
+          <h2>🧩 Настройки чата</h2>
+          <p class="muted">Чуть-чуть админской магии для беседы.</p>
+          <ul class="cmd-list">
+            <li class="cmd"><b>«Настройки чата»</b> — меню настроек.</li>
+            <li class="cmd"><b>«!deletemessage X»</b> — бот будет удалять свои сообщения через X минут.</li>
+            <li class="cmd">В настройках можно включить безопасные ники для фильтрации политики, мата и других неприятностей.</li>
+          </ul>
+        </article>
+
+        <!-- PAID -->
+        <article class="cmd-card cmd-block" id="paid" data-title="купить жабу сундук рубли в букашки купить карту сменить жабу воскресить сменить беседу сбросить статистику">
+          <h2>💳 Платные команды</h2>
+          <p class="muted">Премиум, сундуки, покупки и сервисные команды.</p>
+          <ul class="cmd-list">
+            <li class="cmd"><b>«Купить жабу»</b> — купить премиум жабу / выдать премиум статус.</li>
+            <li class="cmd"><b>«Купить сундук»</b> — меню покупки сундуков с привилегиями.</li>
+            <li class="cmd"><b>«Купить случайный сундук»</b> — купить случайный сундук из существующих.</li>
+            <li class="cmd"><b>«Сменить жабу»</b> — сменить фото жабы (приложить фото). <span class="muted">[Нужен Премиум Статус]</span></li>
+            <li class="cmd"><b>«Сменить фото жабенка»</b> — сменить фото жабенка (приложить фото). <span class="muted">[Нужен Премиум Статус]</span></li>
+            <li class="cmd"><b>«Рубли в букашки 100»</b> — купить букашки за рубли (число можно менять).</li>
+            <li class="cmd"><b>«Купить карту»</b> — купить карту болота.</li>
+            <li class="cmd"><b>«Сменить беседу LastChat NextChat»</b> — перенос жабы в другую беседу.</li>
+            <li class="cmd"><b>«Воскресить жабу UID»</b> — воскрешение (UID берётся из «мёртвых жаб»).</li>
+            <li class="cmd"><b>«Сменить партнёра»</b> — смена партнёра в браке (ответом на сообщение).</li>
+            <li class="cmd"><b>«Сбросить статистику»</b> — сброс побед и поражений.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq" aria-label="Вопросы и ответы">
+        <h2>Вопросы, которые задают чаще всего</h2>
+        <p class="lead">Собрал популярные вопросы новичков и тех, кто уже в болоте по уши. Если ответа нет — значит, пора его дописать (и это норм, сайт живой).</p>
+
+        <div class="faq-grid">
+          <details class="faq-item">
+            <summary>Как в Жабаботе купить усилитель?</summary>
+            <div class="ans">
+              Для личного усилителя используй <b>«Выбрать усилитель»</b> (действует 2 дня).
+              Для клана — <b>«Выбрать усилитель клана»</b> (действует 5 дней). Для кланового усилителя обычно нужен ремесленник.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Как пополнить донат / купить донат в Жабаботе?</summary>
+            <div class="ans">
+              На этой странице собраны команды. Для оплаты обычно используются команды из блока <b>«Платные команды»</b>
+              (например <b>«Рубли в букашки …»</b>) и покупки вроде <b>«Купить жабу»</b>, <b>«Купить сундук»</b>.
+              Если нужно пополнение “через меню”, зайди в раздел доната в самом боте — там самый актуальный путь оплаты.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Что делает пиво?</summary>
+            <div class="ans">
+              Команда <b>«Приобрести пиво»</b> (750 букашек) повышает шанс победы в гонке и покупается один раз.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Как купить стрекозюлю?</summary>
+            <div class="ans">
+              Команда <b>«Приобрести стрекозюлю»</b> (2000 букашек). Она увеличивает получаемые букашки на 10% и покупается один раз.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Какой усилитель лучше?</summary>
+            <div class="ans">
+              «Лучше» зависит от того, что ты фармишь: арена, клановые войны или экономика.
+              Быстрый путь — включить усилитель на 2 дня (<b>«Выбрать усилитель»</b>), поиграть активнее и посмотреть разницу по букашкам/результатам.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Какая работа лучше?</summary>
+            <div class="ans">
+              Если цель — стабильность, начинай с базовой работы через <b>«Отправить жабу на работу»</b>.
+              Дальше пробуй варианты: <b>«Поход в столовую»</b>, <b>«Работа крупье»</b>, <b>«Работа грабитель»</b>.
+              Под свой стиль проще выбрать по итогам пары циклов: где чаще выпадает то, что тебе нужно.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Как быстро поднять букашки без доната?</summary>
+            <div class="ans">
+              Комбо для старта: <b>«Покормить жабу»</b> (не пропускать), работа (<b>«Отправить жабу на работу»</b>), активность в событиях (гонки/тусы),
+              а ещё <b>стрекозюля</b> даёт +10% к букашкам (но это покупка за букашки, не донат).
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Как вступить в клан и начать клановую войну?</summary>
+            <div class="ans">
+              Вступление: <b>«Вступить в клан НАЗВАНИЕ»</b>.
+              Война: <b>«Начать клановую войну»</b>, а затем уже атаки через <b>«Напасть на клан»</b>.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Как попасть на арену и атаковать?</summary>
+            <div class="ans">
+              Одна команда делает всё: <b>«На Арену»</b> — регистрация и нападение.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Как воскресить жабу, если она умерла?</summary>
+            <div class="ans">
+              Посмотри <b>«Мертвые жабы»</b>, найди UID и используй <b>«Воскресить жабу UID»</b>.
+              Если есть аптечки — попробуй <b>«Реанимировать жабу»</b>.
+            </div>
+          </details>
+        </div>
       </section>
     </main>
+
     <footer>
       <div>Жабабот • игра-бот в Telegram • гайды и wiki на одном сайте</div>
-      <div style="opacity:.75;margin-top:6px;">
-        Подсказка: начни с <a href="/guides/prime-status/">Prime</a>, потом <a href="/guides/arena/">Арена</a> и <a href="/guides/clans/">Кланы</a>.
-      </div>
+      <div class="muted">© жабабот.рф</div>
     </footer>
   </div>
-  <script src="/assets/app.js" defer></script>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106028838', 'ym');
 
-    ym(106028838, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/106028838" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+  <script>
+    (function(){
+      const input = document.getElementById('cmdSearch');
+      const blocks = Array.from(document.querySelectorAll('.cmd-block'));
+
+      function norm(s){ return (s||'').toLowerCase().replace(/\s+/g,' ').trim(); }
+
+      function apply(){
+        const q = norm(input.value);
+        if(!q){
+          blocks.forEach(b => b.style.display = '');
+          return;
+        }
+        blocks.forEach(b => {
+          const hay = norm((b.getAttribute('data-title')||'') + ' ' + b.innerText);
+          b.style.display = hay.includes(q) ? '' : 'none';
+        });
+      }
+
+      input.addEventListener('input', apply);
+    })();
+  </script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106028838', 'ym');
+
+      ym(106028838, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/106028838" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
 </body>
 </html>
