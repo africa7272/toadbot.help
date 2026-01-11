@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Гайды по Жабаботу — Арена, Кланы, Подземелья, Снаряжение | жабабот.рф</title>
+<meta content="Гайды по Жабаботу — 12 разделов, чтобы быстро понять механику и не тратить букашки в пустоту. Основа — материалы из серии #Жаба_Всезнамус и игровая справка." name="description"/>
+<meta content="index,follow" name="robots"/>
+<link href="https://жабабот.рф/guides/" rel="canonical"/>
+<!-- Open Graph / соцсети -->
+<meta content="website" property="og:type"/>
+<meta content="жабабот.рф" property="og:site_name"/>
+<meta content="Гайды по Жабаботу — Арена, Кланы, Подземелья, Снаряжение | жабабот.рф" property="og:title"/>
+<meta content="Гайды по Жабаботу — 12 разделов, чтобы быстро понять механику и не тратить букашки в пустоту. Основа — материалы из серии #Жаба_Всезнамус и игровая справка." property="og:description"/>
+<meta content="https://жабабот.рф/guides/" property="og:url"/>
+<!-- Если есть обложка — раскомментируй и подставь путь -->
+<!-- <meta property="og:image" content="https://жабабот.рф/assets/og/guides.jpg" /> -->
+<meta content="summary" name="twitter:card"/>
+<meta content="Гайды по Жабаботу — Арена, Кланы, Подземелья, Снаряжение | жабабот.рф" name="twitter:title"/>
+<meta content="Гайды по Жабаботу — 12 разделов, чтобы быстро понять механику и не тратить букашки в пустоту. Основа — материалы из серии #Жаба_Всезнамус и игровая справка." name="twitter:description"/>
+<!-- <meta name="twitter:image" content="https://жабабот.рф/assets/og/guides.jpg" /> -->
+<!-- Structured Data: WebPage + Breadcrumbs + ItemList -->
+<script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebSite",
+        "name":"жабабот.рф",
+        "url":"https://жабабот.рф/"
+      },
+      {
+        "@type":"WebPage",
+        "name":"Гайды по Жабаботу",
+        "url":"https://жабабот.рф/guides/",
+        "description":"Подборка из 12 гайдов по Жабаботу. Основа — материалы #Жаба_Всезнамус.",
+        "inLanguage":"ru-RU",
+        "isPartOf":{"@id":"https://жабабот.рф/#website"}
+      },
+      {
+        "@type":"BreadcrumbList",
+        "itemListElement":[
+          { "@type":"ListItem", "position":1, "name":"Главная", "item":"https://жабабот.рф/" },
+          { "@type":"ListItem", "position":2, "name":"Гайды", "item":"https://жабабот.рф/guides/" }
+        ]
+      },
+      {
+        "@type":"ItemList",
+        "name":"Гайды по Жабаботу (12 разделов)",
+        "itemListOrder":"https://schema.org/ItemListOrderAscending",
+        "numberOfItems":12,
+        "itemListElement":[
+          { "@type":"ListItem", "position":1, "name":"Prime-статус", "url":"https://жабабот.рф/guides/prime-status/" },
+          { "@type":"ListItem", "position":2, "name":"Банды и верность", "url":"https://жабабот.рф/guides/bands-loyalty/" },
+          { "@type":"ListItem", "position":3, "name":"Уведомления", "url":"https://жабабот.рф/guides/notifications/" },
+          { "@type":"ListItem", "position":4, "name":"Настройки чата", "url":"https://жабабот.рф/guides/chat-settings/" },
+          { "@type":"ListItem", "position":5, "name":"Арена", "url":"https://жабабот.рф/guides/arena/" },
+          { "@type":"ListItem", "position":6, "name":"Подземелья", "url":"https://жабабот.рф/guides/dungeons/" },
+          { "@type":"ListItem", "position":7, "name":"Снаряжение", "url":"https://жабабот.рф/guides/equipment/" },
+          { "@type":"ListItem", "position":8, "name":"Модификаторы", "url":"https://жабабот.рф/guides/modifiers/" },
+          { "@type":"ListItem", "position":9, "name":"Кланы", "url":"https://жабабот.рф/guides/clans/" },
+          { "@type":"ListItem", "position":10, "name":"Ограбления", "url":"https://жабабот.рф/guides/robberies/" },
+          { "@type":"ListItem", "position":11, "name":"Работа и заработок", "url":"https://жабабот.рф/guides/work-earnings/" },
+          { "@type":"ListItem", "position":12, "name":"Воскрешение", "url":"https://жабабот.рф/guides/resurrection/" }
+        ]
+      }
+    ]
+  }
+  </script>
+<style>
+    :root{
+      --primary:#2d1e0c;
+      --accent:#5fb878;
+      --light-bg:#faf8f3;
+      --card-bg:#fff;
+      --text-dark:#2c2c2c;
+      --text-light:#666;
+      --border:#e8e3d8;
+      --topbar-bg:#0b0f14;
+      --topbar-text:#f5f5f5;
+      --cta-gold:#d4af37;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:var(--light-bg);color:var(--text-dark);line-height:1.6}
+
+    /* TOPBAR */
+    .topbar{background:var(--topbar-bg);padding:12px 20px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+    .topbar__inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--topbar-text);font-weight:600;font-size:.95em}
+    .brand__logo{width:28px;height:28px;display:block}
+    .nav{display:flex;gap:18px;align-items:center}
+    .nav__link{color:rgba(245,245,245,.7);text-decoration:none;font-size:.9em;transition:.2s}
+    .nav__link:hover,.nav__link.is-active{color:var(--accent)}
+    .cta{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;text-decoration:none;font-size:.85em;font-weight:600;transition:.2s;border:none;cursor:pointer;white-space:nowrap}
+    .cta--gold{background:var(--cta-gold);color:var(--topbar-bg)}
+    .cta--gold:hover{background:#e5c158;transform:translateY(-2px)}
+
+    /* LAYOUT */
+    .container{max-width:1200px;margin:0 auto;padding:20px}
+
+    .breadcrumbs{
+      font-size:.9em;color:var(--text-light);
+      margin:10px 0 16px;
+    }
+    .breadcrumbs a{color:var(--text-light);text-decoration:none;border-bottom:1px dashed rgba(0,0,0,.2)}
+    .breadcrumbs a:hover{color:var(--accent);border-bottom-color:transparent}
+
+    .hero{
+      padding:28px 20px;
+      background:linear-gradient(135deg,var(--primary) 0%, #3d2b1b 100%);
+      color:#fff;border-radius:14px;
+      box-shadow:0 4px 15px rgba(0,0,0,.1);
+      margin:10px 0 18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero h1{font-size:2.1em;margin-bottom:6px}
+    .hero p{opacity:.92;max-width:860px}
+    .hero .hint{
+      margin-top:14px;
+      display:inline-flex;gap:8px;align-items:center;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      padding:10px 12px;border-radius:12px;
+      font-size:.92em;
+    }
+
+    /* Contents */
+    .contents{
+      background:var(--card-bg);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 2px 8px rgba(0,0,0,.05);
+      margin:0 0 22px;
+    }
+    .contents h2{font-size:1.15em;color:var(--primary);margin-bottom:8px}
+    .contents p{color:var(--text-light);font-size:.95em;margin-bottom:10px}
+    .contents ul{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:8px 14px;
+      list-style:none;
+      padding:0;
+    }
+    .contents a{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      text-decoration:none;
+      color:var(--text-dark);
+      padding:8px 10px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      background:var(--light-bg);
+      transition:.2s;
+      font-size:.95em;
+    }
+    .contents a:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.08);border-color:rgba(95,184,120,.5)}
+    .dot{opacity:.85}
+
+    /* Sections */
+    .section{margin:22px 0}
+    .section-title{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      margin:0 0 10px;
+    }
+    .section-title h2{font-size:1.25em;color:var(--primary)}
+    .section-title .sub{color:var(--text-light);font-size:.95em}
+
+    /* Grid tiles */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+      gap:14px;
+    }
+    .tile{
+      background:var(--card-bg);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 2px 8px rgba(0,0,0,.05);
+      text-decoration:none;
+      color:inherit;
+      transition:.2s;
+      display:flex;gap:12px;align-items:flex-start;
+      min-height:94px;
+    }
+    .tile:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.09)}
+    .icon{
+      width:52px;height:52px;border-radius:12px;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg, rgba(95,184,120,.18), rgba(212,175,55,.14));
+      border:1px solid rgba(95,184,120,.25);
+      font-size:26px;
+      flex:0 0 auto;
+    }
+    .tile h3{font-size:1.02em;margin:0 0 4px;color:var(--primary)}
+    .tile p{margin:0;color:var(--text-light);font-size:.92em}
+    .tags{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+    .tag{
+      font-size:.78em;
+      padding:4px 8px;border-radius:999px;
+      background:var(--light-bg);
+      border:1px solid var(--border);
+      color:var(--text-light);
+    }
+
+    .seo-text{
+      margin-top:18px;
+      color:var(--text-light);
+      font-size:.95em;
+      background:rgba(255,255,255,.55);
+      border:1px dashed rgba(0,0,0,.08);
+      border-radius:14px;
+      padding:14px 16px;
+    }
+    .seo-text strong{color:var(--text-dark)}
+
+    /* Footer */
+    footer{margin-top:28px;padding:18px 0;color:var(--text-light);font-size:.9em;border-top:1px solid var(--border);text-align:center}
+
+    @media (max-width:768px){
+      .hero h1{font-size:1.6em}
+      .topbar__inner{flex-direction:column;align-items:stretch}
+      .nav{justify-content:center}
+      .cta{width:100%;justify-content:center}
+    }
+  </style>
+<meta content="ru_RU" property="og:locale"/><meta name="description" content="12 разделов, чтобы быстро понять механику и не тратить букашки в пустоту. Основа — материалы из серии #Жаба_Всезнамус и игровая справка." />
+<link rel="canonical" href="https://жабабот.рф/guides/" />
+</head>
+<body>
+<header class="topbar">
+<div class="topbar__inner">
+<a aria-label="На главную" class="brand" href="/">
+<span class="brand__logo">🐸</span>
+<span>жабабот.рф</span>
+</a>
+<nav aria-label="Навигация" class="nav">
+<a class="nav__link" href="/">Главная</a>
+<a class="nav__link is-active" href="/guides/">Гайды</a>
+<a class="nav__link" href="/wiki/">Wiki</a>
+
+<a class="nav__link" href="/blog/">Блог</a>
+<a class="nav__link" href="/teams/">Команды</a>
+</nav>
+<a class="cta cta--gold" href="https://t.me/toadbot?start=228691787" rel="noopener" target="_blank">
+        Играть в Жабабота ↗
+      </a>
+</div>
+</header>
+<main class="container">
+<nav aria-label="Хлебные крошки" class="breadcrumbs">
+<a href="/">Главная</a> <span class="dot">→</span> <span>Гайды</span>
+</nav>
+<section class="hero">
+<h1>Гайды по Жабаботу</h1>
+<p>
+        12 разделов, чтобы быстро понять механику и не тратить букашки в пустоту.
+        Основа — материалы из серии <strong>#Жаба_Всезнамус</strong> и игровая справка.
+      </p>
+<div class="hint">🧠 <strong>Совет:</strong> начни с Prime → Арены → Кланов — это даёт самый быстрый разгон прогресса.</div>
+</section>
+<!-- СОДЕРЖАНИЕ (усиление SEO + удобство) -->
+<section aria-label="Содержание гайдов" class="contents">
+<h2>Содержание</h2>
+<p>Все гайды на одной странице — выбирай раздел и переходи внутрь.</p>
+<ul>
+<li><a href="/guides/prime-status/">👑 Prime-статус</a></li>
+<li><a href="/guides/bands-loyalty/">🏋️ Банды и верность</a></li>
+<li><a href="/guides/notifications/">🔔 Уведомления</a></li>
+<li><a href="/guides/chat-settings/">⚙️ Настройки чата</a></li>
+<li><a href="/guides/arena/">🏟️ Арена</a></li>
+<li><a href="/guides/dungeons/">🏚️ Подземелья</a></li>
+<li><a href="/guides/equipment/">🛡️ Снаряжение</a></li>
+<li><a href="/guides/modifiers/">🔧 Модификаторы</a></li>
+<li><a href="/guides/clans/">🏰 Кланы</a></li>
+<li><a href="/guides/robberies/">🚨 Ограбления</a></li>
+<li><a href="/guides/work-earnings/">💼 Работа и заработок</a></li>
+<li><a href="/guides/resurrection/">🕯️ Воскрешение</a></li>
+</ul>
+</section>
+<!-- #Жаба_Всезнамус — база -->
+<section class="section">
+<div class="section-title">
+<h2>#Жаба_Всезнамус — база</h2>
+<div class="sub">коротко, по делу, без “воды из болота”</div>
+</div>
+<div class="grid">
+<a class="tile" href="/guides/prime-status/">
+<div class="icon">👑</div>
+<div>
+<h3>Prime-статус</h3>
+<p>Кормление чаще, лимиты больше, смена имени проще — кому это реально выгодно.</p>
+<div class="tags">
+<span class="tag">#Жаба_Всезнамус</span><span class="tag">прокачка</span><span class="tag">удобство</span>
+</div>
+</div>
+</a>
+<a class="tile" href="/guides/bands-loyalty/">
+<div class="icon">🏋️</div>
+<div>
+<h3>Банды и верность</h3>
+<p>Шансы срабатывания, падение верности, кулоны и бонусы к урону.</p>
+<div class="tags">
+<span class="tag">бой</span><span class="tag">урон</span><span class="tag">кулоны</span>
+</div>
+</div>
+</a>
+<a class="tile" href="/guides/notifications/">
+<div class="icon">🔔</div>
+<div>
+<h3>Уведомления</h3>
+<p>Голод, дейлики, поломки и прочие сигналы — чтобы не пропускать важное.</p>
+<div class="tags">
+<span class="tag">настройки</span><span class="tag">удобство</span>
+</div>
+</div>
+</a>
+<a class="tile" href="/guides/chat-settings/">
+<div class="icon">⚙️</div>
+<div>
+<h3>Настройки чата</h3>
+<p>Удаление сообщений бота, безопасные ники и управление активностями.</p>
+<div class="tags">
+<span class="tag">админам</span><span class="tag">чат</span>
+</div>
+</div>
+</a>
+</div>
+</section>
+<!-- Бои и прогресс -->
+<section class="section">
+<div class="section-title">
+<h2>Бои и прогресс</h2>
+<div class="sub">арена, подземелья, снаряжение</div>
+</div>
+<div class="grid">
+<a class="tile" href="/guides/arena/">
+<div class="icon">🏟️</div>
+<div>
+<h3>Арена</h3>
+<p>Регистрация по часам, исход по двум боям и награды по лигам.</p>
+<div class="tags"><span class="tag">PVP</span><span class="tag">лига</span></div>
+</div>
+</a>
+<a class="tile" href="/guides/dungeons/">
+<div class="icon">🏚️</div>
+<div>
+<h3>Подземелья</h3>
+<p>Стоимость входа, лут, сытость и групповые рейды до 5 жаб.</p>
+<div class="tags"><span class="tag">лут</span><span class="tag">рейд</span></div>
+</div>
+</a>
+<a class="tile" href="/guides/equipment/">
+<div class="icon">🛡️</div>
+<div>
+<h3>Снаряжение</h3>
+<p>Броня/оружие, прочность, починка изолентой и крафт из кусочков.</p>
+<div class="tags"><span class="tag">броня</span><span class="tag">крафт</span></div>
+</div>
+</a>
+<a class="tile" href="/guides/modifiers/">
+<div class="icon">🔧</div>
+<div>
+<h3>Модификаторы</h3>
+<p>Как они надеваются на броню, стакаются и ломаются вместе с ней.</p>
+<div class="tags"><span class="tag">усиления</span><span class="tag">валюта</span></div>
+</div>
+</a>
+</div>
+</section>
+<!-- Кланы и командная игра -->
+<section class="section">
+<div class="section-title">
+<h2>Кланы и командная игра</h2>
+<div class="sub">самый жирный прогресс — тут</div>
+</div>
+<div class="grid">
+<a class="tile" href="/guides/clans/">
+<div class="icon">🏰</div>
+<div>
+<h3>Кланы</h3>
+<p>Создание, лиги, сезон, усилители, карты и клановые войны.</p>
+<div class="tags"><span class="tag">лига</span><span class="tag">война</span></div>
+</div>
+</a>
+<a class="tile" href="/guides/robberies/">
+<div class="icon">🚨</div>
+<div>
+<h3>Ограбления</h3>
+<p>Комната, приглашения, снаряга и таймер 15 минут на прохождение.</p>
+<div class="tags"><span class="tag">кооп</span><span class="tag">испытания</span></div>
+</div>
+</a>
+<a class="tile" href="/guides/work-earnings/">
+<div class="icon">💼</div>
+<div>
+<h3>Работа и заработок</h3>
+<p>Работы, стаж, бонусы и куда идти новичку за стабильным фармом.</p>
+<div class="tags"><span class="tag">фарм</span><span class="tag">прогресс</span></div>
+</div>
+</a>
+<a class="tile" href="/guides/resurrection/">
+<div class="icon">🕯️</div>
+<div>
+<h3>Воскрешение</h3>
+<p>Что делать после смерти: как вернуть жабу по UID и восстановиться.</p>
+<div class="tags"><span class="tag">потери</span><span class="tag">спасение</span></div>
+</div>
+</a>
+</div>
+<div class="seo-text">
+<strong>Про что эти гайды:</strong> механики Жабабота в Telegram — арена, подземелья, снаряжение, модификаторы, кланы, ограбления и заработок букашек.
+        Если ты играешь впервые — начни с базовых разделов и дальше двигайся по содержанию.
+      </div>
+</section>
+<footer>
+<div>жабабот.рф • Гайды • источник обновлений: @toadbotnews</div>
+<div style="opacity:.7;margin-top:6px;">Если болото меняется — мы меняем гайды 🐸</div>
+</footer>
+</main>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106028838', 'ym');
+
+    ym(106028838, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/106028838" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
